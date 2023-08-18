@@ -1,9 +1,5 @@
 
 <template>
-  <div
-    v-show="this.$store.state.layout === 'landing'"
-    class="landing-bg h-100 bg-gradient-primary position-fixed w-100"
-  ></div>
   <sidenav
     :custom_class="this.$store.state.mcolor"
     :class="[
@@ -16,29 +12,21 @@
     class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
   >
     <!-- nav -->
-    <!-- <NavbarComp
+    <NavbarComp
       :class="[navClasses]"
       :textWhite="
         this.$store.state.isAbsolute ? 'text-white opacity-8' : 'text-white'
       "
       :minNav="navbarMinimize"
       v-if="this.$store.state.showNavbar"
-    /> -->
+    />
     <router-view />
     <app-footer v-show="this.$store.state.showFooter" />
-    <Configurator
-      :toggle="toggleConfigurator"
-      :class="[
-        this.$store.state.showConfig ? 'show' : '',
-        this.$store.state.hideConfigButton ? 'd-none' : ''
-      ]"
-    />
   </main>
 </template>
 <script>
 import Sidenav from "./examples/Sidenav";
-import Configurator from "@/examples/Configurator.vue";
-//import NavbarComp from "@/examples/Navbars/NavbarComp.vue";
+import NavbarComp from "@/examples/Navbars/NavbarComp.vue";
 import AppFooter from "@/examples/Footer.vue";
 import { mapMutations } from "vuex";
 
@@ -46,8 +34,7 @@ export default {
   name: "App",
   components: {
     Sidenav,
-    Configurator,
-    //NavbarComp,
+    NavbarComp,
     AppFooter
   },
   methods: {
