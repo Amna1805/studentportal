@@ -5,7 +5,7 @@ import Billing from "../views/Billing.vue";
 import Profile from "../views/Profile.vue";
 import Signup from "../views/Signup.vue";
 import Signin from "../views/Signin.vue";
-
+import MyprofileComp from "../views/Myprofile.vue"
 const routes = [
   {
     path: "/",
@@ -31,6 +31,11 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: Profile,
+  },
+  {
+    path: "/myprofile",
+    name: "Myprofile",
+    component: MyprofileComp,
   },
   {
     path: "/signin",

@@ -1,88 +1,98 @@
 <template>
-  <div
-    class="collapse navbar-collapse w-auto h-auto h-100"
-    id="sidenav-collapse-main"
-  >
+  <div class="collapse navbar-collapse w-auto h-auto h-100" id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <sidenav-item
-          url="/dashboard-default"
-          :class="getRoute() === 'dashboard-default' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'لوحة القيادة' : 'Dashboard'"
-        >
+        <sidenav-item url="/dashboard-default" :class="getRoute() === 'dashboard-default' ? 'active' : ''"
+          :navText="'Dashboard'">
           <template v-slot:icon>
             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item
-          url="/tables"
-          :class="getRoute() === 'tables' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'الجداول' : 'Tables'"
-        >
+        <sidenav-item url="/tables" :class="getRoute() === 'tables' ? 'active' : ''" :navText="'Tables'">
           <template v-slot:icon>
-            <i
-              class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"
-            ></i>
+            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item
-          url="/billing"
-          :class="getRoute() === 'billing' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'الفواتیر' : 'Billing'"
-        >
+        <sidenav-item url="/billing" :class="getRoute() === 'billing' ? 'active' : ''" :navText="'Billing'">
           <template v-slot:icon>
             <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
+      <li class="nav-item">
+        <div @click="toggleDropdown" class="d-flex align-items-center">
+          <sidenav-item url="/dash" :class="getRoute() === 'dash' ? 'active' : ''" :navText="'Equivalence Services'">
+            <template v-slot:icon>
+              <i class="fas fa-bars text-success text-sm opacity-10"></i>
+            </template>
+          </sidenav-item>
+          <i class="fas fa-chevron-down text-success ml-2" :class="{ 'rotate-180': showDropdown }"></i>
+        </div>
+        <transition name="slide-down">
+          <ul v-if="showDropdown" class="mt-2">
+          <li class="list-group-item" style="border: none;">Identity Card</li>
+          <li class="list-group-item" style="border: none;">Late Sitting</li>
+          <li class="list-group-item" style="border: none;">Evaluation</li>
+          <li class="list-group-item" style="border: none;">Clearance</li>
+          <li class="list-group-item" style="border: none;">Extension</li>
+        </ul>
+        </transition>
+       
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/acc" :class="getRoute() === 'acc' ? 'active' : ''" :navText="'Accomodation'">
+          <template v-slot:icon>
+            <i class="fas fa-home text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/tran" :class="getRoute() === 'tran' ? 'active' : ''" :navText="'Transport'">
+          <template v-slot:icon>
+            <i class="fas fa-bus text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/it" :class="getRoute() === 'it' ? 'active' : ''" :navText="'IT Login'">
+          <template v-slot:icon>
+            <i class="fas fa-laptop text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/myprofile" :class="getRoute() === 'profile' ? 'active' : ''" :navText="'MyProfile'">
+          <template v-slot:icon>
+            <i class="ni ni-single-02 text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
       <li class="mt-3 nav-item">
-        <h6
-          v-if="this.$store.state.isRTL"
-          class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
-          :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'"
-        >
-          صفحات المرافق
-        </h6>
-        <h6
-          v-else
-          class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
-          :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'"
-        >
+        <h6 class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
+          :class="this.$store.state.isRTL ? 'me-4' : 'ms-2'">
           ACCOUNT PAGES
         </h6>
       </li>
       <li class="nav-item">
-        <sidenav-item
-          url="/profile"
-          :class="getRoute() === 'profile' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'حساب تعريفي' : 'Profile'"
-        >
+        <sidenav-item url="/profile" :class="getRoute() === 'profile' ? 'active' : ''" :navText="'Profile'">
           <template v-slot:icon>
             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item
-          url="/signin"
-          :class="getRoute() === 'signin' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'تسجيل الدخول' : 'Sign In'"
-        >
+        <sidenav-item url="/signin" :class="getRoute() === 'signin' ? 'active' : ''" :navText="'Sign In'">
           <template v-slot:icon>
             <i class="ni ni-single-copy-04 text-danger text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item
-          url="/signup"
-          :class="getRoute() === 'signup' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'اشتراك' : 'Sign Up'"
-        >
+        <sidenav-item url="/signup" :class="getRoute() === 'signup' ? 'active' : ''" :navText="'Sign Up'">
           <template v-slot:icon>
             <i class="ni ni-collection text-info text-sm opacity-10"></i>
           </template>
@@ -101,6 +111,7 @@ export default {
   },
   data() {
     return {
+      showDropdown: false,
       title: "Argon Dashboard 2",
       controls: "dashboardsExamples",
       isActive: "active"
@@ -113,7 +124,25 @@ export default {
     getRoute() {
       const routeArr = this.$route.path.split("/");
       return routeArr[1];
-    }
+    },
+    toggleDropdown() {
+      this.showDropdown = !this.showDropdown;
+    },
   }
 };
 </script>
+<style scoped>
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.slide-down-enter-active, .slide-down-leave-active {
+  transition: max-height 0.5s ease-in-out;
+}
+.slide-down-enter, .slide-down-leave-to {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+</style>

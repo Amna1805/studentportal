@@ -1,5 +1,5 @@
 <template>
-  <div class="card card-profile mt-3">
+  <div class="card card-profile">
     <h4 class="m-2 p-3">PROFILE COMPLETNESS</h4>
     <div class="row justify-content-center">
       <div class="col-4 col-lg-4 order-lg-2">

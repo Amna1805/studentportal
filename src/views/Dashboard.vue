@@ -30,14 +30,16 @@
       <div class="row">
         <div class="col-lg-8">
           <authors-table />
-          <carousel />    
+          <carousel />
         </div>
         <div class="col-lg-4 mt-3 mt-lg-0">
           <invoice-card />
-          <profile-card />
+          <div class="mt-3">
+            <profile-card />
+          </div>
         </div>
       </div>
-     
+
     </div>
   </div>
 </template>
