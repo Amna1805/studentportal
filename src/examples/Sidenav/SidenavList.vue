@@ -58,9 +58,9 @@
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item url="/it" :class="getRoute() === 'it' ? 'active' : ''" :navText="'IT Login'">
+        <sidenav-item url="/ext" :class="getRoute() === 'ext' ? 'active' : ''" :navText="'Extension'">
           <template v-slot:icon>
-            <i class="fas fa-laptop text-success text-sm opacity-10"></i>
+            <i class="fas fa-calendar-plus text-success text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
