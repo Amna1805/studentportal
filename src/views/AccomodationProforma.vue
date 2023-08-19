@@ -6,7 +6,13 @@
         <form>
             <div class="card mb-4">
                 <fieldset>
-                    <legend class="card-header">PART-I (to be completed by Applicant Hosted Researcher):</legend>
+                    <legend class="card-header d-flex justify-content-between align-items-center">
+                        PART-I (to be completed by Applicant Hosted Researcher):
+                        <div
+                            class="passport-picture-area bg-light rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fas fa-user fa-3x text-primary"></i>
+                        </div>
+                    </legend>
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Name of Hosted Researcher:</label>
@@ -99,6 +105,7 @@
                             <input type="text" class="form-control" id="recommendationDirector"
                                 v-model="applicantInfo.recommendationDirector" />
                         </div>
+                        
                     </div>
                 </fieldset>
             </div>
@@ -111,16 +118,19 @@
                         <div class="form-group form-check">
                             <input disabled type="checkbox" class="form-check-input" id="caadEntriesCorrect"
                                 v-model="officialInfo.caadEntriesCorrect" />
-                            <label class="form-check-label" for="caadEntriesCorrect">Registration entries are correct w.r.t. CAAD Record:</label>
+                            <label class="form-check-label" for="caadEntriesCorrect">Registration entries are correct w.r.t.
+                                CAAD Record:</label>
                         </div>
                         <div class="form-group form-check">
                             <input disabled type="checkbox" class="form-check-input" id="policeVerification"
                                 v-model="officialInfo.policeVerification" />
-                            <label class="form-check-label" for="policeVerification">Police verification proforma submitted:</label>
+                            <label class="form-check-label" for="policeVerification">Police verification proforma
+                                submitted:</label>
                         </div>
                         <div class="form-group">
                             <label for="accommodationType">Accommodation Type Applicable:</label>
-                            <select disabled class="form-control" id="accommodationType" v-model="officialInfo.accommodationType">
+                            <select disabled class="form-control" id="accommodationType"
+                                v-model="officialInfo.accommodationType">
                                 <option value="">Select</option>
                                 <option value="singleRoom">Single Room</option>
                                 <option value="sharedRoomStudents">Shared Room for Students</option>
@@ -181,7 +191,8 @@
                         <div class="form-group">
                             <label for="priorityNo">Request Prioritized and held for provision of Room on Priority
                                 No.:</label>
-                            <input  disabled type="text" class="form-control" id="priorityNo" v-model="officialInfo.priorityNo" />
+                            <input disabled type="text" class="form-control" id="priorityNo"
+                                v-model="officialInfo.priorityNo" />
                         </div>
                         <div class="form-group">
                             <label for="rentChallanNo">Advance Room rent paid vides Challan No.:</label>
