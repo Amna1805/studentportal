@@ -7,16 +7,7 @@
             class="text-sm text-center copyright text-muted"
             :class="this.$store.state.isRTL ? 'text-lg-end' : 'text-lg-start'"
           >
-            ©
-            {{ new Date().getFullYear() }}, made with
-            <i class="fa fa-heart"></i> by
-            <a
-              href="https://www.creative-tim.com"
-              class="font-weight-bold"
-              target="_blank"
-              >Creative Tim</a
-            >
-            for a better web.
+            NCP©{{ new Date().getFullYear() }} All Rights Reserved.
           </div>
         </div>
         <div class="col-lg-6">

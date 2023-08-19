@@ -5,14 +5,7 @@
       :class="`${this.$store.state.isRTL ? '' : ' me-sm-6'} ${this.$store.state.isNavFixed ? 'text-dark' : 'text-white' }`"
     >
       <li class="text-sm breadcrumb-item">
-        <a
-          v-if="this.$store.state.isRTL"
-          class="opacity-5 ps-2"
-          href="#"
-          :class="this.$store.state.isNavFixed ? 'text-dark' : 'text-white'"
-          >لوحات القيادة</a
-        >
-        <a v-else 
+        <a 
         :class="this.$store.state.isNavFixed ? 'text-dark' : 'text-white'"
          class="opacity-8" href="#">Pages</a>
       </li>
