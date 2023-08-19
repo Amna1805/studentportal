@@ -22,7 +22,7 @@
             <i class="ni education_hat mr-2" style="color: #c3c3c3"></i>
             CNIC:
           </div>
-          <div class="ms-1" style="color: black; font-size: 14px;">37405-3094381-2</div>
+          <div class="ms-1" style="color: black; font-size: 14px;">71104-176901801</div>
         </div>
 
         <div class="d-flex flex-column">
@@ -30,14 +30,14 @@
             <i class="ni education_hat mr-2" style="color: #c3c3c3"></i>
             EMAIL:
           </div>
-          <div class="ms-1" style="color: black; font-size: 14px;">amnamuzaffar2002@gmail.com</div>
+          <div class="ms-1" style="color: black; font-size: 14px;">nasirhussaintormik@gmail.com</div>
         </div>
         <div class="d-flex flex-column">
           <div class="h6 font-weight-300 text-muted mt-2">
             <i class="ni education_hat mr-2" style="color: #c3c3c3"></i>
             PHONE NO:
           </div>
-          <div class="ms-1" style="color: black; font-size: 14px;">03105004090</div>
+          <div class="ms-1" style="color: black; font-size: 14px;">03165392101</div>
         </div>
       </div>
       <div class="mt-3">
