@@ -9,7 +9,8 @@ import MyprofileComp from "../views/Myprofile.vue";
 import AccomodationProforma from "../views/AccomodationProforma.vue";
 import ExtensionProforma from "../views/ExtensionProforma.vue";
 import AccountLogin from "../views/AccountLogin.vue";
-
+import EvaluationProforma from "../views/EvaluationProforma.vue"
+import ClearanceProforma from "../views/ClearanceProforma.vue"
 const routes = [
   {
     path: "/",
@@ -60,6 +61,16 @@ const routes = [
     path: "/ext",
     name: "ExtensionProforma",
     component: ExtensionProforma
+  },
+  {
+    path: "/clear",
+    name: "ClearanceProforma",
+    component: ClearanceProforma
+  },
+  {
+    path: "/evaluation",
+    name: "EvaluationProforma",
+    component: EvaluationProforma
   },
   {
     path: "/accLogin",
