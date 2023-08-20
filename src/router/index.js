@@ -70,6 +70,7 @@ const routes = [
     name: "TransportMember",
     component: TransportMember,
   },
+  {
     path: "/acc",
     name: "AccomodationProforma",
     component: AccomodationProforma
