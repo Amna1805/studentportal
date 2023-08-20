@@ -8,6 +8,8 @@ import Signin from "../views/Signin.vue";
 import MyprofileComp from "../views/Myprofile.vue";
 import AccomodationProforma from "../views/AccomodationProforma.vue";
 import ExtensionProforma from "../views/ExtensionProforma.vue";
+import AccountLogin from "../views/AccountLogin.vue";
+
 const routes = [
   {
     path: "/",
@@ -58,6 +60,11 @@ const routes = [
     path: "/ext",
     name: "ExtensionProforma",
     component: ExtensionProforma
+  },
+  {
+    path: "/accLogin",
+    name: "AccountLogin",
+    component: AccountLogin
   }
   
 ];
