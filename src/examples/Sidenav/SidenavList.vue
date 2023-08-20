@@ -23,7 +23,7 @@
           </template>
         </sidenav-item>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <div @click="toggleDropdown" class="d-flex align-items-center">
           <sidenav-item url="/dash" :class="getRoute() === 'dash' ? 'active' : ''" :navText="'Equivalence Services'">
             <template v-slot:icon>
@@ -42,6 +42,20 @@
         </ul>
         </transition>
        
+      </li> -->
+      <li class="nav-item">
+        <sidenav-item url="/clear" :class="getRoute() === 'clear' ? 'active' : ''" :navText="'Clearnance'">
+          <template v-slot:icon>
+            <i class="fas fa-home text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/evaluation" :class="getRoute() === 'eval' ? 'active' : ''" :navText="'Evaluation'">
+          <template v-slot:icon>
+            <i class="fas fa-home text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
       </li>
       <li class="nav-item">
         <sidenav-item url="/acc" :class="getRoute() === 'acc' ? 'active' : ''" :navText="'Accomodation'">

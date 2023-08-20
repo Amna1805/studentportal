@@ -34,7 +34,7 @@
               <td class="align-middle text-center">
                 <a
                   href="javascript:;"
-                  class="text-secondary font-weight-bold text-xs"
+                  class="text-success font-weight-bold text-xs"
                   data-toggle="tooltip"
                   data-original-title="Edit user"
                 >
