@@ -896,7 +896,7 @@ $form-check-input-focus-box-shadow:       none !default;
 $form-check-input-checked-color:          $white !default;
 $form-check-input-checked-bg-color:       transparent !default;
 $form-check-input-checked-border-color:   $form-check-input-checked-bg-color !default;
-$form-check-input-checked-bg-image:       linear-gradient(310deg, $primary-gradient 0%, $primary-gradient-state 100%) !default;
+$form-check-input-checked-bg-image:       linear-gradient(310deg, $success-gradient 0%, $success-gradient-state 100%) !default;
 $form-check-radio-checked-bg-image:       $form-check-input-checked-bg-image !default;
 $form-check-radio-after-width:                  .4375rem !default;
 
