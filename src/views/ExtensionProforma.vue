@@ -14,65 +14,97 @@
                         </div>
                     </legend>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="researcherName">Name of Hosted Researcher:</label>
-                            <input type="text" class="form-control" id="researcherName" v-model="researcherInfo.name" />
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="researcherName">Name of Hosted Researcher:</label>
+                                <input type="text" class="form-control" id="researcherName" v-model="researcherInfo.name" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="researcherPhone">Phone: Cell:</label>
+                                <input type="text" class="form-control" id="researcherPhone"
+                                    v-model="researcherInfo.phone" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="researcherPhone">Phone: Cell:</label>
-                            <input type="text" class="form-control" id="researcherPhone" v-model="researcherInfo.phone" />
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="researcherEmail">E-mail:</label>
+                                <input type="email" class="form-control" id="researcherEmail"
+                                    v-model="researcherInfo.email" />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="registrationNo">NCP Registration No.:</label>
+                                <input type="text" class="form-control" id="registrationNo"
+                                    v-model="researcherInfo.registrationNo" />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="entryCardNo">NCP Entry Card No.</label>
+                                <input type="text" class="form-control" id="entryCardNo"
+                                    v-model="researcherInfo.entryCardNo" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="researcherEmail">E-mail:</label>
-                            <input type="email" class="form-control" id="researcherEmail" v-model="researcherInfo.email" />
-                        </div>
-                        <div class="form-group">
-                            <label for="registrationNo">NCP Registration No.:</label>
-                            <input type="text" class="form-control" id="registrationNo"
-                                v-model="researcherInfo.registrationNo" />
-                            <label for="entryCardNo">NCP Entry Card No.</label>
-                            <input type="text" class="form-control" id="entryCardNo" v-model="researcherInfo.entryCardNo" />
-                        </div>
-                        <div class="form-group">
-                            <label for="department">Relevant Department at NCP:</label>
-                            <input type="text" class="form-control" id="department" v-model="researcherInfo.department" />
-                            <label for="group">Group:</label>
-                            <input type="text" class="form-control" id="group" v-model="researcherInfo.group" />
-                            <label for="contactPerson">Supervisor/Contact Person:</label>
-                            <input type="text" class="form-control" id="contactPerson"
-                                v-model="researcherInfo.contactPerson" />
+
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="department">Relevant Department at NCP:</label>
+                                <input type="text" class="form-control" id="department"
+                                    v-model="researcherInfo.department" />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="group">Group:</label>
+                                <input type="text" class="form-control" id="group" v-model="researcherInfo.group" />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="contactPerson">Supervisor/Contact Person:</label>
+                                <input type="text" class="form-control" id="contactPerson"
+                                    v-model="researcherInfo.contactPerson" />
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="presentOrg">Present Organization/University/Department:</label>
                             <input type="text" class="form-control" id="presentOrg" v-model="researcherInfo.presentOrg" />
                         </div>
+
                         <div class="form-group">
-                            <label for="presentDuration">Present Duration at NCP as per ToR:</label>
-                            <div class="input-group">
-                                <input type="date" class="form-control" id="presentDurationFrom"
-                                    v-model="researcherInfo.presentDurationFrom" />
-                                <div class="input-group-append">
-                                    <label class="input-group-text">to</label>
+                            <label>Present Duration at NCP as per ToR:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="stayFrom">From:</label>
+                                    <input type="date" class="form-control" id="presentDurationFrom"
+                                        v-model="researcherInfo.presentDurationFrom">
                                 </div>
-                                <input type="date" class="form-control" id="presentDurationTo"
-                                    v-model="researcherInfo.presentDurationTo" />
+                                <div class="col-md-6">
+                                    <label for="stayTo">To:</label>
+                                    <input type="date" class="form-control" id="presentDurationTo"
+                                        v-model="researcherInfo.presentDurationTo">
+                                </div>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label for="extensionReason">Reason for Extension:</label>
                             <textarea class="form-control" id="extensionReason"
                                 v-model="researcherInfo.extensionReason"></textarea>
                         </div>
+
                         <div class="form-group">
-                            <label for="extensionPeriodFrom">Requested Period of Extension (as per policy): from</label>
-                            <input type="date" class="form-control" id="extensionPeriodFrom"
-                                v-model="researcherInfo.extensionPeriodFrom" />
-                            <label for="extensionPeriodTo">to</label>
-                            <input type="date" class="form-control" id="extensionPeriodTo"
-                                v-model="researcherInfo.extensionPeriodTo" />
+                            <label>Requested Period of Extension (as per policy): </label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="extStayFrom">From:</label>
+                                    <input type="date" class="form-control" id="extensionPeriodFrom"
+                                        v-model="researcherInfo.extensionPeriodFrom">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="extStayTo">To:</label>
+                                    <input type="date" class="form-control" id="extensionPeriodTo"
+                                        v-model="researcherInfo.extensionPeriodTo">
+                                </div>
+                            </div>
                         </div>
+
                         <div class="form-group">
                             <label for="accommodationRequirement">Accommodation Requirement (if already availing):</label>
+                            <span>&nbsp;&nbsp;</span>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="Yes"
                                     v-model="researcherInfo.accommodationRequirement" />
@@ -86,6 +118,7 @@
                         </div>
                         <div class="form-group">
                             <label for="transportRequirement">Transport Requirement (if already availing):</label>
+                            <span>&nbsp;&nbsp;</span>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="Yes"
                                     v-model="researcherInfo.transportRequirement" />
@@ -97,23 +130,49 @@
                                 <label class="form-check-label">No</label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <p>
-                                I, hereby undertake that (a) My Parent institute is agreed for extension in my stay at NCP
-                                for the assigned research work, (b) During the extended period, I shall abide by NCP
-                                disciplinary/safety/security rules; (c) In case of loss/damage of NCP property, I shall be
-                                responsible to pay for the damage(s)/loss and (d) Upon completion of research work/ studies
-                                at NCP, I shall submit prescribed Clearance Proforma to Collaboration & Academic Activities
-                                Department (CAAD)/NCP for issuance of Certificate of Work Experience at NCP.
+
+                        <div class="rectangle-box p-3 mt-4">
+                            <p class="text-sm mb-2">
+                                <strong>I, hereby undertake that</strong>
                             </p>
+                            <ol class="text-sm mb-4" type="a">
+                                <li> My Parent institute is agreed for extension in my stay at NCP
+                                    for the assigned research work,</li>
+                                <li>During the extended period, I shall abide by NCP
+                                    disciplinary/safety/security rules;</li>
+                                <li> In case of loss/damage of NCP property, I shall be
+                                    responsible to pay for the damage(s)/loss and</li>
+                                <li>Upon completion of research work/ studies
+                                    at NCP, I shall submit prescribed Clearance Proforma to Collaboration & Academic
+                                    Activities
+                                    Department (CAAD)/NCP for issuance of Certificate of Work Experience at NCP.</li>
+                            </ol>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="extAgreePolicy"
+                                    v-model="researcherInfo.extAgreePolicy">
+                                <label class="form-check-label text-sm-2" for="agreePolicy">I have read all the terms
+                                    above.</label>
+                            </div>
                         </div>
+
+                        <br>
                         <div class="form-group">
                             <label for="applicantSignature">Signature of Applicant / Date:</label>
-                            <input type="text" class="form-control" id="applicantSignature"
-                                v-model="researcherInfo.applicantSignature" />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Signature" id="applicantSignature"
+                                        v-model="researcherInfo.applicantSignature" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="date" placeholder="Date" class="form-control" id="applyDate"
+                                        v-model="researcherInfo.applyDate">
+                                </div>
+                            </div>
+
                         </div>
                         <div class="form-group">
                             <label for="recommendationExtension">Recommendation for Extension in Tenure:</label>
+                            <span>&nbsp;&nbsp;</span>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="yes"
                                     v-model="officialInfo.recommendationExtension" />
@@ -125,15 +184,18 @@
                                 <label class="form-check-label">No</label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="ncpSupervisor">NCP Supervisor/Contact Person:</label>
-                            <input type="text" class="form-control" id="ncpSupervisor"
-                                v-model="officialInfo.ncpSupervisor" />
-                        </div>
-                        <div class="form-group">
-                            <label for="concernedDirector">Concerned Director:</label>
-                            <input type="text" class="form-control" id="concernedDirector"
-                                v-model="officialInfo.concernedDirector" />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="ncpSupervisor">NCP Supervisor/Contact Person:</label>
+                                <input type="text" class="form-control" id="ncpSupervisor"
+                                    v-model="officialInfo.ncpSupervisor" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="concernedDirector">Concerned Director:</label>
+                                <input type="text" class="form-control" id="concernedDirector"
+                                    v-model="officialInfo.concernedDirector" />
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -144,52 +206,68 @@
                     <legend class="card-header">PART-II (for Official Use): Action by Hosted Researchers Branch - CAAD
                     </legend>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="jeAIA">JE (A&IA):</label>
-                            <input disabled type="text" class="form-control" id="jeAIA" v-model="officialInfo.jeAIA" />
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="jeAIA">JE (A&IA):</label>
+                                <input disabled type="text" class="form-control" id="jeAIA" v-model="officialInfo.jeAIA" />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="managerAIA">Manager A&IA:</label>
+                                <input disabled type="text" class="form-control" id="managerAIA"
+                                    v-model="officialInfo.managerAIA" />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="gmCAAD">GM CAAD</label>
+                                <input disabled type="text" class="form-control" id="gmCAAD"
+                                    v-model="officialInfo.gmCAAD" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="managerAIA">Manager A&IA:</label>
-                            <input disabled type="text" class="form-control" id="managerAIA"
-                                v-model="officialInfo.managerAIA" />
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label>(to vet above registration contents of HR)</label>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>(to vet above registration contents of HR)</label>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>(to forward the application to DG Secretariat):</label>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>(to vet above registration contents of Hosted Researcher)</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="gmCAAD">GM CAAD (to forward the application to DG Secretariat):</label>
-                            <input disabled type="text" class="form-control" id="gmCAAD" v-model="officialInfo.gmCAAD" />
-                        </div>
+
                         <div class="form-group">
                             <label for="approvalDG">Approval by Concerned DG NCP:</label>
-                            <input disabled type="text" class="form-control" id="approvalDG"
-                                v-model="officialInfo.approvalDG" />
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input disabled type="text" placeholder="Signature" class="form-control" id="approvalDG"
+                                        v-model="officialInfo.approvalDG" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input disabled type="date" class="form-control" id="approvalDate"
+                                        v-model="officialInfo.approvalDate" />
+                                </div>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="approvalDate">Date:</label>
-                            <input disabled type="date" class="form-control" id="approvalDate"
-                                v-model="officialInfo.approvalDate" />
-                        </div>
-                        <div class="form-group">
-                            <label>(Signatures/Stamp)</label>
-                        </div>
-                        <div class="form-group">
-                            <label for="gmAdministration">GM Administration:</label>
-                            <input disabled type="text" class="form-control" id="gmAdministration"
-                                v-model="officialInfo.gmAdministration" />
-                        </div>
-                        <div class="form-group">
-                            <label for="gmCAAD2">GM CAAD:</label>
-                            <input disabled type="text" class="form-control" id="gmCAAD2" v-model="officialInfo.gmCAAD2" />
-                        </div>
-                        <div class="form-group">
-                            <label for="amManagerCAAD">AM/Manager CAAD:</label>
-                            <input disabled type="text" class="form-control" id="amManagerCAAD"
-                                v-model="officialInfo.amManagerCAAD" />
-                        </div>
-                        <div class="form-group">
-                            <label for="jeCAAD">JE CAAD (Hosted Researchers Wing):</label>
-                            <input disabled type="text" class="form-control" id="jeCAAD" v-model="officialInfo.jeCAAD" />
+                            <label>Signature of Concerned Authorities</label>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <input disabled type="text" placeholder="GM Administration" class="form-control"
+                                        id="gmAdministration" v-model="officialInfo.gmAdministration" />
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <input disabled type="text" placeholder="GM CAAD" class="form-control" id="gmCAAD2"
+                                        v-model="officialInfo.gmCAAD2" />
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <input disabled type="text" placeholder="AM/Manager CAAD" class="form-control" id="amManagerCAAD"
+                                        v-model="officialInfo.amManagerCAAD" />
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <input disabled type="text" placeholder="JE CAAD (HR Wing)" class="form-control" id="jeCAAD"
+                                        v-model="officialInfo.jeCAAD" />
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>(for further processing & necessary action)</label>
@@ -300,7 +378,9 @@ export default {
                 accommodationRequirement: null,
                 transportRequirement: null,
                 undertaking: "",
-                applicantSignature: ""
+                applicantSignature: "",
+                extAgreePolicy: "",
+                applyDate: ""
             },
             officialInfo: {
                 // ... Previous officialInfo properties ...
@@ -322,5 +402,9 @@ export default {
 };
 </script>
   
-<style>/* Add any custom styling here */</style>
+<style scoped>
+.rectangle-box {
+    border: 1px solid #000;
+}
+</style>
   
