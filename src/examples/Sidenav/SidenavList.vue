@@ -65,6 +65,13 @@
         </sidenav-item>
       </li>
       <li class="nav-item">
+        <sidenav-item url="/accLogin" :class="getRoute() === 'accLogin' ? 'active' : ''" :navText="'Account Login'">
+          <template v-slot:icon>
+            <i class="fas fa-user-circle text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
         <sidenav-item url="/myprofile" :class="getRoute() === 'profile' ? 'active' : ''" :navText="'MyProfile'">
           <template v-slot:icon>
             <i class="ni ni-single-02 text-success text-sm opacity-10"></i>

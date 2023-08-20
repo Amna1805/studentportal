@@ -150,7 +150,8 @@
                         </div>
                         <div class="form-group">
                             <label for="managerAIA">Manager A&IA:</label>
-                            <input disabled type="text" class="form-control" id="managerAIA" v-model="officialInfo.managerAIA" />
+                            <input disabled type="text" class="form-control" id="managerAIA"
+                                v-model="officialInfo.managerAIA" />
                         </div>
                         <div class="form-group">
                             <label>(to vet above registration contents of Hosted Researcher)</label>
@@ -161,11 +162,13 @@
                         </div>
                         <div class="form-group">
                             <label for="approvalDG">Approval by Concerned DG NCP:</label>
-                            <input disabled type="text" class="form-control" id="approvalDG" v-model="officialInfo.approvalDG" />
+                            <input disabled type="text" class="form-control" id="approvalDG"
+                                v-model="officialInfo.approvalDG" />
                         </div>
                         <div class="form-group">
                             <label for="approvalDate">Date:</label>
-                            <input disabled type="date" class="form-control" id="approvalDate" v-model="officialInfo.approvalDate" />
+                            <input disabled type="date" class="form-control" id="approvalDate"
+                                v-model="officialInfo.approvalDate" />
                         </div>
                         <div class="form-group">
                             <label>(Signatures/Stamp)</label>
@@ -192,70 +195,71 @@
                             <label>(for further processing & necessary action)</label>
                         </div>
 
-                        <div class="row mb-2">
-                            <div class="col-1">a.</div>
-                            <div class="col-4">
-                                <p class="mb-0"><span class="font-weight-bold">AM/Manager Finance:</span></p>
+                        <div class="rectangle-box mt-3 p-3 border border-dark rounded">
+                            <div class="row mb-2">
+                                <div class="col-1">a.</div>
+                                <div class="col-4">
+                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager Finance:</span></p>
+                                </div>
+                                <div class="col-7">
+                                    <p class="mb-0">for payment of honorarium/reimbursements if any etc.</p>
+                                </div>
                             </div>
-                            <div class="col-7">
-                                <p class="mb-0">for payment of honorarium/reimbursements if any etc.</p>
+                            <div class="row mb-2">
+                                <div class="col-1">b.</div>
+                                <div class="col-4">
+                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager HR:</span></p>
+                                </div>
+                                <div class="col-7">
+                                    <p class="mb-0">to amend/issue NCP-Hosted Researchers Entry Card through CAAD.</p>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1">c.</div>
+                                <div class="col-4">
+                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager IT:</span></p>
+                                </div>
+                                <div class="col-7">
+                                    <p class="mb-0">to provide the internet and other related IT matter.</p>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1">d.</div>
+                                <div class="col-4">
+                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager Estate:</span></p>
+                                </div>
+                                <div class="col-7">
+                                    <p class="mb-0">to facilitate accommodation, if applicable.</p>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1">e.</div>
+                                <div class="col-4">
+                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager Transport:</span></p>
+                                </div>
+                                <div class="col-7">
+                                    <p class="mb-0">to facilitate enroute transport, if applicable.</p>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1">f.</div>
+                                <div class="col-4">
+                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager Stores:</span></p>
+                                </div>
+                                <div class="col-7">
+                                    <p class="mb-0">to issue quantity of items as per policy.</p>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-1">g.</div>
+                                <div class="col-4">
+                                    <p class="mb-0"><span class="font-weight-bold">Security Branch:</span></p>
+                                </div>
+                                <div class="col-7">
+                                    <p class="mb-0">for information.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="row mb-2">
-                            <div class="col-1">b.</div>
-                            <div class="col-4">
-                                <p class="mb-0"><span class="font-weight-bold">AM/Manager HR:</span></p>
-                            </div>
-                            <div class="col-7">
-                                <p class="mb-0">to amend/issue NCP-Hosted Researchers Entry Card through CAAD.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1">c.</div>
-                            <div class="col-4">
-                                <p class="mb-0"><span class="font-weight-bold">AM/Manager IT:</span></p>
-                            </div>
-                            <div class="col-7">
-                                <p class="mb-0">to provide the internet and other related IT matter.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1">d.</div>
-                            <div class="col-4">
-                                <p class="mb-0"><span class="font-weight-bold">AM/Manager Estate:</span></p>
-                            </div>
-                            <div class="col-7">
-                                <p class="mb-0">to facilitate accommodation, if applicable.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1">e.</div>
-                            <div class="col-4">
-                                <p class="mb-0"><span class="font-weight-bold">AM/Manager Transport:</span></p>
-                            </div>
-                            <div class="col-7">
-                                <p class="mb-0">to facilitate enroute transport, if applicable.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1">f.</div>
-                            <div class="col-4">
-                                <p class="mb-0"><span class="font-weight-bold">AM/Manager Stores:</span></p>
-                            </div>
-                            <div class="col-7">
-                                <p class="mb-0">to issue quantity of items as per policy.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1">g.</div>
-                            <div class="col-4">
-                                <p class="mb-0"><span class="font-weight-bold">Security Branch:</span></p>
-                            </div>
-                            <div class="col-7">
-                                <p class="mb-0">for information.</p>
-                            </div>
-                        </div>
-
 
 
 
@@ -318,7 +322,5 @@ export default {
 };
 </script>
   
-<style>
-/* Add any custom styling here */
-</style>
+<style>/* Add any custom styling here */</style>
   
