@@ -6,6 +6,9 @@ import Profile from "../views/Profile.vue";
 import Signup from "../views/Signup.vue";
 import Signin from "../views/Signin.vue";
 import MyprofileComp from "../views/Myprofile.vue";
+import IdentityCard from "../views/IdentityCard.vue";
+import LateSitting from "../views/LateSitting.vue";
+import TransportMember from "../views/TransportMember.vue";
 import AccomodationProforma from "../views/AccomodationProforma.vue";
 import ExtensionProforma from "../views/ExtensionProforma.vue";
 import AccountLogin from "../views/AccountLogin.vue";
@@ -53,6 +56,20 @@ const routes = [
     component: Signup,
   },
   {
+    path: "/identitycard",
+    name: "IdentityCard",
+    component: IdentityCard,
+  },
+  {
+    path: "/latesitting",
+    name: "LateSitting",
+    component: LateSitting,
+  },
+  {
+    path: "/transportmembership",
+    name: "TransportMember",
+    component: TransportMember,
+  },
     path: "/acc",
     name: "AccomodationProforma",
     component: AccomodationProforma
