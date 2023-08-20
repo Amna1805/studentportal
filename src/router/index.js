@@ -9,6 +9,11 @@ import MyprofileComp from "../views/Myprofile.vue";
 import IdentityCard from "../views/IdentityCard.vue";
 import LateSitting from "../views/LateSitting.vue";
 import TransportMember from "../views/TransportMember.vue";
+import AccomodationProforma from "../views/AccomodationProforma.vue";
+import ExtensionProforma from "../views/ExtensionProforma.vue";
+import AccountLogin from "../views/AccountLogin.vue";
+import EvaluationProforma from "../views/EvaluationProforma.vue"
+import ClearanceProforma from "../views/ClearanceProforma.vue"
 const routes = [
   {
     path: "/",
@@ -65,6 +70,30 @@ const routes = [
     name: "TransportMember",
     component: TransportMember,
   },
+    path: "/acc",
+    name: "AccomodationProforma",
+    component: AccomodationProforma
+  },
+  {
+    path: "/ext",
+    name: "ExtensionProforma",
+    component: ExtensionProforma
+  },
+  {
+    path: "/clear",
+    name: "ClearanceProforma",
+    component: ClearanceProforma
+  },
+  {
+    path: "/evaluation",
+    name: "EvaluationProforma",
+    component: EvaluationProforma
+  },
+  {
+    path: "/accLogin",
+    name: "AccountLogin",
+    component: AccountLogin
+  }
   
 ];
 
