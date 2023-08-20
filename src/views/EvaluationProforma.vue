@@ -158,6 +158,56 @@
 
                             </div>
                         </div>
+                        <div class="row">
+    <div class="col-md-6 mb-3">
+        <label>Applicant’s Signature:</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label>Date:</label>
+        <input type="text" class="form-control">
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Remarks by Director Concerned on Prog. of Work:</label>
+    <textarea class="form-control"></textarea>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label>Signature of Director Concerned:</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label>Date:</label>
+        <input type="text" class="form-control">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label>GM CAAD:</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label>Manager CAAD (for record and needful):</label>
+        <input type="text" class="form-control">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label>JE CAAD (for record /processing for info if any to Hosted Researcher):</label>
+        <input type="text" class="form-control">
+    </div>
+</div>
+
+<div class="form-group">
+    <label>* Attach list of publications carrying NCP name and titles/venues/durations of International Conferences attended:</label>
+    <textarea class="form-control"></textarea>
+</div>
+
                     </div>
                 </fieldset>
             </div>
