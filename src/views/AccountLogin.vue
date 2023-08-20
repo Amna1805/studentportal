@@ -145,11 +145,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="stayFrom">From:</label>
-                                    <input type="text" class="form-control" id="stayFrom" v-model="formData.stayFrom">
+                                    <input type="date" class="form-control" id="stayFrom" v-model="formData.stayFrom">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="stayTo">To:</label>
-                                    <input type="text" class="form-control" id="stayTo" v-model="formData.stayTo">
+                                    <input type="date" class="form-control" id="stayTo" v-model="formData.stayTo">
                                 </div>
                             </div>
                         </div>

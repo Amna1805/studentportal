@@ -14,34 +14,44 @@
                         </div>
                     </legend>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="name">Name of Hosted Researcher:</label>
-                            <input type="text" class="form-control" id="name" v-model="applicantInfo.name" />
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name">1. Name of Hosted Researcher:</label>
+                                <input type="text" class="form-control" id="name" v-model="applicantInfo.name" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="applicationDate">2. Date of Application:</label>
+                                <input type="date" class="form-control" id="applicationDate"
+                                    v-model="applicantInfo.applicationDate" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="applicationDate">Date of Application:</label>
-                            <input type="date" class="form-control" id="applicationDate"
-                                v-model="applicantInfo.applicationDate" />
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="registrationNo">3. Registration No.:</label>
+                                <input type="text" class="form-control" id="registrationNo"
+                                    v-model="applicantInfo.registrationNo" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="ncpId">4. NCP ID Card No.:</label>
+                                <input type="text" class="form-control" id="ncpId" v-model="applicantInfo.ncpId" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="registrationNo">Registration No.:</label>
-                            <input type="text" class="form-control" id="registrationNo"
-                                v-model="applicantInfo.registrationNo" />
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="department">5. Department at NCP:</label>
+                                <input type="text" class="form-control" id="department"
+                                    v-model="applicantInfo.department" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="expiryDate">6. Date of Expiry of Stay at NCP as per ToRs:</label>
+                                <input type="date" class="form-control" id="expiryDate"
+                                    v-model="applicantInfo.expiryDate" />
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="ncpId">NCP ID Card No.:</label>
-                            <input type="text" class="form-control" id="ncpId" v-model="applicantInfo.ncpId" />
-                        </div>
-                        <div class="form-group">
-                            <label for="department">Department at NCP:</label>
-                            <input type="text" class="form-control" id="department" v-model="applicantInfo.department" />
-                        </div>
-                        <div class="form-group">
-                            <label for="expiryDate">Date of Expiry of Stay at NCP as per ToRs:</label>
-                            <input type="date" class="form-control" id="expiryDate" v-model="applicantInfo.expiryDate" />
-                        </div>
-                        <div class="form-group">
-                            <label for="parentOrgType">Parent University/Institute/Organization (Tick):</label>
+                            <label for="parentOrgType">7. Parent University/Institute/Organization (Tick):</label>
+                            <span>&nbsp;&nbsp;</span>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="local" id="local"
                                     v-model="applicantInfo.parentOrgType" />
@@ -53,59 +63,77 @@
                                 <label class="form-check-label" for="outstation">Outstation</label>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="parentOrgName">Name/Address of Parent University/Institute/Organization of Hosted
+                            <label for="parentOrgName">8. Name/Address of Parent University/Institute/Organization of Hosted
                                 Researcher:</label>
-                            <textarea class="form-control" id="parentOrgName"
-                                v-model="applicantInfo.parentOrgName"></textarea>
+                            <input type="text" class="form-control" id="parentOrgName"
+                                v-model="applicantInfo.parentOrgName" />
                         </div>
+
                         <div class="form-group">
-                            <label for="accommodationFromDate">Accommodation required with effect from (date):</label>
-                            <div class="input-group">
-                                <input type="date" class="form-control" id="accommodationFromDate"
-                                    v-model="applicantInfo.accommodationFromDate" />
-                                <div class="input-group-append">
-                                    <label class="input-group-text">to</label>
+                            <label>9. Accommodation required with effect (date):</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="stayFrom">From:</label>
+                                    <input type="date" class="form-control" id="accommodationFromDate"
+                                        v-model="applicantInfo.accommodationFromDate">
                                 </div>
-                                <input type="date" class="form-control" id="accommodationToDate"
-                                    v-model="applicantInfo.accommodationToDate" />
+                                <div class="col-md-6">
+                                    <label for="stayTo">To:</label>
+                                    <input type="date" class="form-control" id="accommodationToDate"
+                                        v-model="applicantInfo.accommodationToDate">
+                                </div>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="contactCell">Contact Phone Nos. Cell:</label>
-                            <input type="text" class="form-control" id="contactCell" v-model="applicantInfo.contactCell" />
-                            <label for="contactRes">Res.</label>
-                            <input type="text" class="form-control" id="contactRes" v-model="applicantInfo.contactRes" />
-                            <label for="contactLabExt">Lab Ext.</label>
-                            <input type="text" class="form-control" id="contactLabExt"
-                                v-model="applicantInfo.contactLabExt" />
+                            <label>10. Contact Phone Nos.</label>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" placeholder="Cell" id="contactCell"
+                                        v-model="applicantInfo.contactCell" />
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" placeholder="Res" id="contactRes"
+                                        v-model="applicantInfo.contactRes" />
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" placeholder="Contact Lab Ext" id="contactLabExt"
+                                        v-model="applicantInfo.contactLabExt" />
+                                </div>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="securityProforma">Have you submitted security proforma with police
-                                verification?</label>
-                            <div class="form-check">
+                            <label for="securityProforma">11. Have you submitted security proforma with police
+                                verification?
+                            </label>
+                            <span>&nbsp;&nbsp;</span>
+                            <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="yes"
                                     v-model="applicantInfo.securityProforma" />
                                 <label class="form-check-label">YES</label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="no"
                                     v-model="applicantInfo.securityProforma" />
                                 <label class="form-check-label">NO</label>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="applicantSignature">Signature of Applicant Hosted Researcher:</label>
+                            <label for="applicantSignature">12. Signature of Applicant Hosted Researcher:</label>
                             <input type="text" class="form-control" id="applicantSignature"
                                 v-model="applicantInfo.applicantSignature" />
                         </div>
                         <div class="form-group">
-                            <label for="recommendationDirector">Recommendation of Concerned Director for Validity of
+                            <label for="recommendationDirector">13. Recommendation of Concerned Director for Validity of
                                 Request/Period:</label>
                             <input type="text" class="form-control" id="recommendationDirector"
                                 v-model="applicantInfo.recommendationDirector" />
                         </div>
-                        
+
                     </div>
                 </fieldset>
             </div>
@@ -115,28 +143,69 @@
                     <legend class="card-header">Part-II (for Official Use): Action by CAAD Hosted Researchers Branch:
                     </legend>
                     <div class="card-body">
-                        <div class="form-group form-check">
-                            <input disabled type="checkbox" class="form-check-input" id="caadEntriesCorrect"
-                                v-model="officialInfo.caadEntriesCorrect" />
-                            <label class="form-check-label" for="caadEntriesCorrect">Registration entries are correct w.r.t.
+                        <div class="form-group">
+                            <label for="caadEntriesCorrect">1. Registration entries are correct w.r.t.
                                 CAAD Record:</label>
-                        </div>
-                        <div class="form-group form-check">
-                            <input disabled type="checkbox" class="form-check-input" id="policeVerification"
-                                v-model="officialInfo.policeVerification" />
-                            <label class="form-check-label" for="policeVerification">Police verification proforma
-                                submitted:</label>
+                            <span>&nbsp;&nbsp;</span>
+                            <div class="form-check form-check-inline">
+                                <input disabled type="radio" class="form-check-input" value="yes"
+                                    v-model="officialInfo.caadEntriesCorrect" />
+                                <label class="form-check-label">YES</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input disabled type="radio" class="form-check-input" value="no"
+                                    v-model="officialInfo.caadEntriesCorrect" />
+                                <label class="form-check-label">NO</label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="accommodationType">Accommodation Type Applicable:</label>
+                            <label for="policeVerification">2. Police verification proforma has been received & submitted to
+                                PSO (GM Admin):</label>
+                            <span>&nbsp;&nbsp;</span>
+                            <div class="form-check form-check-inline">
+                                <input disabled type="radio" class="form-check-input" value="yes"
+                                    v-model="officialInfo.policeVerification" />
+                                <label class="form-check-label">YES</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input disabled type="radio" class="form-check-input" value="no"
+                                    v-model="officialInfo.policeVerification" />
+                                <label class="form-check-label">NO</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accommodationType">3. Accommodation Type Applicable:</label>
                             <select disabled class="form-control" id="accommodationType"
                                 v-model="officialInfo.accommodationType">
                                 <option value="">Select</option>
-                                <option value="singleRoom">Single Room</option>
-                                <option value="sharedRoomStudents">Shared Room for Students</option>
-                                <option value="sharedRoomEmployees">Shared Room for Employees</option>
+                                <option value="singleRoom">Single Room for Hosted TWAS fellows, (Post Doc Fellows/Adjunct
+                                    Faculty/ Visiting Scientists/Researchers)</option>
+                                <option value="sharedRoomStudents">Shared Room for Hosted Students (three per room for
+                                    Student Internees, M.Phil or MS)</option>
+                                <option value="sharedRoomEmployees">Shared Room for Hosted Employees (two per room for
+                                    Senior Internees shared with local PhD Students who are employees)</option>
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label>4. Signature</label>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="JE CAAD"
+                                        v-model="officialInfo.jeCAAD">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="Manager/GM A&IA"
+                                        v-model="officialInfo.GM">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="Director CAAD"
+                                        v-model="officialInfo.dirCAAD">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </fieldset>
             </div>
@@ -146,29 +215,69 @@
                     <legend class="card-header">Part-III (for Official Use): Action by NCP Administration (Estate Branch):
                     </legend>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="roomsAllotted">No. of BoQs/MoQs Rooms allotted as per SOP:</label>
-                            <input disabled type="number" class="form-control" id="roomsAllotted"
-                                v-model="officialInfo.roomsAllotted" />
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="roomsAllotted">1. No. of BoQs/MoQs Rooms allotted as per SOP:</label>
+                                <input disabled type="number" class="form-control" id="roomsAllotted"
+                                    v-model="officialInfo.roomsAllotted" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="roomsAllotted">2. Total Room Allotted:</label>
+                                <input disabled type="number" class="form-control" id="roomsAllotted"
+                                    v-model="officialInfo.totalAllotted" />
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="spaceAvailable">Space Available (Room) for (Students):</label>
-                            <input disabled type="text" class="form-control" id="spaceAvailable"
-                                v-model="officialInfo.spaceAvailable" />
+                            <label for="spaceAvailable">3. Space Available (Room) for (Students):</label>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input disabled type="number" placeholder="Total No. of available room"
+                                        class="form-control" id="roomAvailable" v-model="officialInfo.roomAvailable" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input disabled type="number" class="form-control"
+                                        placeholder="No. of Student can be Accommodated" id="roomAvailableStd"
+                                        v-model="officialInfo.roomAvailableStd" />
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="spaceAvailability">Space Available</label>
-                            <div class="form-check">
+                            <label for="spaceAvailability">4. Space Available: </label>
+                            <span>&nbsp;&nbsp;</span>
+                            <div class="form-check form-check-inline">
                                 <input disabled type="radio" class="form-check-input" value="YES"
                                     v-model="officialInfo.spaceAvailability" />
                                 <label class="form-check-label">YES</label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check form-check-inline">
                                 <input disabled type="radio" class="form-check-input" value="No"
                                     v-model="officialInfo.spaceAvailability" />
                                 <label class="form-check-label">NO</label>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label>5. Signature</label>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="J.E Estate"
+                                        v-model="officialInfo.jeEstate">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="AM/Manager Estate"
+                                        v-model="officialInfo.managerEstate">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="GM Estate"
+                                        v-model="officialInfo.GMEstate">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="Director Admin"
+                                        v-model="officialInfo.dirAdmin">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </fieldset>
             </div>
@@ -178,26 +287,69 @@
                     <legend class="card-header">Part-IV (for Official Use): Action by NCP Administration (Estate Branch):
                     </legend>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="allotmentRoomNo">Possible Action: Room No.:</label>
-                            <input disabled type="text" class="form-control" id="allotmentRoomNo"
-                                v-model="officialInfo.allotmentRoomNo" />
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="allotmentRoomNo">1. Possible Action: Room No.:</label>
+                                <input disabled type="text" class="form-control" id="allotmentRoomNo"
+                                    v-model="officialInfo.allotmentRoomNo" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="priorityNo">2. Request Prioritized and held for provision of Room on Priority
+                                    No.:</label>
+                                <input disabled type="text" class="form-control" id="priorityNo"
+                                    v-model="officialInfo.priorityNo" />
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="allotmentDuration">Duration of Allotment:</label>
-                            <input disabled type="text" class="form-control" id="allotmentDuration"
-                                v-model="officialInfo.allotmentDuration" />
+                            <label>3. Duration of Allotment: (date)</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="stayFrom">From:</label>
+                                    <input disabled type="date" class="form-control" id="allotmentDurationStart"
+                                        v-model="applicantInfo.allotmentDurationStart">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="stayTo">To:</label>
+                                    <input disabled type="date" class="form-control" id="allotmentDurationEnd"
+                                        v-model="applicantInfo.allotmentDurationEnd">
+                                </div>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="priorityNo">Request Prioritized and held for provision of Room on Priority
-                                No.:</label>
-                            <input disabled type="text" class="form-control" id="priorityNo"
-                                v-model="officialInfo.priorityNo" />
-                        </div>
-                        <div class="form-group">
-                            <label for="rentChallanNo">Advance Room rent paid vides Challan No.:</label>
+                            <label for="rentChallanNo">4. Signature: AM/Manager Estate</label>
                             <input disabled type="text" class="form-control" id="rentChallanNo"
-                                v-model="officialInfo.rentChallanNo" />
+                                v-model="officialInfo.managerEstate" />
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="rentChallanNo">5. Advance Room rent paid vides Challan No.:</label>
+                                    <input disabled type="text" class="form-control" id="rentChallanNo"
+                                        v-model="officialInfo.rentChallanNo" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="rentChallanDate">Advance Room rent paid. Date:</label>
+                                    <input disabled type="date" class="form-control" id="rentChallanDate"
+                                        v-model="officialInfo.rentChallanDate" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>6. Signature</label>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="Caretaker's"
+                                        v-model="officialInfo.caretaker">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input disabled type="text" class="form-control" placeholder="Applicant's"
+                                        v-model="officialInfo.applicant">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -238,12 +390,26 @@ export default {
                 policeVerification: false,
                 accommodationType: '',
                 roomsAllotted: 0,
-                spaceAvailable: '',
+                totalAllotted: 0,
+                roomAvailable: '',
+                roomAvailableStd: '',
                 spaceAvailability: '',
                 allotmentRoomNo: '',
-                allotmentDuration: '',
+                allotmentDurationStart: '',
+                allotmentDurationEnd: '',
                 priorityNo: '',
                 rentChallanNo: '',
+                rentChallanDate: '',
+                jeCAAD: '',
+                GM: '',
+                dirCAAD: '',
+                jeEstate: '',
+                managerEstate: '',
+                GMEstate: '',
+                dirAdmin: '',
+                caretaker: '',
+                applicant: '',
+
             },
         };
     },
