@@ -122,16 +122,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div>
                             <label for="applicantSignature">12. Signature of Applicant Hosted Researcher:</label>
-                            <input type="text" class="form-control" id="applicantSignature"
-                                v-model="applicantInfo.applicantSignature" />
+                            <input type="text" id="applicantSignature" name="applicantSignature" class="input-line">
                         </div>
-                        <div class="form-group">
+                        <div>
                             <label for="recommendationDirector">13. Recommendation of Concerned Director for Validity of
                                 Request/Period:</label>
-                            <input type="text" class="form-control" id="recommendationDirector"
-                                v-model="applicantInfo.recommendationDirector" />
+                            <input type="text" id="recommendationDirector" name="recommendationDirector" class="input-line">
                         </div>
 
                     </div>
@@ -190,22 +188,30 @@
 
                         <div class="form-group">
                             <label>4. Signature</label>
-                            <div class="row">
+                            <div class="row align-items-center">
                                 <div class="col-md-4 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="JE CAAD"
-                                        v-model="officialInfo.jeCAAD">
+                                    <input disabled type="text" id="jecaad" name="jecaad" class="input-line">
+                                    <br>
+                                    <label class="input-label text-center">JE CAAD</label>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="Manager/GM A&IA"
-                                        v-model="officialInfo.GM">
+                                    <div>
+                                        <input disabled type="text" id="recommendationDirector1"
+                                            name="recommendationDirector1" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">Manager/GM A&IA</label>
+                                    </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="Director CAAD"
-                                        v-model="officialInfo.dirCAAD">
+                                    <div>
+                                        <input disabled type="text" id="recommendationDirector2"
+                                            name="recommendationDirector2" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">Director CAAD</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </fieldset>
             </div>
@@ -258,26 +264,38 @@
 
                         <div class="form-group">
                             <label>5. Signature</label>
-                            <div class="row">
+                            <div class="row align-items-center">
                                 <div class="col-md-3 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="J.E Estate"
-                                        v-model="officialInfo.jeEstate">
+                                    <input disabled type="text" id="jecaad" name="jecaad" class="input-line">
+                                    <br>
+                                    <label class="input-label text-center">J.E Estate</label>
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="AM/Manager Estate"
-                                        v-model="officialInfo.managerEstate">
+                                    <div>
+                                        <input disabled type="text" id="recommendationDirector1"
+                                            name="recommendationDirector1" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">AM/Manager Estate</label>
+                                    </div>
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="GM Estate"
-                                        v-model="officialInfo.GMEstate">
+                                    <div>
+                                        <input disabled type="text" id="recommendationDirector2"
+                                            name="recommendationDirector2" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">GM Estate</label>
+                                    </div>
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="Director Admin"
-                                        v-model="officialInfo.dirAdmin">
+                                    <div>
+                                        <input disabled type="text" id="recommendationDirector2"
+                                            name="recommendationDirector2" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">Director Admin</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </fieldset>
             </div>
@@ -317,11 +335,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="rentChallanNo">4. Signature: AM/Manager Estate</label>
-                            <input disabled type="text" class="form-control" id="rentChallanNo"
-                                v-model="officialInfo.managerEstate" />
+                        <br>
+                        <div>
+                            <label for="sign">4. Signature: AM/Manager Estate</label>
+                            <input type="text" id="sign" name="sign" class="input-line">
                         </div>
+                        <br>
 
                         <div class="form-group">
                             <div class="row">
@@ -331,23 +350,28 @@
                                         v-model="officialInfo.rentChallanNo" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="rentChallanDate">Advance Room rent paid. Date:</label>
+                                    <label for="rentChallanDate">6. Advance Room rent paid. Date:</label>
                                     <input disabled type="date" class="form-control" id="rentChallanDate"
                                         v-model="officialInfo.rentChallanDate" />
                                 </div>
                             </div>
                         </div>
 
+
                         <div class="form-group">
-                            <label>6. Signature</label>
-                            <div class="row">
+                            <label>7. Signature</label>
+                            <div class="row align-items-center">
                                 <div class="col-md-6 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="Caretaker's"
-                                        v-model="officialInfo.caretaker">
+                                    <input disabled type="text" id="caretaker" name="caretaker" class="input-line">
+                                    <br>
+                                    <label class="input-label text-center">Caretaker's</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input disabled type="text" class="form-control" placeholder="Applicant's"
-                                        v-model="officialInfo.applicant">
+                                    <div>
+                                        <input disabled type="text" id="applicant" name="applicant" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">Applicant's</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -381,9 +405,7 @@ export default {
                 contactCell: '',
                 contactRes: '',
                 contactLabExt: '',
-                securityProforma: '',      // Added field
-                applicantSignature: '',
-                recommendationDirector: '',
+                securityProforma: '',
             },
             officialInfo: {
                 caadEntriesCorrect: false,
@@ -400,112 +422,14 @@ export default {
                 priorityNo: '',
                 rentChallanNo: '',
                 rentChallanDate: '',
-                jeCAAD: '',
-                GM: '',
-                dirCAAD: '',
-                jeEstate: '',
-                managerEstate: '',
-                GMEstate: '',
-                dirAdmin: '',
-                caretaker: '',
-                applicant: '',
-
             },
         };
     },
 };
 </script>
-  
-  
-<!-- <style scoped>
-.accommodation-form {
-    text-align: center;
-    padding: 20px;
-}
-
-.header-card {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.card {
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card fieldset {
+<style>
+.input-line {
     border: none;
-    padding: 0;
-    margin: 0;
+    border-bottom: 1px solid black;
 }
-
-.card legend {
-    font-weight: bold;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.form-group label {
-    display: inline-block;
-    width: 250px;
-    text-align: left;
-    margin-right: 10px;
-}
-
-.form-group input[type="text"],
-.form-group input[type="date"],
-.form-group input[type="number"],
-.form-group select,
-.form-group textarea {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.form-group label[for="securityProforma"],
-.form-group label[for="parentOrgType"] {
-    margin-right: 5px;
-}
-
-.form-actions {
-    margin-top: 20px;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[type="reset"] {
-    background-color: #dc3545;
-    margin-left: 10px;
-}
-
-button:hover {
-    opacity: 0.8;
-}</style> -->
+</style>
