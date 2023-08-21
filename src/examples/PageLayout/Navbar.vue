@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg top-0 z-index-3 position-absolute mt-4 float-right"
-    :class="isBlur ? isBlur : 'shadow-none my-2 navbar-transparent w-100'">
+  <nav class="navbar navbar-expand-md fixed-top z-index-3 w-80 "
+    :class="isBlur ? isBlur : 'shadow-none navbar-transparent w-80 fixed-top'">
     <div class="container ps-2 pe-0">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -16,12 +16,13 @@
 
 
 
+
 <script>
 import downArrWhite from "@/assets/img/down-arrow-white.svg";
 import downArrBlack from "@/assets/img/down-arrow-dark.svg";
 
 export default {
-  name: "NavbarComp",
+  name: "NavbarHead",
   data() {
     return {
       downArrWhite,

@@ -23,6 +23,20 @@
           </template>
         </sidenav-item>
       </li>
+      <li class="nav-item">
+        <sidenav-item url="/identitycard" :class="getRoute() === 'identitycard' ? 'active' : ''" :navText="'ID Card'">
+          <template v-slot:icon>
+            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/latesitting" :class="getRoute() === 'latesitting' ? 'active' : ''" :navText="'Late Sitting'">
+          <template v-slot:icon>
+            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
       <!-- <li class="nav-item">
         <div @click="toggleDropdown" class="d-flex align-items-center">
           <sidenav-item url="/dash" :class="getRoute() === 'dash' ? 'active' : ''" :navText="'Equivalence Services'">
@@ -44,7 +58,7 @@
        
       </li> -->
       <li class="nav-item">
-        <sidenav-item url="/clear" :class="getRoute() === 'clear' ? 'active' : ''" :navText="'Clearnance'">
+        <sidenav-item url="/clear" :class="getRoute() === 'clear' ? 'active' : ''" :navText="'Clearance'">
           <template v-slot:icon>
             <i class="fas fa-home text-success text-sm opacity-10"></i>
           </template>
@@ -65,7 +79,7 @@
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item url="/tran" :class="getRoute() === 'tran' ? 'active' : ''" :navText="'Transport'">
+        <sidenav-item url="/transportmembership" :class="getRoute() === 'transportmembership' ? 'active' : ''" :navText="'Transport'">
           <template v-slot:icon>
             <i class="fas fa-bus text-success text-sm opacity-10"></i>
           </template>
