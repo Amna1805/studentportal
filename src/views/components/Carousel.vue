@@ -4,7 +4,7 @@
       <div class="carousel-inner border-radius-lg h-100">
         <div
           class="carousel-item h-100 active"
-          :style="{backgroundImage: 'url(' + require('@/assets/img/carousel-1.jpg') + ')',
+          :style="{backgroundImage: 'url(' + require('@/assets/img/ncp1.jpg') + ')',
       backgroundSize: 'cover'}"
         >
           <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">

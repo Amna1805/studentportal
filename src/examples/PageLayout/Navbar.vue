@@ -3,11 +3,17 @@
     :class="isBlur ? isBlur : 'shadow-none my-2 navbar-transparent w-100'">
     <div class="container ps-2 pe-0">
       <ul class="navbar-nav">
-        <li class="nav-item">
+       
+          <li class="nav-item">
+            <div class="d-flex">
           <a class="navbar-brand" href="https://www.ncp.edu.pk/">
             <img src="/ncplogo.png" width="50" height="50" class="logo img-fluid ">
           </a>
+          <h4 class="mt-3">NATIONAL CENTRE FOR PHYSICS</h4>
+        </div>
         </li>
+       
+      
       </ul>
     </div>
   </nav>

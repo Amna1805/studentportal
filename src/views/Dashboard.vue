@@ -18,7 +18,9 @@
                   </div>
                 </div>
                 <div class="col-auto text-end">
-                  <button class="btn btn-outline-success blink">Register Now</button>
+                  <a href="/register">
+                    <button class="btn btn-outline-success blink">Register Now</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -30,13 +32,17 @@
       <div class="row">
         <div class="col-lg-8">
           <authors-table />
-          <carousel />
+          <!-- <carousel /> -->
         </div>
         <div class="col-lg-4 mt-3 mt-lg-0">
-          <invoice-card />
-          <div class="mt-3">
+          <div>
             <profile-card />
           </div>
+          <div class="mt-3">
+            <invoice-card />
+          </div>
+          
+          
         </div>
       </div>
 
@@ -47,14 +53,14 @@
 import AuthorsTable from "./components/AuthorsTable.vue";
 import InvoiceCard from "./components/InvoiceCard.vue";
 import ProfileCard from "./components/ProfileCard.vue";
-import Carousel from "./components/Carousel.vue";
+// import Carousel from "./components/Carousel.vue";
 export default {
   name: "dashboard-default",
   components: {
     AuthorsTable,
     InvoiceCard,
     ProfileCard,
-    Carousel
+    // Carousel
   },
 };
 </script>
