@@ -111,7 +111,7 @@
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>Date:</label>
-                                <input type="text" class="form-control" v-model="formData.nationality">
+                                <input type="date" class="form-control" v-model="formData.nationality">
                             </div>
                         </div>
                         <div class="row">
