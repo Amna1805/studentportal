@@ -1,7 +1,6 @@
 <template>
   <div class="card card-profile">
-    <h4 class="m-2 p-3">PROFILE COMPLETNESS</h4>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5">
       <div class="col-4 col-lg-4 order-lg-2">
         <div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0">
           <a href="javascript:;">

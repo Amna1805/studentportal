@@ -1,7 +1,7 @@
 <template>
     <div class="container py-4">
         <div class="card bg-primary text-white mb-4">
-            <h2 class="card-header">ACCOMMODATION REQUEST PROFORMA</h2>
+            <h4 class="card-header">Accommodation Proforma</h4>
         </div>
         <form>
             <div class="card mb-4">
