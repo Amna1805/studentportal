@@ -13,7 +13,9 @@ import AccomodationProforma from "../views/AccomodationProforma.vue";
 import ExtensionProforma from "../views/ExtensionProforma.vue";
 import AccountLogin from "../views/AccountLogin.vue";
 import EvaluationProforma from "../views/EvaluationProforma.vue"
-import ClearanceProforma from "../views/ClearanceProforma.vue"
+import ClearanceProforma from "../views/ClearanceProforma.vue";
+import Internship from "../views/Internship.vue";
+import Register from "../views/Register.vue";
 const routes = [
   {
     path: "/",
@@ -24,6 +26,16 @@ const routes = [
     path: "/dashboard-default",
     name: "Dashboard",
     component: Dashboard,
+  },
+  {
+    path: "/internship",
+    name: "Internship",
+    component: Internship,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
   },
   {
     path: "/tables",

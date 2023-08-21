@@ -5,11 +5,11 @@
         <sidenav-item url="/dashboard-default" :class="getRoute() === 'dashboard-default' ? 'active' : ''"
           :navText="'Dashboard'">
           <template v-slot:icon>
-            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            <i class="ni ni-tv-2 text-success text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <sidenav-item url="/tables" :class="getRoute() === 'tables' ? 'active' : ''" :navText="'Tables'">
           <template v-slot:icon>
             <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -22,21 +22,7 @@
             <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
           </template>
         </sidenav-item>
-      </li>
-      <li class="nav-item">
-        <sidenav-item url="/identitycard" :class="getRoute() === 'identitycard' ? 'active' : ''" :navText="'ID Card'">
-          <template v-slot:icon>
-            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
-      <li class="nav-item">
-        <sidenav-item url="/latesitting" :class="getRoute() === 'latesitting' ? 'active' : ''" :navText="'Late Sitting'">
-          <template v-slot:icon>
-            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
+      </li> -->
       <!-- <li class="nav-item">
         <div @click="toggleDropdown" class="d-flex align-items-center">
           <sidenav-item url="/dash" :class="getRoute() === 'dash' ? 'active' : ''" :navText="'Equivalence Services'">
@@ -58,17 +44,45 @@
        
       </li> -->
       <li class="nav-item">
+        <sidenav-item url="/internship" :class="getRoute() === 'internship' ? 'active' : ''" :navText="'Internship'">
+          <template v-slot:icon>
+            <i class="fas fa-graduation-cap text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
         <sidenav-item url="/clear" :class="getRoute() === 'clear' ? 'active' : ''" :navText="'Clearance'">
           <template v-slot:icon>
-            <i class="fas fa-home text-success text-sm opacity-10"></i>
+            <i class="fas fa-clipboard text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/identitycard" :class="getRoute() === 'identitycard' ? 'active' : ''" :navText="'Identity Card'">
+          <template v-slot:icon>
+            <i class="fas fa-id-card text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/latesitting" :class="getRoute() === 'latesitting' ? 'active' : ''" :navText="'Late Sitting'">
+          <template v-slot:icon>
+            <i class="fas fa-clock text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/clear" :class="getRoute() === 'clear' ? 'active' : ''" :navText="'Clearance'">
+          <template v-slot:icon>
+            <i class="fas fa-clipboard text-success text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
       <li class="nav-item">
         <sidenav-item url="/evaluation" :class="getRoute() === 'eval' ? 'active' : ''" :navText="'Evaluation'">
           <template v-slot:icon>
-            <i class="fas fa-home text-success text-sm opacity-10"></i>
-          </template>
+            <i class="fas fa-book text-success text-sm opacity-10"></i>
+          </template>o]
         </sidenav-item>
       </li>
       <li class="nav-item">
@@ -100,7 +114,7 @@
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item url="/myprofile" :class="getRoute() === 'profile' ? 'active' : ''" :navText="'MyProfile'">
+        <sidenav-item url="/myprofile" :class="getRoute() === 'profile' ? 'active' : ''" :navText="'Profile'">
           <template v-slot:icon>
             <i class="ni ni-single-02 text-success text-sm opacity-10"></i>
           </template>
@@ -112,13 +126,13 @@
           ACCOUNT PAGES
         </h6>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <sidenav-item url="/profile" :class="getRoute() === 'profile' ? 'active' : ''" :navText="'Profile'">
           <template v-slot:icon>
             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
           </template>
         </sidenav-item>
-      </li>
+      </li> -->
       <li class="nav-item">
         <sidenav-item url="/signin" :class="getRoute() === 'signin' ? 'active' : ''" :navText="'Sign In'">
           <template v-slot:icon>

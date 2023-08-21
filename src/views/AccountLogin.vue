@@ -1,7 +1,7 @@
 <template>
     <div class="container py-4">
         <div class="card bg-primary text-white mb-4">
-            <h2 class="card-header">ACCOUNT LOGIN REQUEST PROFORMA</h2>
+            <h4 class="card-header">Account Login Proforma</h4>
         </div>
 
         <!-- Section 1: Personal Information -->
@@ -145,11 +145,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="stayFrom">From:</label>
-                                    <input type="text" class="form-control" id="stayFrom" v-model="formData.stayFrom">
+                                    <input type="date" class="form-control" id="stayFrom" v-model="formData.stayFrom">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="stayTo">To:</label>
-                                    <input type="text" class="form-control" id="stayTo" v-model="formData.stayTo">
+                                    <input type="date" class="form-control" id="stayTo" v-model="formData.stayTo">
                                 </div>
                             </div>
                         </div>

@@ -46,11 +46,10 @@
               class="top-0 my-auto text-center col-6 d-lg-flex d-none h-100 pe-0 position-absolute end-0 justify-content-center flex-column">
               <div
                 class="position-relative bg-gradient-success h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
-                :style="{'background-image' : `url(${require('@/assets/img/phy3.jpg')})`,
+                :style="{'background-image' : `url(${require('@/assets/img/ncp1.jpg')})`,
                 'background-size' : 'cover'}">
-                <span class="mask bg-gradient-success opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Energy is liberated matter, matter is energy waiting to happen."</h4>
-                <p class="text-white position-relative">- Bill Bryson</p>
+                <span class="mask bg-gradient-success opacity-4"></span>
+               
               </div>
             </div>
           </div>

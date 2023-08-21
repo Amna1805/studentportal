@@ -1,7 +1,7 @@
 <template>
     <div class="container py-4">
         <div class="card bg-primary text-white mb-4">
-            <h2 class="card-header">EVALUATION PROFORMA</h2>
+           <h4 class="card-header">Evaluation Proforma</h4>
         </div>
 
         <!-- Section 1: Personal Information -->
@@ -86,7 +86,8 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="d-flex">
-                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No. of
+                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers"
+                                                class="d-inline-block">No. of
                                                 Papers Published in
                                                 Impact
                                                 Factor Journals:</label></div>
@@ -98,9 +99,10 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="d-flex">
-                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No. of
-                                            No. of Papers Accepted in Impact
-                                            Factor Journals:</label></div>
+                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers"
+                                                class="d-inline-block">No. of
+                                                No. of Papers Accepted in Impact
+                                                Factor Journals:</label></div>
                                         <div class="col-md-3 col-sm-3 col-3">
                                             <input type="number" id="publishedPapers" class="form-control d-inline-block">
                                         </div>
@@ -114,8 +116,9 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="d-flex">
-                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No. of
-                                            No. of Papers Submitted in Impact Factor Journals: </label></div>
+                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers"
+                                                class="d-inline-block">No. of
+                                                No. of Papers Submitted in Impact Factor Journals: </label></div>
                                         <div class="col-md-4 col-sm-3 col-3">
                                             <input type="number" id="publishedPapers" class="form-control d-inline-block">
                                         </div>
@@ -124,8 +127,9 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="d-flex">
-                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No. of
-                                            No. of Paper(s) Presented in International Conference(s):</label></div>
+                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers"
+                                                class="d-inline-block">No. of
+                                                No. of Paper(s) Presented in International Conference(s):</label></div>
                                         <div class="col-md-3 col-sm-3 col-3">
                                             <input type="number" id="publishedPapers" class="form-control d-inline-block">
                                         </div>
@@ -137,8 +141,9 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="d-flex">
-                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No. of
-                                            No. of Patents submitted : National</label></div>
+                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers"
+                                                class="d-inline-block">No. of
+                                                No. of Patents submitted : National</label></div>
                                         <div class="col-md-4 col-sm-3 col-3">
                                             <input type="number" id="publishedPapers" class="form-control d-inline-block">
                                         </div>
@@ -147,8 +152,9 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="d-flex">
-                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No. of
-                                            No. of Patents submitted : International</label></div>
+                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers"
+                                                class="d-inline-block">No. of
+                                                No. of Patents submitted : International</label></div>
                                         <div class="col-md-3 col-sm-3 col-3">
                                             <input type="number" id="publishedPapers" class="form-control d-inline-block">
                                         </div>
@@ -159,54 +165,55 @@
                             </div>
                         </div>
                         <div class="row">
-    <div class="col-md-6 mb-3">
-        <label>Applicant’s Signature:</label>
-        <input type="text" class="form-control">
-    </div>
-    <div class="col-md-6 mb-3">
-        <label>Date:</label>
-        <input type="text" class="form-control">
-    </div>
-</div>
+                            <div class="col-md-6 mb-3">
+                                <label>Applicant’s Signature:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Date:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
 
-<div class="form-group">
-    <label>Remarks by Director Concerned on Prog. of Work:</label>
-    <textarea class="form-control"></textarea>
-</div>
+                        <div class="form-group">
+                            <label>Remarks by Director Concerned on Prog. of Work:</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
 
-<div class="row">
-    <div class="col-md-6 mb-3">
-        <label>Signature of Director Concerned:</label>
-        <input type="text" class="form-control">
-    </div>
-    <div class="col-md-6 mb-3">
-        <label>Date:</label>
-        <input type="text" class="form-control">
-    </div>
-</div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Signature of Director Concerned:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Date:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
 
-<div class="row">
-    <div class="col-md-6 mb-3">
-        <label>GM CAAD:</label>
-        <input type="text" class="form-control">
-    </div>
-    <div class="col-md-6 mb-3">
-        <label>Manager CAAD (for record and needful):</label>
-        <input type="text" class="form-control">
-    </div>
-</div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>GM CAAD:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Manager CAAD (for record and needful):</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
 
-<div class="row">
-    <div class="col-md-6 mb-3">
-        <label>JE CAAD (for record /processing for info if any to Hosted Researcher):</label>
-        <input type="text" class="form-control">
-    </div>
-</div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>JE CAAD (for record /processing for info if any to Hosted Researcher):</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
 
-<div class="form-group">
-    <label>* Attach list of publications carrying NCP name and titles/venues/durations of International Conferences attended:</label>
-    <textarea class="form-control"></textarea>
-</div>
+                        <div class="form-group">
+                            <label>* Attach list of publications carrying NCP name and titles/venues/durations of
+                                International Conferences attended:</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
 
                     </div>
                 </fieldset>
@@ -327,9 +334,8 @@ export default {
     font-size: 18px;
     margin-right: 10px;
 }
-.research-summary p
-{
+
+.research-summary p {
     font-size: 14px;
-}
-</style>
+}</style>
   
