@@ -51,13 +51,6 @@
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item url="/clear" :class="getRoute() === 'clear' ? 'active' : ''" :navText="'Clearance'">
-          <template v-slot:icon>
-            <i class="fas fa-clipboard text-success text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
-      <li class="nav-item">
         <sidenav-item url="/identitycard" :class="getRoute() === 'identitycard' ? 'active' : ''" :navText="'Identity Card'">
           <template v-slot:icon>
             <i class="fas fa-id-card text-success text-sm opacity-10"></i>
