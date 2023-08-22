@@ -265,12 +265,12 @@
                         <div class="form-group">
                             <label>5. Signature</label>
                             <div class="row align-items-center">
-                                <div class="col-md-3 mb-3">
+                                <div class="col-md-3 mb-3 text-center">
                                     <input disabled type="text" id="jecaad" name="jecaad" class="input-line">
                                     <br>
                                     <label class="input-label text-center">J.E Estate</label>
                                 </div>
-                                <div class="col-md-3 mb-3">
+                                <div class="col-md-3 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="recommendationDirector1"
                                             name="recommendationDirector1" class="input-line">
@@ -278,7 +278,7 @@
                                         <label class="input-label text-center">AM/Manager Estate</label>
                                     </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
+                                <div class="col-md-3 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="recommendationDirector2"
                                             name="recommendationDirector2" class="input-line">
@@ -286,7 +286,7 @@
                                         <label class="input-label text-center">GM Estate</label>
                                     </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
+                                <div class="col-md-3 mb-3text-center">
                                     <div>
                                         <input disabled type="text" id="recommendationDirector2"
                                             name="recommendationDirector2" class="input-line">

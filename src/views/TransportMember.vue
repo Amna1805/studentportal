@@ -6,7 +6,7 @@
         <form @submit.prevent="submitForm">
             <div class="card mb-4 form-control-md fs-6">
                 <fieldset>
-                    <legend class="card-header">PART-I: Information Required From Hosted Researcher</legend>
+                    <legend class="card-header">Information Required From Hosted Researcher</legend>
                     <div class="card-body">
                         <div class="row">
                         <div class="col-md-6">
