@@ -35,29 +35,29 @@
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label>1. Name:</label>
-                                <input type="text" class="form-control" v-model="formData.ncpIdNumber">
+                                <input type="text" autofocus class="form-control" v-model="formData.name">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>2. Name of Supervisor/Group Head:</label>
-                                <input type="text" class="form-control" v-model="formData.dateOfBirth">
+                                <input type="text" class="form-control" v-model="formData.supervisor">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>3. Designation:</label>
-                                <input type="text" class="form-control" v-model="formData.nationality">
+                                <input type="text" class="form-control" v-model="formData.designation">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label>4. Date of Joining NCP:</label>
-                                <input type="date" class="form-control" id="applicationDate" />
+                                <input type="date" class="form-control"  v-model="formData.joiningdate" />
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>5. Present Duration at NCP: From:</label>
-                                <input type="date" class="form-control" id="applicationDate" />
+                                <input type="date" class="form-control"  v-model="formData.starttime" />
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>6. Present Duration at NCP: To:</label>
-                                <input type="date" class="form-control" id="applicationDate" />
+                                <input type="date" class="form-control"  v-model="formData.endtime" />
                             </div>
                         </div>
                         <div class="row">
@@ -66,14 +66,14 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="completedCheckbox">
+                                            <input type="radio" checked class="form-check-input" id="status"  value="Completed" v-model="formData.status">
                                             <label class="form-check-label" for="completedCheckbox">Completed</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                            <label class="form-check-label" for="inProgressCheckbox">In Progress</label>
+                                            <input type="radio" class="form-check-input" id="status" value="In Progress" v-model="formData.status">
+                                            <label class="form-check-label" for="inProgressCheckbox" >In Progress</label>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                     <p><b><u>Summary of research work done till date at NCP:</u></b></p>
                     <p><b><i>Title of Research Work:</i></b></p>
                     <p><b><i>Summary of Research Work:</i></b></p>
-                    <textarea class="form-control" rows="8"></textarea>
+                    <textarea class="form-control" rows="8" v-model="formData.summary"></textarea>
                 </div>
             </div>
             <div class="card p-3 mb-4">
@@ -103,7 +103,7 @@
                                         Impact
                                         Factor Journals:</label></div>
                                 <div class="col-md-4 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block"  v-model="formData.publishedpapers">
                                 </div>
                             </div>
 
@@ -115,7 +115,7 @@
                                         No. of Papers Accepted in Impact
                                         Factor Journals:</label></div>
                                 <div class="col-md-3 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.acceptedpapers" >
                                 </div>
                             </div>
 
@@ -131,7 +131,7 @@
                                         of
                                         No. of Papers Submitted in Impact Factor Journals: </label></div>
                                 <div class="col-md-4 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.submittedpapers">
                                 </div>
                             </div>
 
@@ -142,7 +142,7 @@
                                         of
                                         No. of Paper(s) Presented in International Conference(s):</label></div>
                                 <div class="col-md-3 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.presentedpapers">
                                 </div>
                             </div>
 
@@ -156,7 +156,7 @@
                                         of
                                         No. of Patents submitted : National</label></div>
                                 <div class="col-md-4 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.nationalpatentssubmitted">
                                 </div>
                             </div>
 
@@ -167,7 +167,7 @@
                                         of
                                         No. of Patents submitted : International</label></div>
                                 <div class="col-md-3 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.internationalpatentssubmitted">
                                 </div>
                             </div>
 
@@ -227,84 +227,20 @@ export default {
     data() {
         return {
             formData: {
-                ncpIdNumber: '',
-                dateOfBirth: '',
-                nationality: '',
-                cnicNumber: '',
-                passportNumber: '',
-                nameTitle: 'Mr.', // Default value
-                firstName: '',
-                lastName: '',
-                designation: '',
-                building: '',
-                floor: '',
-                roomNumber: '',
-                telephoneOffice: '',
-                mobileNumber: '',
-                // Add more form data fields here
-                applicantSignature: '',
-                departmentHead: '',
-                // Add more form data fields here
-                // Section 13: CoE Name
-                coeName: '',
-
-                // Section 14: Department/Branch
-                departmentBranch: '',
-
-                // Section 15: Email Address
-                emailAddress: '',
-
-                // Section 16: Services required
-                services: {
-                    windowsAccount: false,
-                    emailAccount: false,
-                    printQuota: false,
-                    ldapAccount: false,
-                },
-
-                // Section 17: Specify time duration of stay
-                stayFrom: '',
-                stayTo: '',
-
-                // Section 18: Laptop/Desktop MAC Address
-                macAddress: '',
-
-                // Section 19: Purpose of the IT account
-                itAccountPurpose: '',
-
-                agreePolicy: false,
-
-                deptHeadName: '',
-                deptHeadDate: '',
-                deptHeadSignature: '',
-
-                // for IT dept
-                itUserId: '',
-                itDomain: '',
-                itCheckList: {
-                    emailAccount: false,
-                    ldapAccount: false,
-                    vpnAccount: false,
-                    windowsAccount: false,
-                    printQuota: false,
-                    recordUpdate: false,
-                    allUsersMailingList: false,
-                    departmentalMailingList: false,
-                },
-                gmIt: '',
-                itPersonnelName: '',
-                itSignature: '',
-
-            },
-            itCheckListLabels: {
-                emailAccount: 'Email Account',
-                ldapAccount: 'Linux (LDAP) Account',
-                vpnAccount: 'VPN Account',
-                windowsAccount: 'Windows Login Account',
-                printQuota: 'Print Quota',
-                recordUpdate: 'Record Update',
-                allUsersMailingList: 'All Users Mailing List',
-                departmentalMailingList: 'Departmental Mailing List',
+            name:'',
+            supervisor:'',
+            designation:'',
+            joiningdate:'',
+            starttime:'',
+            endtime:'',
+            status:'',
+            summary:'',
+            publishedpapers:'',
+            submittedpapers:'',
+            acceptedpapers:'',
+            presentedpapers:'',
+            nationalpatentssubmitted:'',
+            internationalpatentssubmitted:'',
             },
         };
     }

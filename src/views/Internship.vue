@@ -22,32 +22,39 @@
                         <label class="col-md-3 col-form-label">Select your category:</label>
                         <div class="col-md-9">
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="adjunctFaculty">
+                                <input type="radio" checked class="form-check-input" value="adjunctFaculty" id="category"
+                                    v-model="formData.category">
                                 <label class="form-check-label" for="adjunctFaculty">Adjunct Faculty</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="visitingScientist">
+                                <input type="radio" class="form-check-input" value="visitingScientist" id="category"
+                                    v-model="formData.category">
                                 <label class="form-check-label" for="visitingScientist">Visiting Scientist/Research
                                     Scholar</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="ncpAssociates">
+                                <input type="radio" class="form-check-input" value="ncpAssociates" id="category"
+                                    v-model="formData.category">
                                 <label class="form-check-label" for="ncpAssociates">NCP Associates</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="postDocFellows">
+                                <input type="radio" class="form-check-input" value="postDocFellows" id="category"
+                                    v-model="formData.category">
                                 <label class="form-check-label" for="postDocFellows">Post-Doc Fellows</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="phdStudent">
+                                <input type="radio" class="form-check-input" value="phdStudent" id="category"
+                                    v-model="formData.category">
                                 <label class="form-check-label" for="phdStudent">Ph.D Student</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="msStudent">
+                                <input type="radio" class="form-check-input" value="msStudent" id="category"
+                                    v-model="formData.category">
                                 <label class="form-check-label" for="msStudent">M.Phil / MS Student</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="internee">
+                                <input type="radio" class="form-check-input" value="internee" id="category"
+                                    v-model="formData.category">
                                 <label class="form-check-label" for="internee">Internee</label>
                             </div>
                         </div>
@@ -57,26 +64,26 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label>1. Proposed Research Area at NCP:</label>
-                                <input type="text" class="form-control" v-model="formData.ncpIdNumber">
+                                <input type="text" autofocus class="form-control" v-model="formData.researcharea">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label>2. Proposed Department Area at NCP:</label>
-                                <input type="text" class="form-control" v-model="formData.dateOfBirth">
+                                <input type="text" class="form-control" v-model="formData.researchdept">
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label>Duration of Internship</label>
                                 <div>
                                     <div class="d-inline align-items-center">
-                                        <label for="latesitstart" class="me-2d-inline"
+                                        <label for="internshipstart" class="me-2d-inline"
                                             style="margin-right: 0.5rem;">From:</label>
-                                        <input type="date" class="form-control d-inline" id="latesitstart"
-                                            style="width: 35%;" />
+                                        <input type="date" class="form-control d-inline" id="internshipstart"
+                                            v-model="formData.internshipstart" style="width: 35%;" />
                                     </div>
                                     <div class="d-inline align-items-center">
-                                        <label for="latesitend" class="me-2 d-inline"
+                                        <label for="internshipend" class="me-2 d-inline"
                                             style="margin-right: 0.5rem;">To:</label>
-                                        <input type="date" class="form-control d-inline" id="latesitend"
-                                            style="width: 35%;" />
+                                        <input type="date" class="form-control d-inline" id="internshipend"
+                                            v-model="formData.internshipend" style="width: 35%;" />
                                     </div>
                                 </div>
                             </div>
@@ -85,28 +92,30 @@
                             <div class="col-md-12 mb-3">
                                 <label>Accommodation Required</label>
                                 <div class="row">
-                                    <div class="col-md-1 ">
+                                    <div class="col-md-2 ">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="completedCheckbox">
-                                            <label class="form-check-label" for="completedCheckbox">Yes</label>
+                                            <input type="radio" class="form-check-input" value="yes" id="acc"
+                                                v-model="formData.accomodation">
+                                            <label class="form-check-label" for="yes">Yes</label>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-1">
+                                    <div class="col-md-10">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                            <label class="form-check-label" for="inProgressCheckbox">No</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-9">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
                                             <label class="form-check-label" for="inProgressCheckbox">If YES please mention
                                                 duration</label>
-                                            <input type="text" id="je-caad" name="je-caad" class="input-line">
+                                            <input ref="accomodationInput" type="text" id="je-caad" name="je-caad"
+                                                class="input-line" :disabled="formData.accomodation !== 'yes'">
                                         </div>
                                     </div>
+                                    <div class="col-md-1">
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" value="no" id="acc"
+                                                v-model="formData.accomodation">
+                                            <label class="form-check-label" for="no">No</label>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -124,15 +133,15 @@
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label>Name:</label>
-                        <input type="text" class="form-control" v-model="formData.ncpIdNumber">
+                        <input type="text" class="form-control" v-model="formData.consultedname">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label>Department:</label>
-                        <input type="text" class="form-control" v-model="formData.dateOfBirth">
+                        <input type="text" class="form-control" v-model="formData.consulteddepartment">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label>Date:</label>
-                        <input type="date" class="form-control" v-model="formData.nationality">
+                        <input type="date" class="form-control" v-model="formData.dateconsulted">
                     </div>
                 </div>
                 <div class="row">
@@ -143,13 +152,15 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="completedCheckbox">
+                                            <input type="radio" class="form-check-input" checked="" value="yes" id="sup"
+                                                v-model="formData.issupervisor">
                                             <label class="form-check-label" for="completedCheckbox">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                            <input type="radio" class="form-check-input" value="no" id="sup"
+                                                v-model="formData.issupervisor">
                                             <label class="form-check-label" for="inProgressCheckbox">No</label>
                                         </div>
                                     </div>
@@ -165,13 +176,15 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="completedCheckbox">
+                                            <input type="radio" class="form-check-input" checked value="yes" id="cosup"
+                                                v-model="formData.iscosupervisor">
                                             <label class="form-check-label" for="completedCheckbox">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                            <input type="radio" class="form-check-input" value="no" id="cosup"
+                                                v-model="formData.iscosupervisor">
                                             <label class="form-check-label" for="inProgressCheckbox">No</label>
                                         </div>
                                     </div>
@@ -184,8 +197,8 @@
             </div>
             <div class="card mb-4 p-3">
                 <div class="undertaking p-3">
-                    <p>I, Mr./Ms./Dr. <input type="text" name="name" placeholder="Amna Muzaffar"
-                            class="input-line text-center"> hereby undertake
+                    <p>I, Mr./Ms./Dr. <input type="text" name="name" value="Amna Muzaffar" class="input-line text-center">
+                        hereby undertake
                         that:</p>
 
                     <p>(a) Upon acceptance, I shall pay:</p>
@@ -223,111 +236,137 @@
                 </div>
             </div>
             <div class="card mb-4 p-3">
-                <p class="small-text"><b><u>
-                            Checklist of Documents</u></b></p>
-                <p><b>Note:</b> The Police Verification Proforma can be downloaded from the link  <a href="https://www.ncp.edu.pk/docs/caad/police-verification-form-2016.pdf" class="text-success"><u>Police Verification Proforma</u></a>.</p>
-
-                <div class="table-responsive mt-3">
-                    <table class="table-bordered">
-                        <thead>
-                            <tr>
-                                <th style="width: 40%;">Document Name</th>
-                                <th style="width: 20%;">Upload Document</th>
-                                <th style="width: 20%;">Checklist</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Attested Copy of Last Degree</td>
-                                <td> <label class="attach-label" for="attach-input">Attach</label>
-                                    <input type="file" class="attach-input" id="attach-input">
-                                </td>
-                                <td>
-                                    <div class="form-check d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                    </div>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td>Updated Brief CV (including list of publications during last three years)</td>
-                                <td> <label class="attach-label" for="attach-input">Attach</label>
-                                    <input type="file" class="attach-input" id="attach-input">
-                                </td>
-                                <td>
-                                    <div class="form-check d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Attested Copy of CNIC/Passport</td>
-                                <td> <label class="attach-label" for="attach-input">Attach</label>
-                                    <input type="file" class="attach-input" id="attach-input">
-                                </td>
-                                <td>
-                                    <div class="form-check d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Referral Letter from parent Department/University/Organization</td>
-                                <td> <label class="attach-label" for="attach-input">Attach</label>
-                                    <input type="file" class="attach-input" id="attach-input">
-                                </td>
-                                <td>
-                                    <div class="form-check d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Passport Size Picture(Blue or White Background)</td>
-                                <td> <label class="attach-label" for="attach-input">Attach</label>
-                                    <input type="file" class="attach-input" id="attach-input">
-                                </td>
-                                <td>
-                                    <div class="form-check d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Police Verification Proforma</td>
-                                <td> <label class="attach-label" for="attach-input">Attach</label>
-                                    <input type="file" class="attach-input" id="attach-input">
-                                </td>
-                                <td>
-                                    <div class="form-check d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Immunization Certificate (COVID-19)</td>
-                                <td> <label class="attach-label" for="attach-input">Attach</label>
-                                    <input type="file" class="attach-input" id="attach-input">
-                                </td>
-                                <td>
-                                    <div class="form-check d-flex justify-content-center align-items-center">
-                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="institution-certification">
+                    <p><b>To be Completed by Applicant’s Parent Institution/ University:</b></p>
+                    <p>We hereby certify that the applicant Mr./Ms./Dr. <input type="text" name="name" value="Amna Muzaffar"
+                            class="input-line text-center"> S/D of <input type="text" name="name" value="Muzaffar Hussain"
+                            class="input-line text-center"> is presently a regular student/employee with Registration No./
+                        PIN No.<input type="text" name="name" value="04072013003" class="input-line text-center"> at our
+                        Department/Institution/University. We have thoroughly read contents of NCP Hosted Researchers Policy
+                        (Revised-2016). We hereby recommend the above mentioned applicant for research work at NCP in the
+                        above specified category (Our Referral Letter is attached in Original) and are willing to
+                        provide/pay for any consumables towards experimental work of the said researcher at NCP Campus (if
+                        applicable after discussion with the Supervisor/Co-Supervisor at NCP campus).</p>
+                    <p><b>Supervisor / Co-Supervisor of Parent Department:</b></p>
+                    <div class="row">
+                        <div class="col-md-4"> <label>Name:</label><input type="text" class="form-control" v-model="formData.researchdept"></div>
+                    <div class="col-md-4">  <label>Designation:</label><input type="text" class="form-control" v-model="formData.researchdept"></div>
+                    <div class="col-md-4">  <label>Department:</label><input type="text" class="form-control" v-model="formData.researchdept"></div>
                 </div>
-            </div>
+<div class="mt-7">  <p> Signature with Date/Stamp: <input type="text" name="name" class="input-line text-center"></p></div>
 
-            <!-- Submit Button -->
-            <div class="form-actions d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-success">Submit</button>
+
             </div>
-        </form>
     </div>
-</template>
+
+    <div class="card mb-4 p-3">
+        <p class="small-text"><b><u>
+                    Checklist of Documents</u></b></p>
+        <p style="font-size: 14px;"><b>Note:</b> The Police Verification Proforma can be downloaded from the link <a
+                href="https://www.ncp.edu.pk/docs/caad/police-verification-form-2016.pdf" class="text-success"><u>Police
+                    Verification Proforma</u></a>.</p>
+
+        <div class="table-responsive mt-3">
+            <table class="table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">Document Name</th>
+                        <th style="width: 20%;">Upload Document</th>
+                        <th style="width: 20%;">Checklist</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Attested Copy of Last Degree</td>
+                        <td> <label class="attach-label" for="attach-input">Attach</label>
+                            <input type="file" class="attach-input" id="attach-input">
+                        </td>
+                        <td>
+                            <div class="form-check d-flex justify-content-center align-items-center">
+                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Updated Brief CV (including list of publications during last three years)</td>
+                        <td> <label class="attach-label" for="attach-input">Attach</label>
+                            <input type="file" class="attach-input" id="attach-input">
+                        </td>
+                        <td>
+                            <div class="form-check d-flex justify-content-center align-items-center">
+                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Attested Copy of CNIC/Passport</td>
+                        <td> <label class="attach-label" for="attach-input">Attach</label>
+                            <input type="file" class="attach-input" id="attach-input">
+                        </td>
+                        <td>
+                            <div class="form-check d-flex justify-content-center align-items-center">
+                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Referral Letter from parent Department/University/Organization</td>
+                        <td> <label class="attach-label" for="attach-input">Attach</label>
+                            <input type="file" class="attach-input" id="attach-input">
+                        </td>
+                        <td>
+                            <div class="form-check d-flex justify-content-center align-items-center">
+                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Passport Size Picture(Blue or White Background)</td>
+                        <td> <label class="attach-label" for="attach-input">Attach</label>
+                            <input type="file" class="attach-input" id="attach-input">
+                        </td>
+                        <td>
+                            <div class="form-check d-flex justify-content-center align-items-center">
+                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Police Verification Proforma</td>
+                        <td> <label class="attach-label" for="attach-input">Attach</label>
+                            <input type="file" class="attach-input" id="attach-input">
+                        </td>
+                        <td>
+                            <div class="form-check d-flex justify-content-center align-items-center">
+                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Immunization Certificate (COVID-19)</td>
+                        <td> <label class="attach-label" for="attach-input">Attach</label>
+                            <input type="file" class="attach-input" id="attach-input">
+                        </td>
+                        <td>
+                            <div class="form-check d-flex justify-content-center align-items-center">
+                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p style="font-size: 14px;"><b><u>Note:</u></b> Students should print this filled form, have it signed by their university, and then upload it again in PDF format.</p>
+
+    <!-- Submit Button -->
+    <div class="form-actions d-flex justify-content-center mt-4">
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+    </form>
+</div></template>
   
 <script>
 export default {
@@ -335,87 +374,28 @@ export default {
     data() {
         return {
             formData: {
-                ncpIdNumber: '',
-                dateOfBirth: '',
-                nationality: '',
-                cnicNumber: '',
-                passportNumber: '',
-                nameTitle: 'Mr.', // Default value
-                firstName: '',
-                lastName: '',
-                designation: '',
-                building: '',
-                floor: '',
-                roomNumber: '',
-                telephoneOffice: '',
-                mobileNumber: '',
-                // Add more form data fields here
-                applicantSignature: '',
-                departmentHead: '',
-                // Add more form data fields here
-                // Section 13: CoE Name
-                coeName: '',
-
-                // Section 14: Department/Branch
-                departmentBranch: '',
-
-                // Section 15: Email Address
-                emailAddress: '',
-
-                // Section 16: Services required
-                services: {
-                    windowsAccount: false,
-                    emailAccount: false,
-                    printQuota: false,
-                    ldapAccount: false,
-                },
-
-                // Section 17: Specify time duration of stay
-                stayFrom: '',
-                stayTo: '',
-
-                // Section 18: Laptop/Desktop MAC Address
-                macAddress: '',
-
-                // Section 19: Purpose of the IT account
-                itAccountPurpose: '',
-
-                agreePolicy: false,
-
-                deptHeadName: '',
-                deptHeadDate: '',
-                deptHeadSignature: '',
-
-                // for IT dept
-                itUserId: '',
-                itDomain: '',
-                itCheckList: {
-                    emailAccount: false,
-                    ldapAccount: false,
-                    vpnAccount: false,
-                    windowsAccount: false,
-                    printQuota: false,
-                    recordUpdate: false,
-                    allUsersMailingList: false,
-                    departmentalMailingList: false,
-                },
-                gmIt: '',
-                itPersonnelName: '',
-                itSignature: '',
-
+                accomodation: 'no',
+                researcharea: '',
+                researchdept: '',
+                internshipstart: '',
+                internshipend: '',
+                consultedname: '',
+                consulteddepartment: '',
+                data: '',
+                issupervisor: '',
+                iscosupervisor: '',
             },
-            itCheckListLabels: {
-                emailAccount: 'Email Account',
-                ldapAccount: 'Linux (LDAP) Account',
-                vpnAccount: 'VPN Account',
-                windowsAccount: 'Windows Login Account',
-                printQuota: 'Print Quota',
-                recordUpdate: 'Record Update',
-                allUsersMailingList: 'All Users Mailing List',
-                departmentalMailingList: 'Departmental Mailing List',
-            },
-        };
-    }
+        }
+    },
+    watch: {
+        "formData.accomodation": function (newValue) {
+            if (newValue === "yes") {
+                this.$nextTick(() => {
+                    this.$refs.accomodationInput.focus(); // Focus the input field
+                });
+            }
+        },
+    },
 };
 </script>
   
@@ -454,11 +434,11 @@ export default {
 }
 
 .undertaking p {
-    font-size: 14px
+    font-size: 12px
 }
 
 .undertaking li {
-    font-size: 14px
+    font-size: 12px
 }
 
 .undertaking {
@@ -490,6 +470,7 @@ export default {
     text-align: center;
 }
 
-
-</style>
+.institution-certification p {
+    font-size: 12px;
+}</style>
   
