@@ -1,14 +1,16 @@
 <template>
     <div class="container py-4">
         <div class="card bg-primary text-white mb-4">
-           <h4 class="card-header">Evaluation Proforma</h4>
+            <h4 class="card-header">Evaluation Proforma</h4>
         </div>
 
         <!-- Section 1: Personal Information -->
         <form>
-            <div class="card mb-4">
+            <div class="card p-3 mb-4">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-sm-8 mb-sm-3 mx-auto evaluation-report mt-5">
+
+                    <div class="col-12 col-sm-8 mb-sm-3 mx-auto evaluation-report mt-2">
+                        <h5 class="mb-3">Instructions:</h5>
                         <p><b><i>Internees & short term visiting scientists and researchers will submit the performance
                                     evaluation
                                     report at the end of their research work.</i></b></p>
@@ -18,6 +20,9 @@
                                     basis.</i></b></p>
                     </div>
                 </div>
+            </div>
+            <div class="card p-3 mb-4">
+
                 <fieldset>
                     <legend class="card-header d-flex justify-content-between align-items-center">
                         To be completed by Applicant Hosted Researcher:
@@ -74,150 +79,140 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="research-summary">
-                            <p><b><u>Summary of research work done till date at NCP:</u></b></p>
-                            <p><b><i>Title of Research Work:</i></b></p>
-                            <p><b><i>Summary of Research Work:</i></b></p>
-                            <textarea class="form-control" rows="8"></textarea>
-                        </div>
-                        <div class="publications-summary mt-3">
-                            <p><b>(a) Summary of Publications in which NCP name is included (attach list)*:</b></p>
-
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <div class="d-flex">
-                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers"
-                                                class="d-inline-block">No. of
-                                                Papers Published in
-                                                Impact
-                                                Factor Journals:</label></div>
-                                        <div class="col-md-4 col-sm-3 col-3">
-                                            <input type="number" id="publishedPapers" class="form-control d-inline-block">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="d-flex">
-                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers"
-                                                class="d-inline-block">No. of
-                                                No. of Papers Accepted in Impact
-                                                Factor Journals:</label></div>
-                                        <div class="col-md-3 col-sm-3 col-3">
-                                            <input type="number" id="publishedPapers" class="form-control d-inline-block">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <div class="d-flex">
-                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers"
-                                                class="d-inline-block">No. of
-                                                No. of Papers Submitted in Impact Factor Journals: </label></div>
-                                        <div class="col-md-4 col-sm-3 col-3">
-                                            <input type="number" id="publishedPapers" class="form-control d-inline-block">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="d-flex">
-                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers"
-                                                class="d-inline-block">No. of
-                                                No. of Paper(s) Presented in International Conference(s):</label></div>
-                                        <div class="col-md-3 col-sm-3 col-3">
-                                            <input type="number" id="publishedPapers" class="form-control d-inline-block">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <div class="d-flex">
-                                        <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers"
-                                                class="d-inline-block">No. of
-                                                No. of Patents submitted : National</label></div>
-                                        <div class="col-md-4 col-sm-3 col-3">
-                                            <input type="number" id="publishedPapers" class="form-control d-inline-block">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="d-flex">
-                                        <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers"
-                                                class="d-inline-block">No. of
-                                                No. of Patents submitted : International</label></div>
-                                        <div class="col-md-3 col-sm-3 col-3">
-                                            <input type="number" id="publishedPapers" class="form-control d-inline-block">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>Applicant’s Signature:</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label>Date:</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Remarks by Director Concerned on Prog. of Work:</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>Signature of Director Concerned:</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label>Date:</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>GM CAAD:</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label>Manager CAAD (for record and needful):</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>JE CAAD (for record /processing for info if any to Hosted Researcher):</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>* Attach list of publications carrying NCP name and titles/venues/durations of
-                                International Conferences attended:</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
-
                     </div>
                 </fieldset>
             </div>
+            <div class="card p-3 mb-4">
+                <div class="research-summary">
+                    <p><b><u>Summary of research work done till date at NCP:</u></b></p>
+                    <p><b><i>Title of Research Work:</i></b></p>
+                    <p><b><i>Summary of Research Work:</i></b></p>
+                    <textarea class="form-control" rows="8"></textarea>
+                </div>
+            </div>
+            <div class="card p-3 mb-4">
+                <div class="publications-summary mt-3">
+                    <p><b>(a) Summary of Publications in which NCP name is included (attach list)*:</b></p>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No.
+                                        of
+                                        Papers Published in
+                                        Impact
+                                        Factor Journals:</label></div>
+                                <div class="col-md-4 col-sm-3 col-3">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No.
+                                        of
+                                        No. of Papers Accepted in Impact
+                                        Factor Journals:</label></div>
+                                <div class="col-md-3 col-sm-3 col-3">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No.
+                                        of
+                                        No. of Papers Submitted in Impact Factor Journals: </label></div>
+                                <div class="col-md-4 col-sm-3 col-3">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No.
+                                        of
+                                        No. of Paper(s) Presented in International Conference(s):</label></div>
+                                <div class="col-md-3 col-sm-3 col-3">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <div class="col-md-8 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No.
+                                        of
+                                        No. of Patents submitted : National</label></div>
+                                <div class="col-md-4 col-sm-3 col-3">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <div class="col-md-9 col-sm-9 col-9"><label for="publishedPapers" class="d-inline-block">No.
+                                        of
+                                        No. of Patents submitted : International</label></div>
+                                <div class="col-md-3 col-sm-3 col-3">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="m-2">* Attach list of publications carrying NCP name and titles/venues/durations
+                        of International Conferences attended:</label>
+                    <button class="btn btn-outline-secondary mt-2 blink" type="button" id="attachButton">Attach</button>
+                </div>
+            </div>
+            <!--CAAD SECTION-->
+            <!-- <div class="card p-3 mb-4">
+                <div class="form-group">
+                    <label>Remarks by Director Concerned on Prog. of Work:</label>
+                    <textarea class="form-control"></textarea>
+                </div>
+
+                <div class="section mt-3">
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <label for="gm-finance">Signature of Director Concerned:</label>
+                            <input type="text" id="gm-finance" name="gm-finance" class="input-line">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="director-admin">Date:</label>
+                            <input type="text" id="director-admin" name="director-admin" class="input-line">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="manager-caad">Manager CAAD (for record and needful):</label>
+                            <input type="text" id="manager-caad" name="manager-caad" class="input-line">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="director-caad">GM CAAD:</label>
+                            <input type="text" id="director-caad" name="director-caad" class="input-line">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div> -->
             <!-- Submit Button -->
             <div class="form-actions d-flex justify-content-center mt-4">
                 <button type="submit" class="btn btn-success">Submit</button>
@@ -325,6 +320,12 @@ export default {
     text-align: center;
 }
 
+.input-line {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
 .evaluation-report p {
     font-size: 12px;
 }
@@ -337,5 +338,16 @@ export default {
 
 .research-summary p {
     font-size: 14px;
-}</style>
+}
+
+.blink {
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+</style>
   

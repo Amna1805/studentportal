@@ -9,86 +9,100 @@
                     <legend class="card-header">PART-I: Information Required From Hosted Researcher</legend>
                     <div class="card-body">
                         <div class="row">
-                        <div class="col-md-6">
-                            <label for="name">Name of Hosted Researcher:</label>
-                            <input type="text" class="form-control" id="name" v-model="applicantInfo.name" />
+                            <div class="col-md-4">
+                                <label for="name">Name of Hosted Researcher:</label>
+                                <input type="text" class="form-control" id="name" v-model="applicantInfo.name" />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="regisno">Registration Number:</label>
+                                <input type="text" class="form-control" id="regisno" v-model="applicantInfo.regisno" />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="cnic">CNIC (without dashes):</label>
+                                <input type="number" class="form-control" id="cnic" v-model="applicantInfo.cnic" />
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="regisno">Registration Number:</label>
-                            <input type="text" class="form-control" id="regisno" v-model="applicantInfo.regisno" />
-                        </div>
-                        <div class="col-md-6">
-                            <label for="cnic">CNIC (without dashes):</label>
-                            <input type="number" class="form-control" id="cnic" v-model="applicantInfo.cnic" />
-                        </div>
-                        <div class="col-md-6">
-                            <label for="workarea">Work Area During Late Sitting(Block/ Lab Number):</label>
-                            <input type="text" class="form-control" id="workarea" v-model="applicantInfo.workarea" />
-                        </div>
-                        <div class="col-md-6 mb-2">
-                            <label>Duration of Late Sitting</label>
-                            <div>
-                                <div class="d-inline align-items-center">
-                                    <label for="latesitstart" class="me-2d-inline"
-                                        style="margin-right: 0.5rem;">From:</label>
-                                    <input type="date" class="form-control d-inline" id="latesitstart"
-                                        v-model="applicantInfo.latesitstart" style="width: 35%;" />
-                                </div>
-                                <div class="d-inline align-items-center">
-                                    <label for="latesitend" class="me-2 d-inline" style="margin-right: 0.5rem;">To:</label>
-                                    <input type="date" class="form-control d-inline" id="latesitend"
-                                        v-model="applicantInfo.latesitend" style="width: 35%;" />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="workarea">Work Area During Late Sitting(Block/ Lab Number):</label>
+                                <input type="text" class="form-control" id="workarea" v-model="applicantInfo.workarea" />
+                            </div>
+                            <div class="col-md-8 mb-2">
+                                <label>Duration of Late Sitting</label>
+                                <div>
+                                    <div class="d-inline align-items-center">
+                                        <label for="latesitstart" class="me-2d-inline"
+                                            style="margin-right: 0.5rem;">From:</label>
+                                        <input type="date" class="form-control d-inline" id="latesitstart"
+                                            v-model="applicantInfo.latesitstart" style="width: 35%;" />
+                                    </div>
+                                    <div class="d-inline align-items-center">
+                                        <label for="latesitend" class="me-2 d-inline"
+                                            style="margin-right: 0.5rem;">To:</label>
+                                        <input type="date" class="form-control d-inline" id="latesitend"
+                                            v-model="applicantInfo.latesitend" style="width: 35%;" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-md-6">
-                            <label for="contactlab">Lab Phone #:</label>
-                            <input type="number" class="form-control" id="contactlab" v-model="applicantInfo.contactlab" />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="contactlab">Lab Phone #:</label>
+                                <input type="number" class="form-control" id="contactlab"
+                                    v-model="applicantInfo.contactlab" />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="contactcell">Cell Phone #:</label>
+                                <input type="number" class="form-control" id="contactcell"
+                                    v-model="applicantInfo.contactcell" />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="latesitreason">Reason for Late Sitting:</label>
+                                <textarea class="form-control" id="latesitreason" v-model="applicantInfo.latesitreason"
+                                    rows="3" cols="50" maxlength="250"></textarea>
+                                <!-- <p>Remaining characters: {{ remainingCharacters }}</p> -->
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <label for="contactcell">Cell Phone #:</label>
-                            <input type="number" class="form-control" id="contactcell"
-                                v-model="applicantInfo.contactcell" />
-                        </div>
-                        <div class="col-md-6">
-                            <label for="latesitreason">Reason for Late Sitting:</label>
-                            <textarea class="form-control" id="latesitreason" v-model="applicantInfo.latesitreason" rows="3"
-                                cols="50" maxlength="250"></textarea>
-                            <!-- <p>Remaining characters: {{ remainingCharacters }}</p> -->
-                        </div>
-                        <div class="col-md-6 mt-lg-n4 mt-md-n4">
-                            <label for="caretaker">Name of Caretaker During Late Sitting:</label>
-                            <input type="text" class="form-control" id="caretaker" v-model="applicantInfo.caretaker" />
+                        <div class="row">
+                            <div class="col-md-6 mt-lg-n4 mt-md-n4">
+                                <label for="caretaker">Name of Caretaker During Late Sitting:</label>
+                                <input type="text" class="form-control" id="caretaker" v-model="applicantInfo.caretaker" />
+
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <argon-checkbox checked id="recommendation" v-model="applicantInfo.recommendation">
+                                    <label class="form-check-label text-dark font-weight-bolder" for="recommendation">
+                                        Recommendation By Supervisor
+                                    </label>
+                                </argon-checkbox>
+
+                            </div>
 
                         </div>
-                        <div class="col-md-6 mt-3">
-                        <argon-checkbox checked  id="recommendation" v-model="applicantInfo.recommendation">
-                            <label class="form-check-label text-dark font-weight-bolder" for="recommendation">
-                                Recommendation By Supervisor
-                            </label>
-                        </argon-checkbox>
-                    </div>
-                        <div class="col-md-6 mt-3 mb-2">
-                            <label class="h6">Residence Contact Incase of Emergency:</label>
-                            <div>
+                        <label class="h6">Residence Contact Incase of Emergency:</label>
+                        <div class="row">
+
+                            <div class="col-md-4">
                                 <label for="emergencyname">Name:</label>
                                 <input type="text" class="form-control" id="emergencyname"
                                     v-model="applicantInfo.emergencyname" />
+                            </div>
+                            <div class="col-md-4">
                                 <label for="emergencycontactcell">Cell #:</label>
                                 <input type="number" class="form-control" id="emergencycontactcell"
                                     v-model="applicantInfo.emergencycontactcell" />
+                            </div>
+                            <div class="col-md-4">
                                 <label for="emergencycontactptcl">Landline #:</label>
                                 <input type="number" class="form-control" id="emergencycontactptcl"
                                     v-model="applicantInfo.emergencycontactptcl" />
                             </div>
-                            <br/>
                         </div>
-                       
-</div>
-                        <!-- when the form is submitted, get the date of the form at that time and then send it -->
-                        <!-- just display appliction status instead of CAAD Fields -->
+
                     </div>
+                    <!-- when the form is submitted, get the date of the form at that time and then send it -->
+                    <!-- just display appliction status instead of CAAD Fields -->
+
                 </fieldset>
 
             </div>
@@ -108,7 +122,7 @@ export default {
     },
     data() {
         return {
-           
+
             applicantInfo: {
                 name: '',
                 regisno: '',

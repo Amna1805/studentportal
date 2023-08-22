@@ -16,28 +16,28 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="researcherName">Name of Hosted Researcher:</label>
+                                <label for="researcherName">1. Name of Hosted Researcher:</label>
                                 <input type="text" class="form-control" id="researcherName" v-model="researcherInfo.name" />
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="researcherPhone">Phone: Cell:</label>
+                                <label for="researcherPhone">2. Phone/Cell:</label>
                                 <input type="text" class="form-control" id="researcherPhone"
                                     v-model="researcherInfo.phone" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                                <label for="researcherEmail">E-mail:</label>
+                                <label for="researcherEmail">3. E-mail:</label>
                                 <input type="email" class="form-control" id="researcherEmail"
                                     v-model="researcherInfo.email" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="registrationNo">NCP Registration No.:</label>
+                                <label for="registrationNo">4. NCP Registration No.:</label>
                                 <input type="text" class="form-control" id="registrationNo"
                                     v-model="researcherInfo.registrationNo" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="entryCardNo">NCP Entry Card No.</label>
+                                <label for="entryCardNo">5. NCP Entry Card No.</label>
                                 <input type="text" class="form-control" id="entryCardNo"
                                     v-model="researcherInfo.entryCardNo" />
                             </div>
@@ -45,27 +45,27 @@
 
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                                <label for="department">Relevant Department at NCP:</label>
+                                <label for="department">6. Relevant Department at NCP:</label>
                                 <input type="text" class="form-control" id="department"
                                     v-model="researcherInfo.department" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="group">Group:</label>
+                                <label for="group">7. Group:</label>
                                 <input type="text" class="form-control" id="group" v-model="researcherInfo.group" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="contactPerson">Supervisor/Contact Person:</label>
+                                <label for="contactPerson">8. Supervisor/Contact Person:</label>
                                 <input type="text" class="form-control" id="contactPerson"
                                     v-model="researcherInfo.contactPerson" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="presentOrg">Present Organization/University/Department:</label>
+                            <label for="presentOrg">9. Present Organization/University/Department:</label>
                             <input type="text" class="form-control" id="presentOrg" v-model="researcherInfo.presentOrg" />
                         </div>
 
                         <div class="form-group">
-                            <label>Present Duration at NCP as per ToR:</label>
+                            <label>10. Present Duration at NCP as per ToR:</label>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="stayFrom">From:</label>
@@ -81,13 +81,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="extensionReason">Reason for Extension:</label>
+                            <label for="extensionReason">11. Reason for Extension:</label>
                             <textarea class="form-control" id="extensionReason"
                                 v-model="researcherInfo.extensionReason"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label>Requested Period of Extension (as per policy): </label>
+                            <label>12. Requested Period of Extension (as per policy): </label>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="extStayFrom">From:</label>
@@ -103,7 +103,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="accommodationRequirement">Accommodation Requirement (if already availing):</label>
+                            <label for="accommodationRequirement">13. Accommodation Requirement (if already
+                                availing):</label>
                             <span>&nbsp;&nbsp;</span>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="Yes"
@@ -117,7 +118,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="transportRequirement">Transport Requirement (if already availing):</label>
+                            <label for="transportRequirement">14. Transport Requirement (if already availing):</label>
                             <span>&nbsp;&nbsp;</span>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="Yes"
@@ -157,7 +158,7 @@
 
                         <br>
                         <div class="form-group">
-                            <label for="applicantSignature">Signature of Applicant / Date:</label>
+                            <label for="applicantSignature">15. Signature of Applicant / Date:</label>
                             <div class="row">
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="Signature" id="applicantSignature"
@@ -171,7 +172,7 @@
 
                         </div>
                         <div class="form-group">
-                            <label for="recommendationExtension">Recommendation for Extension in Tenure:</label>
+                            <label for="recommendationExtension">16. Recommendation for Extension in Tenure:</label>
                             <span>&nbsp;&nbsp;</span>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" value="yes"
@@ -187,12 +188,12 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="ncpSupervisor">NCP Supervisor/Contact Person:</label>
+                                <label for="ncpSupervisor">17. NCP Supervisor/Contact Person:</label>
                                 <input type="text" class="form-control" id="ncpSupervisor"
                                     v-model="officialInfo.ncpSupervisor" />
                             </div>
                             <div class="col-md-6">
-                                <label for="concernedDirector">Concerned Director:</label>
+                                <label for="concernedDirector">18. Concerned Director:</label>
                                 <input type="text" class="form-control" id="concernedDirector"
                                     v-model="officialInfo.concernedDirector" />
                             </div>
@@ -208,16 +209,16 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                                <label for="jeAIA">JE (A&IA):</label>
+                                <label for="jeAIA">1. JE (A&IA):</label>
                                 <input disabled type="text" class="form-control" id="jeAIA" v-model="officialInfo.jeAIA" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="managerAIA">Manager A&IA:</label>
+                                <label for="managerAIA">2. Manager A&IA:</label>
                                 <input disabled type="text" class="form-control" id="managerAIA"
                                     v-model="officialInfo.managerAIA" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="gmCAAD">GM CAAD</label>
+                                <label for="gmCAAD">3. GM CAAD</label>
                                 <input disabled type="text" class="form-control" id="gmCAAD"
                                     v-model="officialInfo.gmCAAD" />
                             </div>
@@ -235,7 +236,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="approvalDG">Approval by Concerned DG NCP:</label>
+                            <label for="approvalDG">4. Approval by Concerned DG NCP:</label>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <input disabled type="text" placeholder="Signature" class="form-control" id="approvalDG"
@@ -249,7 +250,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Signature of Concerned Authorities</label>
+                            <label>5. Signature of Concerned Authorities</label>
                             <div class="row">
                                 <div class="col-md-3 mb-3">
                                     <input disabled type="text" placeholder="GM Administration" class="form-control"
@@ -260,12 +261,12 @@
                                         v-model="officialInfo.gmCAAD2" />
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <input disabled type="text" placeholder="AM/Manager CAAD" class="form-control" id="amManagerCAAD"
-                                        v-model="officialInfo.amManagerCAAD" />
+                                    <input disabled type="text" placeholder="AM/Manager CAAD" class="form-control"
+                                        id="amManagerCAAD" v-model="officialInfo.amManagerCAAD" />
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <input disabled type="text" placeholder="JE CAAD (HR Wing)" class="form-control" id="jeCAAD"
-                                        v-model="officialInfo.jeCAAD" />
+                                    <input disabled type="text" placeholder="JE CAAD (HR Wing)" class="form-control"
+                                        id="jeCAAD" v-model="officialInfo.jeCAAD" />
                                 </div>
                             </div>
                         </div>
@@ -274,69 +275,101 @@
                         </div>
 
                         <div class="rectangle-box mt-3 p-3 border border-dark rounded">
+                            
                             <div class="row mb-2">
-                                <div class="col-1">a.</div>
                                 <div class="col-4">
-                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager Finance:</span></p>
+                                    <p class="mb-0">
+                                        <span>a.</span>
+                                        <span class="font-weight-bold">AM/Manager Finance:</span>
+                                    </p>
                                 </div>
+                                <div class="col-1">-</div>
                                 <div class="col-7">
                                     <p class="mb-0">for payment of honorarium/reimbursements if any etc.</p>
                                 </div>
                             </div>
+
                             <div class="row mb-2">
-                                <div class="col-1">b.</div>
                                 <div class="col-4">
-                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager HR:</span></p>
+                                    <p class="mb-0">
+                                        <span>b.</span>
+                                        <span class="font-weight-bold">AM/Manager HR:</span>
+                                    </p>
                                 </div>
+                                <div class="col-1">-</div>
                                 <div class="col-7">
                                     <p class="mb-0">to amend/issue NCP-Hosted Researchers Entry Card through CAAD.</p>
                                 </div>
                             </div>
+
+
                             <div class="row mb-2">
-                                <div class="col-1">c.</div>
                                 <div class="col-4">
-                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager IT:</span></p>
+                                    <p class="mb-0">
+                                        <span>c.</span>
+                                        <span class="font-weight-bold">AM/Manager IT:</span>
+                                    </p>
                                 </div>
+                                <div class="col-1">-</div>
                                 <div class="col-7">
                                     <p class="mb-0">to provide the internet and other related IT matter.</p>
                                 </div>
                             </div>
+
                             <div class="row mb-2">
-                                <div class="col-1">d.</div>
                                 <div class="col-4">
-                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager Estate:</span></p>
+                                    <p class="mb-0">
+                                        <span>f.</span>
+                                        <span class="font-weight-bold">AM/Manager Estate:</span>
+                                    </p>
                                 </div>
+                                <div class="col-1">-</div>
                                 <div class="col-7">
                                     <p class="mb-0">to facilitate accommodation, if applicable.</p>
                                 </div>
                             </div>
+
                             <div class="row mb-2">
-                                <div class="col-1">e.</div>
                                 <div class="col-4">
-                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager Transport:</span></p>
+                                    <p class="mb-0">
+                                        <span>e.</span>
+                                        <span class="font-weight-bold">AM/Manager Transport:</span>
+                                    </p>
                                 </div>
+                                <div class="col-1">-</div>
                                 <div class="col-7">
                                     <p class="mb-0">to facilitate enroute transport, if applicable.</p>
                                 </div>
                             </div>
+
                             <div class="row mb-2">
-                                <div class="col-1">f.</div>
                                 <div class="col-4">
-                                    <p class="mb-0"><span class="font-weight-bold">AM/Manager Stores:</span></p>
+                                    <p class="mb-0">
+                                        <span>f.</span>
+                                        <span class="font-weight-bold">AM/Manager Stores:</span>
+                                    </p>
                                 </div>
+                                <div class="col-1">-</div>
                                 <div class="col-7">
                                     <p class="mb-0">to issue quantity of items as per policy.</p>
                                 </div>
                             </div>
+
                             <div class="row mb-2">
-                                <div class="col-1">g.</div>
                                 <div class="col-4">
-                                    <p class="mb-0"><span class="font-weight-bold">Security Branch:</span></p>
+                                    <p class="mb-0">
+                                        <span>g.</span>
+                                        <span class="font-weight-bold">Security Branch</span>
+                                    </p>
                                 </div>
+                                <div class="col-1">-</div>
                                 <div class="col-7">
                                     <p class="mb-0">for information.</p>
                                 </div>
                             </div>
+
+
+                           
                         </div>
 
 

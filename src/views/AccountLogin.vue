@@ -225,15 +225,16 @@
                         </div>
 
                         <!-- Applicant's Signature and Department Head -->
+                        <br>
                         <div class="form-group">
-                            <label>Applicant Signature:</label>
+                            <label>21. Applicant Signature:</label>
                             <input type="text" class="form-control" v-model="formData.applicantSignature">
                         </div>
 
 
                         <!-- For Head of the Concerned Department -->
                         <div class="form-group">
-                            <label>For Head of the Concerned Department</label>
+                            <label>22. For Head of the Concerned Department</label>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <input type="text" class="form-control" placeholder="Dept. Head (Name)"

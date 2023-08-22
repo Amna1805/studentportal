@@ -4,9 +4,10 @@
             <h4 class="card-header">Register Now</h4>
         </div>
         <form>
-            <div class="card mb-4">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-sm-8 mb-sm-3 mx-auto evaluation-report mt-5">
+            <div class="card p-3 mb-4">
+            <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8 mb-sm-3 mx-auto evaluation-report mt-2">
+                        <h5 class="mb-3 text-center">Instructions:</h5>
                         <p><b><i>Applicants are required to read the NCP Hosted Researchers Policy available at
                                     www.ncp.edu.pk/ir.php
                                     carefully before filling the form.</i></b></p>
@@ -22,9 +23,12 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="card p-3">
+              
                 <fieldset>
                     <legend class="card-header d-flex justify-content-between align-items-center">
-                        PART-I (to be completed by Applicant Hosted Researcher):
+                        Completed by Applicant Hosted Researcher:
                         <div
                             class="passport-picture-area bg-light rounded-circle d-flex align-items-center justify-content-center">
                             <i class="fas fa-user fa-3x text-primary"></i>
@@ -255,5 +259,6 @@ export default {
 .input-line {
     border: none;
     border-bottom: 1px solid black;
+    outline: none;
 }</style>
   
