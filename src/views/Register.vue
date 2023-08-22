@@ -9,7 +9,7 @@
                     <div class="col-12 col-sm-8 mb-sm-3 mx-auto evaluation-report mt-2">
                         <h5 class="mb-3 text-center">Instructions:</h5>
                         <p><b><i>Applicants are required to read the NCP Hosted Researchers Policy available at
-                                    www.ncp.edu.pk/ir.php
+                                    www.ncp.edu.pk/hr.php
                                     carefully before filling the form.</i></b></p>
                         <p><b><i>Applicant must have first division or equivalent grade in final/last degree and no more
                                     than one second

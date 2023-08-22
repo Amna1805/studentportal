@@ -64,7 +64,7 @@
                                 <input type="text" class="form-control" v-model="formData.dateOfBirth">
                             </div>
                             <div class="col-md-12 mb-2">
-                                <label>Duration of Late Sitting</label>
+                                <label>Duration of Internship</label>
                                 <div>
                                     <div class="d-inline align-items-center">
                                         <label for="latesitstart" class="me-2d-inline"
