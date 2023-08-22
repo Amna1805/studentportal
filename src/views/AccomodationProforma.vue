@@ -1,6 +1,6 @@
 <template>
     <div class="container py-4">
-        <div class="card bg-primary text-white mb-4">
+        <div class="card bg-primary text-white mb-4 printShow">
             <h4 class="card-header">Accommodation Proforma</h4>
         </div>
         <form>
@@ -126,17 +126,27 @@
                             <label for="applicantSignature">12. Signature of Applicant Hosted Researcher:</label>
                             <input type="text" id="applicantSignature" name="applicantSignature" class="input-line">
                         </div>
+                        <br>
                         <div>
                             <label for="recommendationDirector">13. Recommendation of Concerned Director for Validity of
                                 Request/Period:</label>
                             <input type="text" id="recommendationDirector" name="recommendationDirector" class="input-line">
                         </div>
 
+                        <div class="printOff rectangle-box p-3 mt-4">
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <label>14. Please print the form and upload it:</label>
+                                <button class="btn btn-success" @click="printForm">
+                                    <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
+                                </button>
+                                <input type="file" @change="handleFileUpload" class="form-control-file">
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
             </div>
 
-            <div class="card mb-4">
+            <div class="card mb-4 d-none">
                 <fieldset>
                     <legend class="card-header">Part-II (for Official Use): Action by CAAD Hosted Researchers Branch:
                     </legend>
@@ -189,12 +199,12 @@
                         <div class="form-group">
                             <label>4. Signature</label>
                             <div class="row align-items-center">
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-3 text-center">
                                     <input disabled type="text" id="jecaad" name="jecaad" class="input-line">
                                     <br>
                                     <label class="input-label text-center">JE CAAD</label>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="recommendationDirector1"
                                             name="recommendationDirector1" class="input-line">
@@ -202,7 +212,7 @@
                                         <label class="input-label text-center">Manager/GM A&IA</label>
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="recommendationDirector2"
                                             name="recommendationDirector2" class="input-line">
@@ -216,7 +226,7 @@
                 </fieldset>
             </div>
 
-            <div class="card mb-4">
+            <div class="card mb-4 d-none">
                 <fieldset>
                     <legend class="card-header">Part-III (for Official Use): Action by NCP Administration (Estate Branch):
                     </legend>
@@ -265,12 +275,12 @@
                         <div class="form-group">
                             <label>5. Signature</label>
                             <div class="row align-items-center">
-                                <div class="col-md-3 mb-3">
+                                <div class="col-md-3 mb-3 text-center">
                                     <input disabled type="text" id="jecaad" name="jecaad" class="input-line">
                                     <br>
                                     <label class="input-label text-center">J.E Estate</label>
                                 </div>
-                                <div class="col-md-3 mb-3">
+                                <div class="col-md-3 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="recommendationDirector1"
                                             name="recommendationDirector1" class="input-line">
@@ -278,7 +288,7 @@
                                         <label class="input-label text-center">AM/Manager Estate</label>
                                     </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
+                                <div class="col-md-3 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="recommendationDirector2"
                                             name="recommendationDirector2" class="input-line">
@@ -286,7 +296,7 @@
                                         <label class="input-label text-center">GM Estate</label>
                                     </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
+                                <div class="col-md-3 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="recommendationDirector2"
                                             name="recommendationDirector2" class="input-line">
@@ -300,7 +310,7 @@
                 </fieldset>
             </div>
 
-            <div class="card mb-4">
+            <div class="card mb-4 d-none">
                 <fieldset>
                     <legend class="card-header">Part-IV (for Official Use): Action by NCP Administration (Estate Branch):
                     </legend>
@@ -361,12 +371,12 @@
                         <div class="form-group">
                             <label>7. Signature</label>
                             <div class="row align-items-center">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-3 text-center">
                                     <input disabled type="text" id="caretaker" name="caretaker" class="input-line">
                                     <br>
                                     <label class="input-label text-center">Caretaker's</label>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="applicant" name="applicant" class="input-line">
                                         <br>
@@ -379,16 +389,26 @@
                 </fieldset>
             </div>
 
-            <div class="form-actions d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-success">Submit</button>
+            <div class="printOff">
+                <div class="form-actions d-flex justify-content-center mt-4">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
             </div>
         </form>
     </div>
 </template>
   
 <script>
+// import html2pdf from 'html2pdf.js';
 export default {
     name: 'AccomodationProforma',
+
+    methods: {
+        printForm() {
+            window.print();
+        },
+    },
+
     data() {
         return {
             applicantInfo: {
@@ -426,10 +446,20 @@ export default {
         };
     },
 };
+
+
+
 </script>
+
+<style media="print">
+@import "@/assets/css/print.css";
+</style>
 <style>
 .input-line {
     border: none;
     border-bottom: 1px solid black;
 }
+.rectangle-box {
+        border: 1px solid #000;
+    }
 </style>

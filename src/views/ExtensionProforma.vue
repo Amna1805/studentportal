@@ -157,20 +157,18 @@
                         </div>
 
                         <br>
-                        <div class="form-group">
-                            <label for="applicantSignature">15. Signature of Applicant / Date:</label>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Signature" id="applicantSignature"
-                                        v-model="researcherInfo.applicantSignature" />
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="date" placeholder="Date" class="form-control" id="applyDate"
-                                        v-model="researcherInfo.applyDate">
-                                </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="applicantSignature">15. Signature of Applicant / Date:</label>
+                                <input type="text" id="applicantSignature" name="applicantSignature" class="input-line">
                             </div>
-
+                            <div class="col-md-6">
+                                <input type="date" placeholder="Date" class="form-control" id="applyDate"
+                                v-model="researcherInfo.applyDate">
+                            </div>
                         </div>
+
+                        <br>
                         <div class="form-group">
                             <label for="recommendationExtension">16. Recommendation for Extension in Tenure:</label>
                             <span>&nbsp;&nbsp;</span>
@@ -186,96 +184,115 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="ncpSupervisor">17. NCP Supervisor/Contact Person:</label>
-                                <input type="text" class="form-control" id="ncpSupervisor"
-                                    v-model="officialInfo.ncpSupervisor" />
-                            </div>
-                            <div class="col-md-6">
-                                <label for="concernedDirector">18. Concerned Director:</label>
-                                <input type="text" class="form-control" id="concernedDirector"
-                                    v-model="officialInfo.concernedDirector" />
+                        <div class="form-group">
+                            <label>17. Signature/Date/Stamp</label>
+                            <div class="row align-items-center">
+                                <div class="col-md-6 mb-3 text-center">
+                                    <input disabled type="text" id="ncpSup" name="ncpSup" class="input-line">
+                                    <br>
+                                    <label class="input-label text-center">NCP Supervisor/Contact Person</label>
+                                </div>
+                                <div class="col-md-6 mb-3 text-center">
+                                    <div>
+                                        <input disabled type="text" id="dir" name="dir" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">Concerned Director</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </fieldset>
             </div>
 
-            <div class="card mt-4">
+            <div class="card mt-4 d-none">
                 <fieldset>
                     <legend class="card-header">PART-II (for Official Use): Action by Hosted Researchers Branch - CAAD
                     </legend>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label for="jeAIA">1. JE (A&IA):</label>
-                                <input disabled type="text" class="form-control" id="jeAIA" v-model="officialInfo.jeAIA" />
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="managerAIA">2. Manager A&IA:</label>
-                                <input disabled type="text" class="form-control" id="managerAIA"
-                                    v-model="officialInfo.managerAIA" />
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="gmCAAD">3. GM CAAD</label>
-                                <input disabled type="text" class="form-control" id="gmCAAD"
-                                    v-model="officialInfo.gmCAAD" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label>(to vet above registration contents of HR)</label>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>(to vet above registration contents of HR)</label>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>(to forward the application to DG Secretariat):</label>
-                            </div>
-                        </div>
 
                         <div class="form-group">
-                            <label for="approvalDG">4. Approval by Concerned DG NCP:</label>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <input disabled type="text" placeholder="Signature" class="form-control" id="approvalDG"
-                                        v-model="officialInfo.approvalDG" />
+                            <label>1. Signature</label>
+                            <div class="row align-items-center">
+                                <div class="col-md-4 mb-3 text-center">
+                                    <input disabled type="text" id="ncpSup" name="ncpSup" class="input-line">
+                                    <br>
+                                    <label for="jeAIA">i. JE (A&IA)</label>
+                                    <br>
+                                        <p class="small">(to vet above registration contents of HR)</p> 
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <input disabled type="date" class="form-control" id="approvalDate"
-                                        v-model="officialInfo.approvalDate" />
+                                <div class="col-md-4 mb-3 text-center">
+                                    <div>
+                                        <input disabled type="text" id="dir" name="dir" class="input-line">
+                                        <br> 
+                                        <label for="managerAIA">ii. Manager A&IA</label>     
+                                        <br>
+                                        <p class="small">(to vet above registration contents of HR)</p>   
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3 text-center">
+                                    <div>
+                                        <input disabled type="text" id="dir" name="dir" class="input-line"> 
+                                        <br>
+                                        <label for="managerAIA">iii. GM CAAD</label>  
+                                        <br>  
+                                        <p class="small">(to forward the application to DG Secretariat)</p>    
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="applicantSignature">2. Approval by Concerned DG NCP / Date:</label>
+                                <input type="text" id="dgSignature" name="dgSignature" class="input-line">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="date" placeholder="Date" class="form-control" id="approvalDate"  v-model="officialInfo.approvalDate">
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                            <label>5. Signature of Concerned Authorities</label>
-                            <div class="row">
-                                <div class="col-md-3 mb-3">
-                                    <input disabled type="text" placeholder="GM Administration" class="form-control"
-                                        id="gmAdministration" v-model="officialInfo.gmAdministration" />
+                            <label>3. Signature of Concerned Authorities</label>
+                            <div class="row align-items-center">
+                                <div class="col-md-3 mb-3 text-center">
+                                    <input disabled type="text" id="jecaad" name="jecaad" class="input-line">
+                                    <br>
+                                    <label class="input-label text-center">GM Administration</label>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                    <input disabled type="text" placeholder="GM CAAD" class="form-control" id="gmCAAD2"
-                                        v-model="officialInfo.gmCAAD2" />
+                                <div class="col-md-3 mb-3 text-center">
+                                    <div>
+                                        <input disabled type="text" id="recommendationDirector1"
+                                            name="recommendationDirector1" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">GM CAAD</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                    <input disabled type="text" placeholder="AM/Manager CAAD" class="form-control"
-                                        id="amManagerCAAD" v-model="officialInfo.amManagerCAAD" />
+                                <div class="col-md-3 mb-3 text-center">
+                                    <div>
+                                        <input disabled type="text" id="recommendationDirector2"
+                                            name="recommendationDirector2" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">AM/Manager CAAD</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                    <input disabled type="text" placeholder="JE CAAD (HR Wing)" class="form-control"
-                                        id="jeCAAD" v-model="officialInfo.jeCAAD" />
+                                <div class="col-md-3 mb-3 text-center">
+                                    <div>
+                                        <input disabled type="text" id="recommendationDirector2"
+                                            name="recommendationDirector2" class="input-line">
+                                        <br>
+                                        <label class="input-label text-center">JE CAAD (Hosted Researchers Wing)</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label>(for further processing & necessary action)</label>
                         </div>
 
                         <div class="rectangle-box mt-3 p-3 border border-dark rounded">
-                            
+
                             <div class="row mb-2">
                                 <div class="col-4">
                                     <p class="mb-0">
@@ -369,7 +386,7 @@
                             </div>
 
 
-                           
+
                         </div>
 
 
@@ -411,24 +428,13 @@ export default {
                 accommodationRequirement: null,
                 transportRequirement: null,
                 undertaking: "",
-                applicantSignature: "",
                 extAgreePolicy: "",
                 applyDate: ""
             },
             officialInfo: {
                 // ... Previous officialInfo properties ...
                 recommendationExtension: '', // Yes or No
-                ncpSupervisor: '',
-                concernedDirector: '',
-                jeAIA: '',
-                managerAIA: '',
-                gmCAAD: '',
-                approvalDG: '',
-                approvalDate: '',
-                gmAdministration: '',
-                gmCAAD2: '',
-                amManagerCAAD: '',
-                jeCAAD: '',
+                approvalDate:''
             },
         };
     }

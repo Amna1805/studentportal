@@ -62,7 +62,8 @@
                                         v-model="formData.firstName">
                                 </div>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" placeholder="Last Name" v-model="formData.lastName">
+                                    <input type="text" class="form-control" placeholder="Last Name"
+                                        v-model="formData.lastName">
                                 </div>
                             </div>
                         </div>
@@ -169,7 +170,7 @@
                         <!-- Section 20: Attach Proof of Affiliation -->
                         <div class="form-group">
                             <label>20. Attach the proof of affiliation with NCP. (if applicable)</label>
-                            <input type="file" class="form-control-file">
+                            <input type="file" class="custom-file-input" id="proofOfFile" accept=".pdf">
                         </div>
 
 
@@ -226,13 +227,17 @@
 
                         <!-- Applicant's Signature and Department Head -->
                         <br>
-                        <div class="form-group">
-                            <label>21. Applicant Signature:</label>
-                            <input type="text" class="form-control" v-model="formData.applicantSignature">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="applicantSignature">21. Applicant Signature: </label>
+                                <input type="text" id="applicantSignature" name="applicantSignature" class="input-line">
+                            </div>
                         </div>
 
 
                         <!-- For Head of the Concerned Department -->
+
+                        <br>
                         <div class="form-group">
                             <label>22. For Head of the Concerned Department</label>
                             <div class="row">
@@ -241,12 +246,13 @@
                                         v-model="formData.deptHeadName">
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <input type="date" class="form-control" placeholder="Date"
+                                    <label>Date:</label>
+                                    <input type="text" class="input-line"
                                         v-model="formData.deptHeadDate">
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <input type="text" class="form-control" placeholder="Signature"
-                                        v-model="formData.deptHeadSignature">
+                                    <label>Sign:</label>
+                                    <input type="text" class="input-line">
                                 </div>
                             </div>
                         </div>
@@ -256,7 +262,7 @@
 
 
             <!-- For IT Department Use -->
-            <div class="card mb-4">
+            <div class="card mb-4 d-none">
                 <fieldset>
                     <legend class="card-header d-flex justify-content-between align-items-center">
                         PART-II (For IT Department Use):
@@ -280,7 +286,8 @@
                                 <div class="row">
                                     <div class="col-md-4" v-for="(checkbox, key) in formData.itCheckList" :key="key">
                                         <div class="form-check">
-                                            <input disabled type="checkbox" class="form-check-input" :id="key" v-model="itCheckList">
+                                            <input disabled type="checkbox" class="form-check-input" :id="key"
+                                                v-model="itCheckList">
                                             <label class="form-check-label" :for="key">{{ itCheckListLabels[key] }}</label>
                                         </div>
                                     </div>
@@ -288,18 +295,29 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label>4. GM IT:</label>
-                                <input disabled type="text" class="form-control" v-model="formData.gmIt">
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>5. IT Personnel Name:</label>
-                                <input disabled type="text" class="form-control" v-model="formData.itPersonnelName">
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label>6. Signature:</label>
-                                <input disabled type="text" class="form-control" v-model="formData.itSignature">
+                        <div class="form-group">
+                            <label>4. Approval by IT Dept:</label>
+                            <div class="row align-items-center">
+                                <div class="col-md-4 mb-3 text-center">
+                                    <input disabled type="text" id="ncpSup" name="ncpSup" class="input-line">
+                                    <br>
+                                    <label for="GMIT">i. GM IT</label>
+                                </div>
+                                <div class="col-md-4 mb-3 text-center">
+                                    <div>
+                                        <input disabled type="text" id="dir" name="dir" class="input-line">
+                                        <br> 
+                                        <label for="managerAIA">ii. IT Personnel Name</label>     
+                         
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3 text-center">
+                                    <div>
+                                        <input disabled type="text" id="dir" name="dir" class="input-line"> 
+                                        <br>
+                                        <label for="managerAIA">iii. Signature</label>  
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -334,7 +352,6 @@ export default {
                 telephoneOffice: '',
                 mobileNumber: '',
                 // Add more form data fields here
-                applicantSignature: '',
                 departmentHead: '',
                 // Add more form data fields here
                 // Section 13: CoE Name
@@ -345,6 +362,7 @@ export default {
 
                 // Section 15: Email Address
                 emailAddress: '',
+                printForm:'',
 
                 // Section 16: Services required
                 services: {
@@ -367,9 +385,7 @@ export default {
                 agreePolicy: false,
 
                 deptHeadName: '',
-                deptHeadDate: '',
-                deptHeadSignature: '',
-
+              
                 // for IT dept
                 itUserId: '',
                 itDomain: '',
@@ -383,10 +399,6 @@ export default {
                     allUsersMailingList: false,
                     departmentalMailingList: false,
                 },
-                gmIt: '',
-                itPersonnelName: '',
-                itSignature: '',
-
             },
             itCheckListLabels: {
                 emailAccount: 'Email Account',
