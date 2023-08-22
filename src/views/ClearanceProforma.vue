@@ -22,25 +22,25 @@
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label>1. Name:</label>
-                                <input type="text" class="form-control" v-model="formData.ncpIdNumber">
+                                <input type="text" class="form-control" v-model="formData.name">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>2. Department:</label>
-                                <input type="text" class="form-control" v-model="formData.dateOfBirth">
+                                <input type="text" class="form-control" v-model="formData.department">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>3. Designation:</label>
-                                <input type="text" class="form-control" v-model="formData.nationality">
+                                <input type="text" class="form-control" v-model="formData.designation">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label>4. Reg No:</label>
-                                <input type="text" class="form-control" v-model="formData.cnicNumber">
+                                <input type="text" class="form-control" v-model="formData.regno">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>5. NCP Entry Card No:</label>
-                                <input type="text" class="form-control" v-model="formData.passportNumber">
+                                <input type="text" class="form-control" v-model="formData.entryno">
                             </div>
                         </div>
 
@@ -52,28 +52,34 @@
             </div>
             <div class="card mb-3 p-5">
                 <div class="option">
-                    <input type="radio" name="leave-option" id="option-1" value="option1">
-                    <label for="option-1">Option-1:</label>
-                    <p>It is stated that I have to leave NCP on a temporary basis to join back my parent department
-                        due to unavoidable circumstances on <input type="text" name="date1" class="input-line">. I,
-                        therefore, discontinue my On-Campus Research Work at NCP Department <input type="text"
-                            name="department1" class="input-line"> under supervision of <input type="text"
-                            name="supervisor1" class="input-line"> w.e.f. <input type="text" name="start-date1"
-                            class="input-line">. I shall rejoin NCP w.e.f. <input type="text" name="rejoin-date1"
-                            class="input-line">. I have settled dues and/or pending matters with all concerned
-                        departments at NCP Campus and there is no claim of any description against me.</p>
+                    <div class="form-check">
+                        <input type="radio" checked class="form-check-input" id="P" value="temporraybasis"
+                            v-model="formData.option">
+                        <label for="option-1">Option-1:</label>
+                        <p>It is stated that I have to leave NCP on a temporary basis to join back my parent department
+                            due to unavoidable circumstances on <input type="text" name="date1" class="input-line">. I,
+                            therefore, discontinue my On-Campus Research Work at NCP Department <input type="text"
+                                name="department1" class="input-line"> under supervision of <input type="text"
+                                name="supervisor1" class="input-line"> w.e.f. <input type="text" name="start-date1"
+                                class="input-line">. I shall rejoin NCP w.e.f. <input type="text" name="rejoin-date1"
+                                class="input-line">. I have settled dues and/or pending matters with all concerned
+                            departments at NCP Campus and there is no claim of any description against me.</p>
+                    </div>
                 </div>
                 <div class="option">
-                    <input type="radio" name="leave-option" id="option-2" value="option2">
-                    <label for="option-2">Option-2:</label>
-                    <p>It is stated that I, <input type="text" name="name2" class="input-line">, have finally
-                        completed my research work/internship at NCP Campus/Department <input type="text" name="department2"
-                            class="input-line"> under supervision of <input type="text" name="supervisor2"
-                            class="input-line"> and will proceed to join my parent Institute
-                        namely: <input type="text" name="parent-institute" class="input-line">, w.e.f. <input type="text"
-                            name="join-date2" class="input-line">. I have settled dues and/or pending
-                        matters with all concerned departments at NCP Campus and there is no claim of any
-                        description against me.</p>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="status" value="completed"
+                            v-model="formData.option">
+                        <label for="option-2">Option-2:</label>
+                        <p>It is stated that I, <input type="text" name="name2" class="input-line">, have finally
+                            completed my research work/internship at NCP Campus/Department <input type="text"
+                                name="department2" class="input-line"> under supervision of <input type="text"
+                                name="supervisor2" class="input-line"> and will proceed to join my parent Institute
+                            namely: <input type="text" name="parent-institute" class="input-line">, w.e.f. <input
+                                type="text" name="join-date2" class="input-line">. I have settled dues and/or pending
+                            matters with all concerned departments at NCP Campus and there is no claim of any
+                            description against me.</p>
+                    </div>
                 </div>
             </div>
 
@@ -232,86 +238,14 @@ export default {
     data() {
         return {
             formData: {
-                ncpIdNumber: '',
-                dateOfBirth: '',
-                nationality: '',
-                cnicNumber: '',
-                passportNumber: '',
-                nameTitle: 'Mr.', // Default value
-                firstName: '',
-                lastName: '',
-                designation: '',
-                building: '',
-                floor: '',
-                roomNumber: '',
-                telephoneOffice: '',
-                mobileNumber: '',
-                // Add more form data fields here
-                applicantSignature: '',
-                departmentHead: '',
-                // Add more form data fields here
-                // Section 13: CoE Name
-                coeName: '',
-
-                // Section 14: Department/Branch
-                departmentBranch: '',
-
-                // Section 15: Email Address
-                emailAddress: '',
-
-                // Section 16: Services required
-                services: {
-                    windowsAccount: false,
-                    emailAccount: false,
-                    printQuota: false,
-                    ldapAccount: false,
-                },
-
-                // Section 17: Specify time duration of stay
-                stayFrom: '',
-                stayTo: '',
-
-                // Section 18: Laptop/Desktop MAC Address
-                macAddress: '',
-
-                // Section 19: Purpose of the IT account
-                itAccountPurpose: '',
-
-                agreePolicy: false,
-
-                deptHeadName: '',
-                deptHeadDate: '',
-                deptHeadSignature: '',
-
-                // for IT dept
-                itUserId: '',
-                itDomain: '',
-                itCheckList: {
-                    emailAccount: false,
-                    ldapAccount: false,
-                    vpnAccount: false,
-                    windowsAccount: false,
-                    printQuota: false,
-                    recordUpdate: false,
-                    allUsersMailingList: false,
-                    departmentalMailingList: false,
-                },
-                gmIt: '',
-                itPersonnelName: '',
-                itSignature: '',
-
-            },
-            itCheckListLabels: {
-                emailAccount: 'Email Account',
-                ldapAccount: 'Linux (LDAP) Account',
-                vpnAccount: 'VPN Account',
-                windowsAccount: 'Windows Login Account',
-                printQuota: 'Print Quota',
-                recordUpdate: 'Record Update',
-                allUsersMailingList: 'All Users Mailing List',
-                departmentalMailingList: 'Departmental Mailing List',
-            },
-        };
+               name:'',
+               department:'',
+               designation:'',
+               regno:'',
+               entryno:'',
+               option:'',
+          }
+        }
     }
 };
 </script>

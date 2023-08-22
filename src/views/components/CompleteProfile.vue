@@ -72,6 +72,16 @@
             </div>
           </div>
         </li>
+        <li class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center ms-3">
+            <i class="fas fa-file text-gray"></i>
+          </div>
+            <div class="d-flex flex-column ms-3">
+              <h6 class="mb-1 text-dark font-weight-bold text-sm">Documents Details</h6>
+            </div>
+          </div>
+        </li>
       </ul>
       </div>
       
