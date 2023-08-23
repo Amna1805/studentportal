@@ -14,7 +14,7 @@
                 <div class="col my-auto">
                   <div class="h-100">
                     <h5 class="mb-1">Welcome back!</h5>
-                    <p class="mb-0 font-weight-bold text-sm">AMNAAAA MUZAFFAR</p>
+                    <p class="mb-0 font-weight-bold text-sm">AMNA MUZAFFAR</p>
                   </div>
                 </div>
                 <div class="col-auto text-end">
@@ -27,17 +27,23 @@
           </div>
         </div>
       </div>
+      <div class="mt-4 row">
+        <div class="col-12">
+          <projects-table />
+    
+        </div>
+      </div>
+
     </div>
- 
   </div>
 </template>
 <script>
-
+import ProjectsTable from "./components/ProjectsTable.vue";
 // import Carousel from "./components/Carousel.vue";
 export default {
   name: "dashboard-default",
   components: {
-    
+    ProjectsTable,
     // Carousel
   },
 };
