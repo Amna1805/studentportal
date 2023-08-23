@@ -1,5 +1,6 @@
 <template>
-  <nav aria-label="breadcrumb">
+  <div></div>
+  <!-- <nav aria-label="breadcrumb">
     <ol
       class="px-0 pt-1 pb-0 mb-0 bg-transparent breadcrumb"
       :class="`${this.$store.state.isRTL ? '' : ' me-sm-6'} ${this.$store.state.isNavFixed ? 'text-dark' : 'text-white' }`"
@@ -20,7 +21,7 @@
     <h6 class="mb-0 font-weight-bolder" :class="this.$store.state.isNavFixed ? 'text-dark' : 'text-white'">
       {{ currentPage }}
     </h6>
-  </nav>
+  </nav> -->
 </template>
 
 <script>

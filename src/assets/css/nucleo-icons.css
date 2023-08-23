@@ -241,9 +241,9 @@ License - nucleoapp.com/license/
   content: "\ea0d";
 }
 
-.ni-bell-55::before {
+/* .ni-bell-55::before {
   content: "\ea0e";
-}
+} */
 
 .ni-bold-down::before {
   content: "\ea0f";
