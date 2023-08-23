@@ -8,7 +8,7 @@
     <div class="container" >
     <div class="row">
       <div class="col-12">
-        <navbar isBlur="blur  fixed-top border-radius-lg my-3 py-2 start-0 end-0 mx-auto shadow" v-bind:darkMode="true"
+        <navbar isBlur="blur  border-radius-lg my-3 py-2 start-0 end-0 mx-auto shadow" v-bind:darkMode="true"
           isBtn="bg-gradient-success" />
       </div>
     </div>

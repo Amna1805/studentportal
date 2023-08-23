@@ -390,10 +390,15 @@
             </div>
 
             <div class="printOff">
-                <div class="form-actions d-flex justify-content-center mt-4">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                <div class="row">
+                    <div class="form-actions d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-success me-2" @click="saveForm">Save</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
                 </div>
             </div>
+
+
         </form>
     </div>
 </template>
@@ -402,12 +407,6 @@
 // import html2pdf from 'html2pdf.js';
 export default {
     name: 'AccomodationProforma',
-
-    methods: {
-        printForm() {
-            window.print();
-        },
-    },
 
     data() {
         return {
@@ -445,10 +444,64 @@ export default {
             },
         };
     },
+
+    computed: {
+        cookieName() {
+            return 'form-data-' + this.$route.path; // Unique name based on the route
+        },
+    },
+
+    created() {
+        this.loadSavedFormData(); // Load saved data when the component is created
+    },
+
+    methods: {
+        printForm() {
+            window.print();
+        },
+        loadSavedFormData() {
+            const formDataCookie = this.getCookie(this.cookieName);
+            if (formDataCookie) {
+                const formData = JSON.parse(formDataCookie);
+                Object.assign(this.applicantInfo, formData);
+            }
+        },
+        saveForm() {
+            const formData = {
+                name: this.applicantInfo.name,
+                applicationDate: this.applicantInfo.applicationDate,
+                registrationNo: this.applicantInfo.registrationNo,
+                ncpId: this.applicantInfo.ncpId,
+                department: this.applicantInfo.department,
+                expiryDate: this.applicantInfo.expiryDate,
+                parentOrgType: this.applicantInfo.parentOrgType,
+                parentOrgName: this.applicantInfo.parentOrgName,
+                accommodationFromDate: this.applicantInfo.accommodationFromDate,
+                accommodationToDate: this.applicantInfo.accommodationToDate,
+                contactCell: this.applicantInfo.contactCell,
+                contactRes: this.applicantInfo.contactRes,
+                contactLabExt: this.applicantInfo.contactLabExt,
+                securityProforma: this.applicantInfo.securityProforma,
+            };
+            this.setCookie(this.cookieName, JSON.stringify(formData), 365);
+            alert('Form data saved.');
+        },
+        setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        },
+        getCookie(name) {
+            const value = "; " + document.cookie;
+            const parts = value.split("; " + name + "=");
+            if (parts.length === 2) {
+                return parts.pop().split(";").shift();
+            }
+            return null;
+        },
+    },
 };
-
-
-
 </script>
 
 <style media="print">
@@ -459,7 +512,8 @@ export default {
     border: none;
     border-bottom: 1px solid black;
 }
+
 .rectangle-box {
-        border: 1px solid #000;
-    }
+    border: 1px solid #000;
+}
 </style>

@@ -1,38 +1,28 @@
 <template>
-  <nav class="navbar navbar-expand-md fixed-top z-index-3 w-80 "
-    :class="isBlur ? isBlur : 'shadow-none navbar-transparent w-80 fixed-top'">
-    <div class="container ps-2 pe-0">
-      <ul class="navbar-nav">
-       
+  <div class="container-fluid py-4">
+    <nav class="navbar navbar-expand-md w-80 mx-auto"  :class="isBlur ? isBlur : ''">
+      <div class="container">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <div class="d-flex">
-          <a class="navbar-brand" href="https://www.ncp.edu.pk/">
-            <img src="/ncplogo.png" width="50" height="50" class="logo img-fluid ">
-          </a>
-          <h4 class="mt-3">NATIONAL CENTRE FOR PHYSICS</h4>
-        </div>
-        </li>
-       
-      
-      </ul>
-    </div>
-  </nav>
+              <a class="navbar-brand" href="https://www.ncp.edu.pk/">
+                <img src="/ncplogo.png" width="50" height="50" class="logo img-fluid">
+              </a>
+              <h4 class="mt-3 text-black">NATIONAL CENTRE FOR PHYSICS</h4>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </template>
 
-
-
-
-
 <script>
-import downArrWhite from "@/assets/img/down-arrow-white.svg";
-import downArrBlack from "@/assets/img/down-arrow-dark.svg";
-
 export default {
   name: "NavbarHead",
   data() {
     return {
-      downArrWhite,
-      downArrBlack
+      // Your data here
     };
   },
   props: {
@@ -45,18 +35,17 @@ export default {
     }
   },
   computed: {
-    darkModes() {
+    darkModes(){
       return {
         "text-dark": this.darkMode
-      };
+      }
     }
+  
   }
 };
 </script>
+
 <style>
-body{
-  overflow-x: hidden;
-}
 .logo {
   background-color: transparent;
   padding: 0.25rem;
@@ -69,5 +58,10 @@ body{
 
 .logo:hover {
   background-color: rgba(200, 200, 200, 0.5);
+}
+nav{
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
 }
 </style>
