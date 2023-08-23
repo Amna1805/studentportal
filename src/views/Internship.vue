@@ -249,128 +249,152 @@
                         applicable after discussion with the Supervisor/Co-Supervisor at NCP campus).</p>
                     <p><b>Supervisor / Co-Supervisor of Parent Department:</b></p>
                     <div class="row">
-                        <div class="col-md-4"> <label>Name:</label><input type="text" class="form-control" v-model="formData.researchdept"></div>
-                    <div class="col-md-4">  <label>Designation:</label><input type="text" class="form-control" v-model="formData.researchdept"></div>
-                    <div class="col-md-4">  <label>Department:</label><input type="text" class="form-control" v-model="formData.researchdept"></div>
-                </div>
-<div class="mt-7">  <p> Signature with Date/Stamp: <input type="text" name="name" class="input-line text-center"></p></div>
+                        <div class="col-md-4"> <label>Name:</label><input type="text" class="form-control"
+                                v-model="formData.researchdept"></div>
+                        <div class="col-md-4"> <label>Designation:</label><input type="text" class="form-control"
+                                v-model="formData.researchdept"></div>
+                        <div class="col-md-4"> <label>Department:</label><input type="text" class="form-control"
+                                v-model="formData.researchdept"></div>
+                    </div>
+                    <div class="mt-7">
+                        <p> Signature with Date/Stamp: <input type="text" name="name" class="input-line text-center"></p>
+                    </div>
 
+
+                </div>
+            </div>
+
+            <div class="card mb-4 p-3">
+                <p class="small-text"><b><u>
+                            Checklist of Documents</u></b></p>
+                <p style="font-size: 14px;"><b>Note:</b> The Police Verification Proforma can be downloaded from the link <a
+                        href="https://www.ncp.edu.pk/docs/caad/police-verification-form-2016.pdf"
+                        class="text-success"><u>Police
+                            Verification Proforma</u></a>.</p>
+
+                <div class="table-responsive mt-3">
+                    <table class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 40%;">Document Name</th>
+                                <th style="width: 20%;">Upload Document</th>
+                                <th style="width: 20%;">Checklist</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Attested Copy of Last Degree</td>
+                                <td> <label class="attach-label" for="attach-input">Attach</label>
+                                    <input type="file" class="attach-input" id="attach-input">
+                                </td>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Updated Brief CV (including list of publications during last three years)</td>
+                                <td> <label class="attach-label" for="attach-input">Attach</label>
+                                    <input type="file" class="attach-input" id="attach-input">
+                                </td>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Attested Copy of CNIC/Passport</td>
+                                <td> <label class="attach-label" for="attach-input">Attach</label>
+                                    <input type="file" class="attach-input" id="attach-input">
+                                </td>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Referral Letter from parent Department/University/Organization</td>
+                                <td> <label class="attach-label" for="attach-input">Attach</label>
+                                    <input type="file" class="attach-input" id="attach-input">
+                                </td>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Passport Size Picture(Blue or White Background)</td>
+                                <td> <label class="attach-label" for="attach-input">Attach</label>
+                                    <input type="file" class="attach-input" id="attach-input">
+                                </td>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Police Verification Proforma</td>
+                                <td> <label class="attach-label" for="attach-input">Attach</label>
+                                    <input type="file" class="attach-input" id="attach-input">
+                                </td>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Immunization Certificate (COVID-19)</td>
+                                <td> <label class="attach-label" for="attach-input">Attach</label>
+                                    <input type="file" class="attach-input" id="attach-input">
+                                </td>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center align-items-center">
+                                        <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
+            <div class="card mb-4 p-3">
+                <p style="font-size: 14px;"><b><u>Note:</u></b> Students should print this filled form, have it signed by
+                    their university, and then upload it again in PDF format.</p>
+                <div class="printOff rectangle-box p-3 ">
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <label>14. Please print the form and upload it:</label>
+                        <button class="btn btn-success" @click="printForm">
+                            <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
+                        </button>
+                        <input type="file" @change="generatePDF" class="form-control-file">
+                    </div>
+                </div>
+            </div>
+            <!-- Submit Button -->
+            <div class="form-actions d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
     </div>
-
-    <div class="card mb-4 p-3">
-        <p class="small-text"><b><u>
-                    Checklist of Documents</u></b></p>
-        <p style="font-size: 14px;"><b>Note:</b> The Police Verification Proforma can be downloaded from the link <a
-                href="https://www.ncp.edu.pk/docs/caad/police-verification-form-2016.pdf" class="text-success"><u>Police
-                    Verification Proforma</u></a>.</p>
-
-        <div class="table-responsive mt-3">
-            <table class="table-bordered">
-                <thead>
-                    <tr>
-                        <th style="width: 40%;">Document Name</th>
-                        <th style="width: 20%;">Upload Document</th>
-                        <th style="width: 20%;">Checklist</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Attested Copy of Last Degree</td>
-                        <td> <label class="attach-label" for="attach-input">Attach</label>
-                            <input type="file" class="attach-input" id="attach-input">
-                        </td>
-                        <td>
-                            <div class="form-check d-flex justify-content-center align-items-center">
-                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>Updated Brief CV (including list of publications during last three years)</td>
-                        <td> <label class="attach-label" for="attach-input">Attach</label>
-                            <input type="file" class="attach-input" id="attach-input">
-                        </td>
-                        <td>
-                            <div class="form-check d-flex justify-content-center align-items-center">
-                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Attested Copy of CNIC/Passport</td>
-                        <td> <label class="attach-label" for="attach-input">Attach</label>
-                            <input type="file" class="attach-input" id="attach-input">
-                        </td>
-                        <td>
-                            <div class="form-check d-flex justify-content-center align-items-center">
-                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Referral Letter from parent Department/University/Organization</td>
-                        <td> <label class="attach-label" for="attach-input">Attach</label>
-                            <input type="file" class="attach-input" id="attach-input">
-                        </td>
-                        <td>
-                            <div class="form-check d-flex justify-content-center align-items-center">
-                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Passport Size Picture(Blue or White Background)</td>
-                        <td> <label class="attach-label" for="attach-input">Attach</label>
-                            <input type="file" class="attach-input" id="attach-input">
-                        </td>
-                        <td>
-                            <div class="form-check d-flex justify-content-center align-items-center">
-                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Police Verification Proforma</td>
-                        <td> <label class="attach-label" for="attach-input">Attach</label>
-                            <input type="file" class="attach-input" id="attach-input">
-                        </td>
-                        <td>
-                            <div class="form-check d-flex justify-content-center align-items-center">
-                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Immunization Certificate (COVID-19)</td>
-                        <td> <label class="attach-label" for="attach-input">Attach</label>
-                            <input type="file" class="attach-input" id="attach-input">
-                        </td>
-                        <td>
-                            <div class="form-check d-flex justify-content-center align-items-center">
-                                <input type="checkbox" class="form-check-input" id="inProgressCheckbox">
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <p style="font-size: 14px;"><b><u>Note:</u></b> Students should print this filled form, have it signed by their university, and then upload it again in PDF format.</p>
-
-    <!-- Submit Button -->
-    <div class="form-actions d-flex justify-content-center mt-4">
-        <button type="submit" class="btn btn-success">Submit</button>
-    </div>
-    </form>
-</div></template>
+</template>
   
 <script>
 export default {
     name: "InternshipProforrma",
+    methods: {
+        printForm() {
+            window.print();
+        },
+    },
     data() {
         return {
             formData: {
@@ -472,5 +496,6 @@ export default {
 
 .institution-certification p {
     font-size: 12px;
-}</style>
+}
+</style>
   
