@@ -1,11 +1,6 @@
 
 <template>
-  <sidenav :custom_class="this.$store.state.mcolor" :class="[
-    this.$store.state.isTransparent,
-    this.$store.state.isRTL ? 'fixed-end' : 'fixed-start'
-  ]" v-if="this.$store.state.showSidenav" />
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-    <div class="container" >
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <navbar isBlur="blur  border-radius-lg my-3 py-2 start-0 end-0 mx-auto shadow" v-bind:darkMode="true"
@@ -13,13 +8,17 @@
       </div>
     </div>
   </div>
+  <sidenav :custom_class="this.$store.state.mcolor" :class="[
+    this.$store.state.isTransparent,
+    this.$store.state.isRTL ? 'fixed-end' : 'fixed-start'
+  ]" v-if="this.$store.state.showSidenav" />
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
     <!-- nav -->
     <NavbarComp :class="[navClasses]" :textWhite="this.$store.state.isAbsolute ? 'text-white opacity-8' : 'text-white'
       " :minNav="navbarMinimize" v-if="this.$store.state.showNavbar" />
     <router-view />
     <app-footer v-show="this.$store.state.showFooter" />
   </main>
- 
 </template>
 
 
@@ -39,7 +38,9 @@ export default {
     Navbar,
   },
   methods: {
-    ...mapMutations(["toggleConfigurator", "navbarMinimize"])
+    ...mapMutations(["toggleConfigurator", "navbarMinimize"]),
+   
+
   },
   computed: {
     navClasses() {
