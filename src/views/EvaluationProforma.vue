@@ -1,13 +1,13 @@
 <template>
     <div class="container py-4">
         <div class="card bg-primary text-white mb-4">
-            <h4 class="card-header">Evaluation Proforma</h4>
+            <h4 class="card-header">Performance Evaluation Report</h4>
         </div>
 
         <!-- Section 1: Personal Information -->
         <form>
-            <div class="card p-3 mb-4">
-                <div class="row justify-content-center">
+            <div class="card p-3 mb-3">
+                <div class="row justify-content-start">
 
                     <div class="col-12 col-sm-8 mb-sm-3 mx-auto evaluation-report mt-2">
                         <h5 class="mb-3">Instructions:</h5>
@@ -179,7 +179,7 @@
                 <div class="form-group">
                     <label class="m-2">* Attach list of publications carrying NCP name and titles/venues/durations
                         of International Conferences attended:</label>
-                    <button class="btn btn-outline-secondary mt-2 blink" type="button" id="attachButton">Attach</button>
+                    <button class="btn btn-success btn-outline-success mt-2" type="button" id="attachButton">Attach</button>
                 </div>
             </div>
             <!--CAAD SECTION-->
@@ -215,7 +215,7 @@
             </div> -->
             <!-- Submit Button -->
             <div class="form-actions d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-success btn-outline-success">Submit</button>
             </div>
         </form>
     </div>

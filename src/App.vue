@@ -1,10 +1,9 @@
 
 <template>
-   <div class="container" >
+  <div class="container">
     <div class="row">
       <div class="col-12">
-        <navbar isBlur="blur  fixed-top border-radius-lg my-3 py-2 start-0 end-0 mx-auto shadow" v-bind:darkMode="true"
-          />
+        <navbar isBlur="blur  fixed-top border-radius-lg my-3 py-2 start-0 end-0 mx-auto shadow" v-bind:darkMode="true" />
       </div>
     </div>
   </div>
@@ -19,7 +18,6 @@
     <router-view />
     <app-footer v-show="this.$store.state.showFooter" />
   </main>
- 
 </template>
 
 
@@ -39,7 +37,9 @@ export default {
     Navbar,
   },
   methods: {
-    ...mapMutations(["toggleConfigurator", "navbarMinimize"])
+    ...mapMutations(["toggleConfigurator", "navbarMinimize"]),
+   
+
   },
   computed: {
     navClasses() {

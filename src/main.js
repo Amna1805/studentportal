@@ -5,6 +5,7 @@ import router from "./router";
 import "./assets/css/nucleo-icons.css";
 import "./assets/css/nucleo-svg.css";
 import ArgonDashboard from "./argon-dashboard";
+import "@/assets/css/print.css";
 //import VeeValidatePlugin from '@vee-validate';
 //import { defineRule } from '@vee-validate/rules';
 
@@ -13,6 +14,9 @@ import ArgonDashboard from "./argon-dashboard";
 //     return /^[0-9]{13}$/.test(value);
 //   });
 const appInstance = createApp(App);
+appInstance.config.globalProperties.$printForm = function() {
+    window.print();
+};
 //appInstance.use(VeeValidatePlugin);
 appInstance.use(store);
 appInstance.use(router);

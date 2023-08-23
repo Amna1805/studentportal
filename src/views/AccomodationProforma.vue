@@ -32,7 +32,7 @@
                                     v-model="applicantInfo.registrationNo" />
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="ncpId">4. NCP ID Card No.:</label>
+                                <label for="ncpId">4. NCP ID Card No:</label>
                                 <input type="text" class="form-control" id="ncpId" v-model="applicantInfo.ncpId" />
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>10. Contact Phone Nos.</label>
+                            <label>10. Contact Phone No.</label>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <input type="text" class="form-control" placeholder="Cell" id="contactCell"
@@ -136,7 +136,7 @@
                         <div class="printOff rectangle-box p-3 mt-4">
                             <div class="d-flex justify-content-between align-items-center mt-4">
                                 <label>14. Please print the form and upload it:</label>
-                                <button class="btn btn-success" @click="printForm">
+                                <button class="btn btn-success" @click="$printForm()">
                                     <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
                                 </button>
                                 <input type="file" @change="handleFileUpload" class="form-control-file">
@@ -403,12 +403,6 @@
 export default {
     name: 'AccomodationProforma',
 
-    methods: {
-        printForm() {
-            window.print();
-        },
-    },
-
     data() {
         return {
             applicantInfo: {
@@ -451,9 +445,6 @@ export default {
 
 </script>
 
-<style media="print">
-@import "@/assets/css/print.css";
-</style>
 <style>
 .input-line {
     border: none;
