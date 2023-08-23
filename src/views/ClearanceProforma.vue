@@ -1,7 +1,7 @@
 <template>
     <div class="container py-4">
         <div class="card bg-primary text-white mb-4">
-            <h4 class="card-header">Clearance Proforma</h4>
+            <h4 class="card-header">Clearance Certificate (Temporary/Final)</h4>
         </div>
 
         <!-- Section 1: Personal Information -->
@@ -9,10 +9,10 @@
             <div class="card mb-3 p-3">
                 <fieldset>
                     <legend
-                        class="card-header d-flex justify-content-between align-items-center font-weight-bold text-decoration-underline">
-                        <p style="font-size: 14px;"><b><u>
+                        class="card-header d-flex justify-content-between align-items-center ">
+                       
                                     1. Certification by Applicant Hosted Researcher (please tick the appropriate
-                                    option):</u></b></p>
+                                    option):
                         <div class="avatar avatar-xl position-relative">
                             <img src="../assets/img/amna.jpg" alt="profile_image"
                                 class="shadow-sm w-100 border-radius-lg" />
@@ -20,15 +20,15 @@
                     </legend>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-4 mb-3 ">
                                 <label>1. Name:</label>
                                 <input type="text" class="form-control" v-model="formData.name">
                             </div>
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-4 mb-3 ">
                                 <label>2. Department:</label>
                                 <input type="text" class="form-control" v-model="formData.department">
                             </div>
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-4 mb-3 ">
                                 <label>3. Designation:</label>
                                 <input type="text" class="form-control" v-model="formData.designation">
                             </div>
@@ -46,12 +46,7 @@
 
 
                     </div>
-
-                </fieldset>
-
-            </div>
-            <div class="card mb-3 p-5">
-                <div class="option">
+                    <div class="option">
                     <div class="form-check">
                         <input type="radio" checked class="form-check-input" id="P" value="temporraybasis"
                             v-model="formData.option">
@@ -80,7 +75,45 @@
                             matters with all concerned departments at NCP Campus and there is no claim of any
                             description against me.</p>
                     </div>
+                    <div class="form-check "><br/>
+                        <input type="checkbox" class="form-check-input" id="extAgreePolicy">
+                        <label class="form-check-label text-sm-2" for="extAgreePolicy">I agree to the terms and services.</label>
+                    </div>
                 </div>
+                </fieldset>
+               
+            </div>
+            <div class="card mb-3 p-3">
+              <fieldset>
+                <legend
+                        class="card-header">
+                                    2. Certification by Supervisor and Director/Head of Concerned Department:  
+                    </legend>
+                    <div class="card-body">
+                        <p class="mt-n3">Certified that there is nothing outstanding against the above-mentioned Hosted Researcher in the
+                            department. It is, therefore , he/she may be issued Clearance Certificate and Work Experience 
+                            Certificate after due vetting by Finance Branch, Admin Branches and CAAD.
+                        </p>
+                        <div>
+                            <label for="supSignature">  Recommended by Concerned Research Supervisor/ Group Head: </label>
+                            <input type="text" id="supSignature" name="supSignature" class="input-line">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="director">Endorsed by Concerned Director/HOD (NCP Complex) : </label>
+                            <input type="text" id="recommendationDirector" name="recommendationDirector" class="input-line">
+                        </div>
+                    </div>
+              </fieldset>
+              <div class="printOff rectangle-box p-3 mt-4">
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <label>14. Please print the form and upload it:</label>
+                                <button class="btn btn-success" @click="$printForm()">
+                                    <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
+                                </button>
+                                <input type="file" @change="handleFileUpload" class="form-control-file">
+                            </div>
+                        </div>
             </div>
 
             <!---CAAD SECTION-->
@@ -224,10 +257,11 @@
                     </div>
                 </div>
             </div> -->
-            <!-- Submit Button -->
+            <!-- Submit Button --><div class="printOff">
             <div class="form-actions d-flex justify-content-center mt-4">
                 <button type="submit" class="btn btn-success">Submit</button>
             </div>
+        </div>
         </form>
     </div>
 </template>

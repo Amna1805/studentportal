@@ -9,7 +9,10 @@
           <a class="navbar-brand" href="https://www.ncp.edu.pk/">
             <img src="/ncplogo.png" width="50" height="50" class="logo img-fluid ">
           </a>
-          <h4 class="mt-3">NATIONAL CENTRE FOR PHYSICS</h4>
+          <a class="navbar-brand" href="https://www.ncp.edu.pk/">
+            <h4 class="mt-2">NATIONAL CENTRE FOR PHYSICS</h4>
+          </a>
+          
         </div>
         </li>
        

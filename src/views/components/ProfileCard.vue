@@ -16,12 +16,6 @@
         <h5>
           Amna Muzaffar
         </h5>
-        <div class="h6 font-weight-300">
-          <i class="ni location_pin mr-2"></i>Student
-        </div>
-        <div>
-          <i class="ni education_hat mr-2"></i>Quaid-i-Azam University,Islamabad
-        </div>
       </div>
       <div class="d-flex flex-column align-items-center">
           <div class="custom-scrollbar mt-3">
@@ -71,7 +65,7 @@
         </li>
       </ul>
       <div class="d-flex justify-content-end mt-4">
-        <a href="#" class="text-success">
+        <a href="/myprofile" class="text-success">
           Update Profile
           <i class="fas fa-play ml-5 fa-xs"></i>
         </a>

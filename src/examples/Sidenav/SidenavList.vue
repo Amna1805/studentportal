@@ -66,6 +66,27 @@
         </sidenav-item>
       </li>
       <li class="nav-item">
+        <sidenav-item url="/accLogin" :class="getRoute() === 'accLogin' ? 'active' : ''" :navText="'Account Login'">
+          <template v-slot:icon>
+            <i class="fas fa-user-circle text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/transportmembership" :class="getRoute() === 'transportmembership' ? 'active' : ''" :navText="'Transport'">
+          <template v-slot:icon>
+            <i class="fas fa-bus text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item url="/acc" :class="getRoute() === 'acc' ? 'active' : ''" :navText="'Accomodation'">
+          <template v-slot:icon>
+            <i class="fas fa-home text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
         <sidenav-item url="/latesitting" :class="getRoute() === 'latesitting' ? 'active' : ''" :navText="'Late Sitting'">
           <template v-slot:icon>
             <i class="fas fa-clock text-success text-sm opacity-10"></i>
@@ -87,37 +108,9 @@
         </sidenav-item>
       </li>
       <li class="nav-item">
-        <sidenav-item url="/acc" :class="getRoute() === 'acc' ? 'active' : ''" :navText="'Accomodation'">
-          <template v-slot:icon>
-            <i class="fas fa-home text-success text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
-      <li class="nav-item">
-        <sidenav-item url="/transportmembership" :class="getRoute() === 'transportmembership' ? 'active' : ''" :navText="'Transport'">
-          <template v-slot:icon>
-            <i class="fas fa-bus text-success text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
-      <li class="nav-item">
         <sidenav-item url="/ext" :class="getRoute() === 'ext' ? 'active' : ''" :navText="'Extension'">
           <template v-slot:icon>
             <i class="fas fa-calendar-plus text-success text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
-      <li class="nav-item">
-        <sidenav-item url="/accLogin" :class="getRoute() === 'accLogin' ? 'active' : ''" :navText="'Account Login'">
-          <template v-slot:icon>
-            <i class="fas fa-user-circle text-success text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
-      <li class="nav-item">
-        <sidenav-item url="/myprofile" :class="getRoute() === 'profile' ? 'active' : ''" :navText="'Profile'">
-          <template v-slot:icon>
-            <i class="ni ni-single-02 text-success text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
@@ -134,6 +127,13 @@
           </template>
         </sidenav-item>
       </li> -->
+      <li class="nav-item">
+        <sidenav-item url="/myprofile" :class="getRoute() === 'profile' ? 'active' : ''" :navText="'Profile'">
+          <template v-slot:icon>
+            <i class="ni ni-single-02 text-success text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
       <li class="nav-item">
         <sidenav-item url="/signin" :class="getRoute() === 'signin' ? 'active' : ''" :navText="'Sign In'">
           <template v-slot:icon>
