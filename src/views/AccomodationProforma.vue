@@ -3,7 +3,7 @@
         <div class="card bg-primary text-white mb-4 printShow">
             <h4 class="card-header">Accommodation Proforma</h4>
         </div>
-        <form>
+        <form  @submit.prevent="submitForm">
             <div class="card mb-4">
                 <fieldset>
                     <legend class="card-header d-flex justify-content-between align-items-center">
@@ -21,8 +21,8 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="applicationDate">2. Date of Application:</label>
-                                <input disabled type="date" class="form-control" id="applicationDate"
-                                    v-model="applicantInfo.applicationDate" />
+                                <input type="date" class="form-control" id="applicationDate"
+                                readonly v-model="applicantInfo.applicationDate" />
                             </div>
                         </div>
                         <div class="row">
@@ -478,6 +478,18 @@ export default {
             }
             return null;
         },
+        submitForm() {
+            const currentDate = new Date();
+            const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+            const day = currentDate.getDate().toString().padStart(2, '0');
+            const year = currentDate.getFullYear();
+            this.applicantInfo.applicationDate = `${year}-${month}-${day}`;
+            // console.log(this.formData.todayDate);
+        },
+    },
+    mounted() {
+        // Initialize dateValue when the component is mounted
+        this.submitForm();
     },
 };
 </script>
