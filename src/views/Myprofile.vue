@@ -24,8 +24,13 @@
                 <div class="col-md-6">
                   <label for="example-text-input" class="form-control-label">Name</label>
                   <div ref="inputContainer">
+<<<<<<< HEAD
                     <argon-input type="isEditing ? 'date' : 'text'" :value="isEditing ? '' : studentInfo.std_name"
                       :readonly="!isEditing" ref="editInput" />
+=======
+                    <input class="form-control" type="isEditing ? 'date' : 'text'" :value="studentInfo.std_name"
+                      readonly/>
+>>>>>>> 6623302f7095dedf33b1a1a9149afa712fa779f6
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -221,7 +226,6 @@ import setNavPills from "@/assets/js/nav-pills.js";
 import setTooltip from "@/assets/js/tooltip.js";
 import CompleteProfile from "./components/CompleteProfile.vue";
 import ArgonInput from "@/components/ArgonInput.vue";
-
 import axios from "axios"; // Import Axios
 
 const body = document.getElementsByTagName("body")[0];
