@@ -231,6 +231,7 @@ export default {
     return {
       activeSection: 'personal',
       hoveredSection: '',
+      isEditing:false,
       showMenu: false,
       studentInfo: {
 
