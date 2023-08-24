@@ -17,36 +17,23 @@
         <form @submit.prevent="submitForm">
             <div class="card ">
                 <fieldset>
-                    <legend class="card-header  d-flex justify-content-between align-items-center">Information Required From
-                        Hosted Researcher
-
+                    <legend class="card-header d-flex justify-content-between align-items-center">
+                        To be completed by Applicant Hosted Researcher:
+                        <div class="avatar avatar-xl position-relative">
+                            <img src="../assets/img/amna.jpg" alt="profile_image"
+                                class="shadow-sm w-100 border-radius-lg" />
+                        </div>
                     </legend>
 
                     <div class="card-body">
-
                         <div class="row">
-                            <div class="col-12 text-center d-block d-lg-none mb-4 justify-content-start">
-                                    <div class="avatar avatar-xl position-relative">
-                                        <img src="../assets/img/laiba.jpg" alt="profile_image"
-                                            class="shadow-sm border-radius-lg img-thumbnail img-fluid passport-size" />
-                                    </div>
-                                </div>
-                            <div class="col-md-12 d-flex justify-content-between align-items-start flex-wrap">
-                                <div class="col-md-4 mb-4 mb-md-0">
-                                    <label for="name" class="form-control-label">Name of Hosted Researcher:</label>
-                                    <ArgonInput type="text" id="name" v-model="applicantInfo.name" />
-                                </div>
-                                <div class="col-md-4 mb-4 mb-md-0">
-                                    <label for="regisno" class="form-control-label">Registration Number:</label>
-                                    <ArgonInput type="text" id="regisno" v-model="applicantInfo.regisno" />
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="avatar avatar-xl position-relative ms-auto d-none d-lg-block">
-                                        <img src="../assets/img/laiba.jpg" alt="profile_image"
-                                            class="shadow-sm border-radius-lg img-thumbnail img-fluid passport-size" />
-                                    </div>
-                                </div>
-                               
+                            <div class="col-md-4 ">
+                                <label for="name" class="form-control-label">Name of Hosted Researcher:</label>
+                                <ArgonInput type="text" id="name" v-model="applicantInfo.name" />
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="regisno" class="form-control-label">Registration Number:</label>
+                                <ArgonInput type="text" id="regisno" v-model="applicantInfo.regisno" />
                             </div>
                         </div>
 
@@ -83,22 +70,27 @@
                             <!-- when the form is submitted, get the date of the form at that time and then send it -->
                             <!-- just display appliction status instead of CAAD Fields -->
                         </div>
-                        <div class="printOff rectangle-box p-3 mt-4">
-                            <div class="d-flex justify-content-between align-items-center mt-4">
-                                <label>14. Please print the form and upload it:</label>
-                                <button class="btn btn-success" @click="$printForm()">
-                                    <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
-                                </button>
-                                <input type="file" @change="handleFileUpload" class="form-control-file">
-                            </div>
-                        </div>
+                        <div class="printOff card p-3 mb-3">
+                <div class="d-flex justify-content-start align-items-center mt-4">
+                    <label class="mb-2 mb-md-0">14. Please print the form and upload it:</label>
+                    <button class="btn btn-success mb-2 mb-md-0 ms-3" @click="$printForm()">
+                        <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
+                    </button>
+                </div>
+                <div class="mt-3 d-md-flex ">
+                    <input type="file" @change="handleFileUpload" class="form-control-file">
+                </div>
+            </div>
                     </div>
 
                 </fieldset>
             </div>
             <div class="printOff">
-                <div class="form-actions d-flex justify-content-center mt-4">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                <div class="row">
+                    <div class="form-actions d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-success me-2" @click="saveForm">Save</button>
+                        <button type="submit" class="btn btn-success" @click="submitForm">Submit</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -132,11 +124,21 @@ export default {
                 receiptno: '',
                 receiptdate: '',
                 regisno: '',
-                currentDate: null,
+               
             },
 
         };
 
+    },
+   
+    methods: {
+        submitForm() {
+        
+        }
+    },
+    mounted() {
+        // Initialize dateValue when the component is mounted
+        this.submitForm();
     },
     // methods: {
     //     submitForm() {

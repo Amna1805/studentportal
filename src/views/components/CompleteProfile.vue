@@ -41,50 +41,58 @@
         </div>
       </div>
       <div class="mt-3">
-      <ul class="list-group mt-2">
-        <li class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg">
-          <div class="d-flex align-items-center ms-3">
+        <ul class="list-group mt-2">
+          <li class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg cursor-pointer "
+            :style="getListStyles('personal')" @mouseenter="onMouseEnter('personal')" @mouseleave="onMouseLeave()"
+            @click="emitSectionClicked('personal')">
+            <div class="d-flex align-items-center ms-3">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-user text-gray"></i>
+              </div>
+              <div class="d-flex flex-column ms-3">
+                <h6 class="mb-1 text-dark font-weight-bold text-sm">Personal Details</h6>
+              </div>
+            </div>
+          </li>
+          <li @click="emitSectionClicked('contact')"
+            class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg cursor-pointer"
+            @mouseenter="onMouseEnter('contact')" @mouseleave="onMouseLeave()" :style="getListStyles('contact')">
             <div class="d-flex align-items-center">
-            <i class="fas fa-user text-gray"></i>
-          </div>
-            <div class="d-flex flex-column ms-3">
-              <h6 class="mb-1 text-dark font-weight-bold text-sm">Personal Details</h6>
+              <div class="d-flex align-items-center ms-3">
+                <i class="fas fa-address-book text-gray"></i>
+              </div>
+              <div class="d-flex flex-column ms-3">
+                <h6 class="mb-1 text-dark font-weight-bold text-sm">Contact details</h6>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg">
-          <div class="d-flex align-items-center">
-            <div class="d-flex align-items-center ms-3">
-            <i class="fas fa-address-book text-gray"></i>
-          </div>
-            <div class="d-flex flex-column ms-3">
-              <h6 class="mb-1 text-dark font-weight-bold text-sm">Contact details</h6>
+          </li>
+          <li class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg cursor-pointer"
+            :style="getListStyles('education')" @mouseenter="onMouseEnter('education')" @mouseleave="onMouseLeave()"
+            @click="emitSectionClicked('education')">
+            <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center ms-3">
+                <i class="fas fa-user-graduate text-gray"></i>
+              </div>
+              <div class="d-flex flex-column ms-3">
+                <h6 class="mb-1 text-dark font-weight-bold text-sm">Education Details</h6>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg">
-          <div class="d-flex align-items-center">
-            <div class="d-flex align-items-center ms-3">
-            <i class="fas fa-user-graduate text-gray"></i>
-          </div>
-            <div class="d-flex flex-column ms-3">
-              <h6 class="mb-1 text-dark font-weight-bold text-sm">Education Details</h6>
+          </li>
+          <li class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg cursor-pointer"
+            :style="getListStyles('document')" @mouseenter="onMouseEnter('document')" @mouseleave="onMouseLeave()"
+            @click="emitSectionClicked('document')">
+            <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center ms-3">
+                <i class="fas fa-file text-gray"></i>
+              </div>
+              <div class="d-flex flex-column ms-3">
+                <h6 class="mb-1 text-dark font-weight-bold text-sm">Documents Details</h6>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="list-group-item border d-flex justify-content-between ps-0 m-1 border-radius-lg">
-          <div class="d-flex align-items-center">
-            <div class="d-flex align-items-center ms-3">
-            <i class="fas fa-file text-gray"></i>
-          </div>
-            <div class="d-flex flex-column ms-3">
-              <h6 class="mb-1 text-dark font-weight-bold text-sm">Documents Details</h6>
-            </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
       </div>
-      
+
     </div>
   </div>
 </template>
@@ -92,7 +100,46 @@
 <script>
 export default {
   name: "CompleteProfile",
-};
+  props: {
+    activeSection: String,
+    hoveredSection: String
+  },
+  data() {
+    return {
+      localHoveredSection: null
+    };
+  },
+  methods: {
+    onMouseEnter(section) {
+      this.localHoveredSection = section;
+    },
+    onMouseLeave() {
+      this.localHoveredSection = null;
+    },
+    emitSectionClicked(section) {
+      this.$emit("sectionClicked", section);
+    },
+    getListStyles(section) {
+      const styles = {};
+
+      if (this.activeSection === section) {
+        styles.backgroundColor = '#f8f9fe';
+        styles.color = '#007bff';
+      } else if (this.hoveredSection === section) {
+        styles.backgroundColor = '#e5e5e5';
+      }
+      return styles;
+    },
+  },
+
+  watch: {
+    localHoveredSection(newValue) {
+      this.$emit("hoveredSectionChange", newValue);
+    }
+  }
+
+
+}
 </script>
 <style>
 .custom-scrollbar {
@@ -117,5 +164,17 @@ export default {
   background-color: #00cc66;
   /* Green color */
   border-radius: 8px;
+}
+
+.active-section {
+  background-color: #f8f9fe;
+  /* Set the background color for the active section */
+  color: #007bff;
+  /* Set the font color for the active section */
+}
+
+.hovered-section {
+  background-color: #e5e5e5;
+  /* Set the background color for the hovered section */
 }
 </style>

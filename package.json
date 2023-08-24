@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vee-validate/rules": "^4.11.2",
+    "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "chart.js": "^4.3.3",
     "core-js": "^3.8.3",

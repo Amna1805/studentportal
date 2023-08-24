@@ -72,7 +72,7 @@
                             <div class="col-md-6 mt-3">
                                 <argon-checkbox checked id="recommendation" v-model="applicantInfo.recommendation">
                                     <label class="form-check-label text-dark font-weight-bolder" for="recommendation">
-                                        Recommendation By Supervisor
+                                        Recommendation By Hosted Researcher's Supervisor
                                     </label>
                                 </argon-checkbox>
 
@@ -80,7 +80,7 @@
 
                         </div>
                         <label class="h6">Residence Contact Incase of Emergency:</label>
-                        <div class="row">
+                        <div class="row mb-4">
 
                             <div class="col-md-4">
                                 <label for="emergencyname">Name:</label>
@@ -98,7 +98,28 @@
                                     v-model="applicantInfo.emergencycontactptcl" />
                             </div>
                         </div>
-
+                        <div class="row mb-2">
+                            <div class="col-md-4">
+                                <label for="todayDate">Date of Application:</label>
+                                <input type="date" class="form-control" id="todayDate" v-model="applicantInfo.todayDate"
+                                    readonly />
+                            </div>
+                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-2 mt-2">
+                                <label for="gm-finance">Signature of Applicant:</label>
+                                <input type="text" id="gm-finance" name="gm-finance" class="input-line">
+                            </div>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <label for="gm-finance">Signature of Supervisor:</label>
+                                <input type="text" id="gm-finance" name="gm-finance" class="input-line">
+                            </div>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <label for="gm-finance">Signature of Director Concerned:</label>
+                                <input type="text" id="gm-finance" name="gm-finance" class="input-line">
+                            </div>
+                        </div>
                     </div>
                     <!-- when the form is submitted, get the date of the form at that time and then send it -->
                     <!-- just display appliction status instead of CAAD Fields -->
@@ -106,13 +127,35 @@
                 </fieldset>
 
             </div>
-            <div class="form-actions d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-success">Submit</button>
+            <div class="printOff card p-3 mb-3">
+                <div class="d-flex justify-content-start align-items-center mt-4">
+                    <label class="mb-2 mb-md-0">14. Please print the form and upload it:</label>
+                    <button class="btn btn-success mb-2 mb-md-0 ms-3" @click="$printForm()">
+                        <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
+                    </button>
+                </div>
+                <div class="mt-3 d-md-flex ">
+                    <input type="file" @change="handleFileUpload" class="form-control-file">
+                </div>
+            </div>
+            <div class="printOff">
+                <div class="row">
+                    <div class="form-actions d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-success me-2" @click="saveForm">Save</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
 </template>
-
+<style>
+.input-line {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+</style>
 <script>
 import ArgonCheckbox from "@/components/ArgonCheckbox.vue";
 export default {
@@ -139,12 +182,26 @@ export default {
                 emergencycontactptcl: '',
                 caretaker: '',
                 recommmendation: '',
-                currentDate: null,
+                todayDate: '',
             },
-
         };
-
     },
+    methods: {
+        submitForm() {
+            const currentDate = new Date();
+            const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+            const day = currentDate.getDate().toString().padStart(2, '0');
+            const year = currentDate.getFullYear();
+            this.applicantInfo.todayDate = `${year}-${month}-${day}`;
+            // console.log(this.formData.todayDate);
+        },
+    },
+    mounted() {
+        // Initialize dateValue when the component is mounted
+        this.submitForm();
+    },
+
+
     //     computed: {
     //     remainingCharacters() {
     //       return this.maxlength - this.applicantInfo.latesitreason.length;
