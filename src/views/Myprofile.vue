@@ -24,8 +24,8 @@
                 <div class="col-md-6">
                   <label for="example-text-input" class="form-control-label">Name</label>
                   <div ref="inputContainer">
-                    <argon-input type="isEditing ? 'date' : 'text'" :value="isEditing ? '' : 'Amna Muzaffar'"
-                      :readonly="!isEditing" ref="editInput" />
+                    <input class="form-control" type="isEditing ? 'date' : 'text'" :value="studentInfo.std_name"
+                      readonly/>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -264,12 +264,12 @@ export default {
     },
     async fetchStudentData() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/student/3740530943812');
+        const response = await axios.get('http://127.0.0.1:8000/student/7110417690181a');
         this.studentInfo = response.data;
       } catch (error) {
         console.error('Error fetching student data:', error);
       }
-    },
+    }
   },
 
   async mounted() {
