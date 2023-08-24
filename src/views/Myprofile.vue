@@ -24,7 +24,7 @@
                 <div class="col-md-6">
                   <label for="example-text-input" class="form-control-label">Name</label>
                   <div ref="inputContainer">
-                    <argon-input type="isEditing ? 'date' : 'text'" :value="isEditing ? '' : 'Amna Muzaffar'"
+                    <argon-input type="isEditing ? 'date' : 'text'" :value="isEditing ? '' : studentInfo.std_name"
                       :readonly="!isEditing" ref="editInput" />
                   </div>
                 </div>
@@ -221,7 +221,7 @@ import setNavPills from "@/assets/js/nav-pills.js";
 import setTooltip from "@/assets/js/tooltip.js";
 import CompleteProfile from "./components/CompleteProfile.vue";
 import ArgonInput from "@/components/ArgonInput.vue";
-import ArgonButton from "@/components/ArgonButton.vue";
+
 import axios from "axios"; // Import Axios
 
 const body = document.getElementsByTagName("body")[0];
@@ -230,6 +230,9 @@ export default {
   name: "MyprofileComp",
   data() {
     return {
+      isEditing:false,
+      activeSection: 'personal', 
+      hoveredSection:'',
       showMenu: false,
       studentInfo: {
 
@@ -260,6 +263,14 @@ export default {
     },
     handleHoveredSectionChange(section) {
       this.hoveredSection = section;
+    },
+    async fetchStudentData() {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/student/3740530943812');
+        this.studentInfo = response.data;
+      } catch (error) {
+        console.error('Error fetching student data:', error);
+      }
     }
   },
 
@@ -286,15 +297,6 @@ export default {
     this.$store.state.hideConfigButton = false;
     body.classList.remove("profile-overview");
   },
-  methods: {
-    async fetchStudentData() {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/student/3740530943812');
-        this.studentInfo = response.data;
-      } catch (error) {
-        console.error('Error fetching student data:', error);
-      }
-    }
-  },
+ 
 };
 </script>
