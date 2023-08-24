@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid py-4">
-    <nav class="navbar navbar-expand-md w-80 mx-auto"  :class="isBlur ? isBlur : ''">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-md w-150"  :class="isBlur ? isBlur : ''">
       <div class="container">
         <ul class="navbar-nav">
           <li class="nav-item">

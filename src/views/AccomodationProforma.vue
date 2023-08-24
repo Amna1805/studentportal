@@ -17,35 +17,32 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="name">1. Name of Hosted Researcher:</label>
-                                <input type="text" class="form-control" id="name" v-model="applicantInfo.name" />
+                                <input disabled type="text" class="form-control" id="name" />
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="applicationDate">2. Date of Application:</label>
-                                <input type="date" class="form-control" id="applicationDate"
+                                <input disabled type="date" class="form-control" id="applicationDate"
                                     v-model="applicantInfo.applicationDate" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="registrationNo">3. Registration No.:</label>
-                                <input type="text" class="form-control" id="registrationNo"
-                                    v-model="applicantInfo.registrationNo" />
+                                <input disabled type="text" class="form-control" id="registrationNo" />
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="ncpId">4. NCP ID Card No:</label>
-                                <input type="text" class="form-control" id="ncpId" v-model="applicantInfo.ncpId" />
+                                <input disabled type="text" class="form-control" id="ncpId" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="department">5. Department at NCP:</label>
-                                <input type="text" class="form-control" id="department"
-                                    v-model="applicantInfo.department" />
+                                <input disabled type="text" class="form-control" id="department" />
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="expiryDate">6. Date of Expiry of Stay at NCP as per ToRs:</label>
-                                <input type="date" class="form-control" id="expiryDate"
-                                    v-model="applicantInfo.expiryDate" />
+                                <input disabled type="date" class="form-control" id="expiryDate" />
                             </div>
                         </div>
 
@@ -67,8 +64,7 @@
                         <div class="form-group">
                             <label for="parentOrgName">8. Name/Address of Parent University/Institute/Organization of Hosted
                                 Researcher:</label>
-                            <input type="text" class="form-control" id="parentOrgName"
-                                v-model="applicantInfo.parentOrgName" />
+                            <input disabled type="text" class="form-control" id="parentOrgName" />
                         </div>
 
                         <div class="form-group">
@@ -91,8 +87,7 @@
                             <label>10. Contact Phone No.</label>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
-                                    <input type="text" class="form-control" placeholder="Cell" id="contactCell"
-                                        v-model="applicantInfo.contactCell" />
+                                    <input disabled type="text" class="form-control" placeholder="Cell" id="contactCell" />
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <input type="text" class="form-control" placeholder="Res" id="contactRes"
@@ -411,17 +406,10 @@ export default {
     data() {
         return {
             applicantInfo: {
-                name: '',
                 applicationDate: '',
-                registrationNo: '',
-                ncpId: '',
-                department: '',
-                expiryDate: '',
-                parentOrgType: '',         // Added field
-                parentOrgName: '',         // Added field
+                parentOrgType: '',                // Added field
                 accommodationFromDate: '', // Added field
                 accommodationToDate: '',   // Added field
-                contactCell: '',
                 contactRes: '',
                 contactLabExt: '',
                 securityProforma: '',
@@ -456,7 +444,7 @@ export default {
     },
 
     methods: {
-       
+
         loadSavedFormData() {
             const formDataCookie = this.getCookie(this.cookieName);
             if (formDataCookie) {
@@ -466,17 +454,9 @@ export default {
         },
         saveForm() {
             const formData = {
-                name: this.applicantInfo.name,
-                applicationDate: this.applicantInfo.applicationDate,
-                registrationNo: this.applicantInfo.registrationNo,
-                ncpId: this.applicantInfo.ncpId,
-                department: this.applicantInfo.department,
-                expiryDate: this.applicantInfo.expiryDate,
                 parentOrgType: this.applicantInfo.parentOrgType,
-                parentOrgName: this.applicantInfo.parentOrgName,
                 accommodationFromDate: this.applicantInfo.accommodationFromDate,
                 accommodationToDate: this.applicantInfo.accommodationToDate,
-                contactCell: this.applicantInfo.contactCell,
                 contactRes: this.applicantInfo.contactRes,
                 contactLabExt: this.applicantInfo.contactLabExt,
                 securityProforma: this.applicantInfo.securityProforma,

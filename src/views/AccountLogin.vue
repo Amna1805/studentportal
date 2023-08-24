@@ -19,11 +19,11 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label>1. NCP ID Number:</label>
-                                <input type="text" class="form-control" v-model="formData.ncpIdNumber">
+                                <input disabled type="text" class="form-control">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label>2. Date of Birth (DD/MM/YYYY):</label>
-                                <input type="text" class="form-control" v-model="formData.dateOfBirth">
+                                <input disabled type="text" class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label>4. CNIC No.:</label>
-                                <input type="text" class="form-control" v-model="formData.cnicNumber">
+                                <input disabled type="text" class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label>6. Designation:</label>
-                                <input type="text" class="form-control" v-model="formData.designation">
+                                <input disabled type="text" class="form-control">
                             </div>
                         </div>
                         <!-- Section 2: Name -->
@@ -51,19 +51,17 @@
                             <label>7. Name (Please fill in capital Letters):</label>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <select class="form-control" v-model="formData.nameTitle">
+                                    <select class="form-control">
                                         <option value="Mr.">Mr.</option>
                                         <option value="Mrs.">Mrs.</option>
                                         <option value="Ms.">Ms.</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" placeholder="First Name"
-                                        v-model="formData.firstName">
+                                    <input disabled type="text" class="form-control" placeholder="First Name">
                                 </div>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" placeholder="Last Name"
-                                        v-model="formData.lastName">
+                                    <input disabled type="text" class="form-control" placeholder="Last Name">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +92,7 @@
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>12. Mobile No.:</label>
-                                <input type="text" class="form-control" v-model="formData.mobileNumber">
+                                <input disabled type="text" class="form-control">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label>13. CoE Name:</label>
@@ -106,12 +104,12 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label>14. Department/Branch:</label>
-                                <input type="text" class="form-control" v-model="formData.departmentBranch">
+                                <input disabled type="text" class="form-control">
                             </div>
                             <!-- Section 15: Email Address -->
                             <div class="col-md-6 mb-3">
                                 <label>15. Email Address:</label>
-                                <input type="email" class="form-control" v-model="formData.emailAddress">
+                                <input disabled type="email" class="form-control">
                             </div>
                         </div>
 
@@ -168,7 +166,7 @@
                         </div>
 
                         <!-- Section 20: Attach Proof of Affiliation -->
-                        <div class="form-group">
+                        <div class="printOff form-group">
                             <label>20. Attach the proof of affiliation with NCP. (if applicable)</label>
                             <input type="file" class="custom-file-input" id="proofOfFile" accept=".pdf">
                         </div>
@@ -242,18 +240,25 @@
                             <label>22. For Head of the Concerned Department</label>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
-                                    <input type="text" class="form-control" placeholder="Dept. Head (Name)"
-                                        v-model="formData.deptHeadName">
+                                    <input disabled type="text" class="form-control" placeholder="Dept. Head (Name)">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label>Date:</label>
-                                    <input type="text" class="input-line"
-                                        v-model="formData.deptHeadDate">
+                                    <input type="text" class="input-line">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label>Sign:</label>
                                     <input type="text" class="input-line">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="printOff rectangle-box p-3 mt-4">
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <label>23. Please print the form and upload it:</label>
+                                <button class="btn btn-success" @click="$printForm()">
+                                    <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
+                                </button>
+                                <input type="file" @change="handleFileUpload" class="form-control-file">
                             </div>
                         </div>
                     </div>
@@ -306,16 +311,16 @@
                                 <div class="col-md-4 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="dir" name="dir" class="input-line">
-                                        <br> 
-                                        <label for="managerAIA">ii. IT Personnel Name</label>     
-                         
+                                        <br>
+                                        <label for="managerAIA">ii. IT Personnel Name</label>
+
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3 text-center">
                                     <div>
-                                        <input disabled type="text" id="dir" name="dir" class="input-line"> 
+                                        <input disabled type="text" id="dir" name="dir" class="input-line">
                                         <br>
-                                        <label for="managerAIA">iii. Signature</label>  
+                                        <label for="managerAIA">iii. Signature</label>
                                     </div>
                                 </div>
                             </div>
@@ -324,8 +329,13 @@
                 </fieldset>
             </div>
             <!-- Submit Button -->
-            <div class="form-actions d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-success">Submit</button>
+            <div class="printOff">
+                <div class="row">
+                    <div class="form-actions d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-success me-2" @click="saveForm">Save</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -337,32 +347,14 @@ export default {
     data() {
         return {
             formData: {
-                ncpIdNumber: '',
-                dateOfBirth: '',
                 nationality: '',
-                cnicNumber: '',
                 passportNumber: '',
-                nameTitle: 'Mr.', // Default value
-                firstName: '',
-                lastName: '',
-                designation: '',
                 building: '',
                 floor: '',
                 roomNumber: '',
                 telephoneOffice: '',
-                mobileNumber: '',
-                // Add more form data fields here
-                departmentHead: '',
-                // Add more form data fields here
-                // Section 13: CoE Name
                 coeName: '',
-
-                // Section 14: Department/Branch
-                departmentBranch: '',
-
-                // Section 15: Email Address
-                emailAddress: '',
-                printForm:'',
+                printForm: '',
 
                 // Section 16: Services required
                 services: {
@@ -384,11 +376,9 @@ export default {
 
                 agreePolicy: false,
 
-                deptHeadName: '',
-              
+
+
                 // for IT dept
-                itUserId: '',
-                itDomain: '',
                 itCheckList: {
                     emailAccount: false,
                     ldapAccount: false,
@@ -400,6 +390,8 @@ export default {
                     departmentalMailingList: false,
                 },
             },
+            itUserId: '',
+            itDomain: '',
             itCheckListLabels: {
                 emailAccount: 'Email Account',
                 ldapAccount: 'Linux (LDAP) Account',
@@ -411,7 +403,66 @@ export default {
                 departmentalMailingList: 'Departmental Mailing List',
             },
         };
+    },
+
+    computed: {
+        cookieName() {
+            return 'form-data-' + this.$route.path; // Unique name based on the route
+        },
+    },
+
+    created() {
+        this.loadSavedFormData(); // Load saved data when the component is created
+    },
+
+    methods: {
+        loadSavedFormData() {
+            const formDataCookie = this.getCookie(this.cookieName);
+            if (formDataCookie) {
+                const myformData = JSON.parse(formDataCookie);
+                Object.assign(this.formData, myformData);
+            }
+        },
+        saveForm() {
+            const savedFormData = {
+                nationality: this.formData.nationality,
+                passportNumber: this.formData.passportNumber,
+                building: this.formData.building,
+                floor: this.formData.floor,
+                roomNumber: this.formData.roomNumber,
+                telephoneOffice: this.formData.telephoneOffice,
+                coeName: this.formData.coeName,
+                services: {
+                    windowsAccount: this.formData.services.windowsAccount,
+                    emailAccount: this.formData.services.emailAccount,
+                    printQuota: this.formData.services.printQuota,
+                    ldapAccount: this.formData.services.ldapAccount,
+                },
+                stayFrom: this.formData.stayFrom,
+                stayTo: this.formData.stayTo,
+                macAddress: this.formData.macAddress,
+                itAccountPurpose: this.formData.itAccountPurpose,
+                agreePolicy: this.formData.agreePolicy,
+            };
+            this.setCookie(this.cookieName, JSON.stringify(savedFormData), 365);
+            alert('Form data saved.');
+        },
+        setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        },
+        getCookie(name) {
+            const value = "; " + document.cookie;
+            const parts = value.split("; " + name + "=");
+            if (parts.length === 2) {
+                return parts.pop().split(";").shift();
+            }
+            return null;
+        },
     }
+
 };
 </script>
   

@@ -17,29 +17,29 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="researcherName">1. Name of Hosted Researcher:</label>
-                                <input type="text" class="form-control" id="researcherName" v-model="researcherInfo.name" />
+                                <input disabled type="text" class="form-control" id="researcherName" />
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="researcherPhone">2. Phone/Cell:</label>
                                 <input type="text" class="form-control" id="researcherPhone"
-                                    v-model="researcherInfo.phone" />
+                                disabled />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="researcherEmail">3. E-mail:</label>
                                 <input type="email" class="form-control" id="researcherEmail"
-                                    v-model="researcherInfo.email" />
+                                   disabled />
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="registrationNo">4. NCP Registration No.:</label>
                                 <input type="text" class="form-control" id="registrationNo"
-                                    v-model="researcherInfo.registrationNo" />
+                                disabled />
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="entryCardNo">5. NCP Entry Card No.</label>
                                 <input type="text" class="form-control" id="entryCardNo"
-                                    v-model="researcherInfo.entryCardNo" />
+                                disabled />
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
                             <div class="col-md-4 mb-3">
                                 <label for="department">6. Relevant Department at NCP:</label>
                                 <input type="text" class="form-control" id="department"
-                                    v-model="researcherInfo.department" />
+                                disabled />
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="group">7. Group:</label>
@@ -56,12 +56,12 @@
                             <div class="col-md-4 mb-3">
                                 <label for="contactPerson">8. Supervisor/Contact Person:</label>
                                 <input type="text" class="form-control" id="contactPerson"
-                                    v-model="researcherInfo.contactPerson" />
+                                disabled />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="presentOrg">9. Present Organization/University/Department:</label>
-                            <input type="text" class="form-control" id="presentOrg" v-model="researcherInfo.presentOrg" />
+                            <input type="text" class="form-control" id="presentOrg" disabled />
                         </div>
 
                         <div class="form-group">
@@ -69,13 +69,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="stayFrom">From:</label>
-                                    <input type="date" class="form-control" id="presentDurationFrom"
-                                        v-model="researcherInfo.presentDurationFrom">
+                                    <input disabled type="date" class="form-control" id="presentDurationFrom"
+                                       >
                                 </div>
                                 <div class="col-md-6">
                                     <label for="stayTo">To:</label>
                                     <input type="date" class="form-control" id="presentDurationTo"
-                                        v-model="researcherInfo.presentDurationTo">
+                                    disabled>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +164,7 @@
                             </div>
                             <div class="col-md-6">
                                 <input type="date" placeholder="Date" class="form-control" id="applyDate"
-                                v-model="researcherInfo.applyDate">
+                                    v-model="researcherInfo.applyDate">
                             </div>
                         </div>
 
@@ -201,6 +201,16 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="printOff rectangle-box p-3 mt-4">
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <label>18. Please print the form and upload it:</label>
+                                <button class="btn btn-success" @click="$printForm()">
+                                    <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
+                                </button>
+                                <input type="file" @change="handleFileUpload" class="form-control-file">
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
             </div>
@@ -219,24 +229,24 @@
                                     <br>
                                     <label for="jeAIA">i. JE (A&IA)</label>
                                     <br>
-                                        <p class="small">(to vet above registration contents of HR)</p> 
+                                    <p class="small">(to vet above registration contents of HR)</p>
                                 </div>
                                 <div class="col-md-4 mb-3 text-center">
                                     <div>
                                         <input disabled type="text" id="dir" name="dir" class="input-line">
-                                        <br> 
-                                        <label for="managerAIA">ii. Manager A&IA</label>     
                                         <br>
-                                        <p class="small">(to vet above registration contents of HR)</p>   
+                                        <label for="managerAIA">ii. Manager A&IA</label>
+                                        <br>
+                                        <p class="small">(to vet above registration contents of HR)</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3 text-center">
                                     <div>
-                                        <input disabled type="text" id="dir" name="dir" class="input-line"> 
+                                        <input disabled type="text" id="dir" name="dir" class="input-line">
                                         <br>
-                                        <label for="managerAIA">iii. GM CAAD</label>  
-                                        <br>  
-                                        <p class="small">(to forward the application to DG Secretariat)</p>    
+                                        <label for="managerAIA">iii. GM CAAD</label>
+                                        <br>
+                                        <p class="small">(to forward the application to DG Secretariat)</p>
                                     </div>
                                 </div>
                             </div>
@@ -248,7 +258,8 @@
                                 <input type="text" id="dgSignature" name="dgSignature" class="input-line">
                             </div>
                             <div class="col-md-6">
-                                <input type="date" placeholder="Date" class="form-control" id="approvalDate"  v-model="officialInfo.approvalDate">
+                                <input type="date" placeholder="Date" class="form-control" id="approvalDate"
+                                    v-model="officialInfo.approvalDate">
                             </div>
                         </div>
 
@@ -384,23 +395,20 @@
                                     <p class="mb-0">for information.</p>
                                 </div>
                             </div>
-
-
-
                         </div>
-
-
-
-
                     </div>
                 </fieldset>
             </div>
 
-
-
-            <div class="form-actions mt-4 d-flex justify-content-center">
-                <button type="submit" class="btn btn-success">Submit</button>
+            <div class="printOff">
+                <div class="row">
+                    <div class="form-actions d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-success me-2" @click="saveForm">Save</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
             </div>
+
         </form>
     </div>
 </template>
@@ -411,17 +419,7 @@ export default {
     data() {
         return {
             researcherInfo: {
-                name: "",
-                phone: "",
-                email: "",
-                registrationNo: "",
-                entryCardNo: "",
-                department: "",
                 group: "",
-                contactPerson: "",
-                presentOrg: "",
-                presentDurationFrom: null,
-                presentDurationTo: null,
                 extensionReason: "",
                 extensionPeriodFrom: null,
                 extensionPeriodTo: null,
@@ -434,10 +432,59 @@ export default {
             officialInfo: {
                 // ... Previous officialInfo properties ...
                 recommendationExtension: '', // Yes or No
-                approvalDate:''
+                approvalDate: ''
             },
         };
-    }
+    },
+
+    computed: {
+        cookieName() {
+            return 'form-data-' + this.$route.path; // Unique name based on the route
+        },
+    },
+
+    created() {
+        this.loadSavedFormData(); // Load saved data when the component is created
+    },
+
+    methods: {
+        loadSavedFormData() {
+            const formDataCookie = this.getCookie(this.cookieName);
+            if (formDataCookie) {
+                const formData = JSON.parse(formDataCookie);
+                Object.assign(this.researcherInfo, formData);
+            }
+        },
+        saveForm() {
+            const formData = {
+                group: this.researcherInfo.group,
+                extensionReason: this.researcherInfo.extensionReason,
+                extensionPeriodFrom: this.researcherInfo.extensionPeriodFrom,
+                extensionPeriodTo: this.researcherInfo.extensionPeriodTo,
+                accommodationRequirement: this.researcherInfo.accommodationRequirement,
+                transportRequirement: this.researcherInfo.transportRequirement,
+                undertaking: this.researcherInfo.undertaking,
+                extAgreePolicy: this.researcherInfo.extAgreePolicy,
+                applyDate: this.researcherInfo.applyDate
+            };
+            this.setCookie(this.cookieName, JSON.stringify(formData), 365);
+            alert('Form data saved.');
+        },
+        setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        },
+        getCookie(name) {
+            const value = "; " + document.cookie;
+            const parts = value.split("; " + name + "=");
+            if (parts.length === 2) {
+                return parts.pop().split(";").shift();
+            }
+            return null;
+        },
+    },
 };
 </script>
   
