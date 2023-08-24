@@ -221,6 +221,9 @@ import setNavPills from "@/assets/js/nav-pills.js";
 import setTooltip from "@/assets/js/tooltip.js";
 import CompleteProfile from "./components/CompleteProfile.vue";
 import ArgonInput from "@/components/ArgonInput.vue";
+import ArgonButton from "@/components/ArgonButton.vue";
+import axios from "axios"; // Import Axios
+
 const body = document.getElementsByTagName("body")[0];
 
 export default {
@@ -228,9 +231,9 @@ export default {
   data() {
     return {
       showMenu: false,
-      activeSection: 'personal',
-      hoveredSection: '',
-      isEditing: false,
+      studentInfo: {
+
+      } // To store student data
     };
   },
 
@@ -260,21 +263,13 @@ export default {
     }
   },
 
-  mounted() {
+  async mounted() {
     this.$store.state.isAbsolute = true;
     setNavPills();
     setTooltip();
-    const storedSection = localStorage.getItem('activeSection');
-    const storedHoveredSection = localStorage.getItem('hoveredSection');
-    if (storedSection) {
-      this.activeSection = storedSection;
-    }
-    if (storedHoveredSection) {
-      this.hoveredSection = storedHoveredSection;
-    }
-    if (this.isEditing) {
-      this.$refs.editInput.focus();
-    }
+
+     // Fetch student data when the component is mounted
+     await this.fetchStudentData();
   },
   beforeMount() {
     this.$store.state.imageLayout = "profile-overview";
@@ -290,6 +285,16 @@ export default {
     this.$store.state.showFooter = true;
     this.$store.state.hideConfigButton = false;
     body.classList.remove("profile-overview");
-  }
+  },
+  methods: {
+    async fetchStudentData() {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/student/3740530943812');
+        this.studentInfo = response.data;
+      } catch (error) {
+        console.error('Error fetching student data:', error);
+      }
+    }
+  },
 };
 </script>

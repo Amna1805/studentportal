@@ -49,16 +49,25 @@
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label>4. Date of Joining NCP:</label>
-                                <input type="date" class="form-control"  v-model="formData.joiningdate" />
+                                <input type="date" class="form-control" v-model="formData.joiningdate" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label>5. Present Duration at NCP: From:</label>
-                                <input type="date" class="form-control"  v-model="formData.starttime" />
+                                <label>5. Present Duration at NCP</label>
+                                <div>
+                                    <div class="d-inline align-items-center">
+                                        <label for="starttime" class="me-2d-inline"
+                                            style="margin-right: 0.5rem;">From:</label>
+                                        <input type="date" class="form-control d-inline" id="starttime"
+                                            v-model="formData.starttime" style="width: 35%;" />
+                                    </div>
+                                    <div class="d-inline align-items-center">
+                                        <label for="endtime" class="me-2 d-inline" style="margin-right: 0.5rem;">To:</label>
+                                        <input type="date" class="form-control d-inline" id="endtime"
+                                            v-model="formData.endtime" style="width: 35%;" />
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <label>6. Present Duration at NCP: To:</label>
-                                <input type="date" class="form-control"  v-model="formData.endtime" />
-                            </div>
+
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-3">
@@ -66,17 +75,24 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input type="radio" checked class="form-check-input" id="status"  value="Completed" v-model="formData.status">
+                                            <input type="radio" checked class="form-check-input" id="status"
+                                                value="Completed" v-model="formData.status">
                                             <label class="form-check-label" for="completedCheckbox">Completed</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="status" value="In Progress" v-model="formData.status">
-                                            <label class="form-check-label" for="inProgressCheckbox" >In Progress</label>
+                                            <input type="radio" class="form-check-input" id="status" value="In Progress"
+                                                v-model="formData.status">
+                                            <label class="form-check-label" for="inProgressCheckbox">In Progress</label>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label>Date of Submission:</label>
+                                <input type="date" id="todayDate" name="todayDate" class="form-control"
+                                    v-model="formData.todayDate" readonly />
                             </div>
                         </div>
                     </div>
@@ -103,7 +119,8 @@
                                         Impact
                                         Factor Journals:</label></div>
                                 <div class="col-md-4 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block"  v-model="formData.publishedpapers">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block"
+                                        v-model="formData.publishedpapers">
                                 </div>
                             </div>
 
@@ -115,7 +132,8 @@
                                         No. of Papers Accepted in Impact
                                         Factor Journals:</label></div>
                                 <div class="col-md-3 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.acceptedpapers" >
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block"
+                                        v-model="formData.acceptedpapers">
                                 </div>
                             </div>
 
@@ -131,7 +149,8 @@
                                         of
                                         No. of Papers Submitted in Impact Factor Journals: </label></div>
                                 <div class="col-md-4 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.submittedpapers">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block"
+                                        v-model="formData.submittedpapers">
                                 </div>
                             </div>
 
@@ -142,7 +161,8 @@
                                         of
                                         No. of Paper(s) Presented in International Conference(s):</label></div>
                                 <div class="col-md-3 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.presentedpapers">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block"
+                                        v-model="formData.presentedpapers">
                                 </div>
                             </div>
 
@@ -156,7 +176,8 @@
                                         of
                                         No. of Patents submitted : National</label></div>
                                 <div class="col-md-4 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.nationalpatentssubmitted">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block"
+                                        v-model="formData.nationalpatentssubmitted">
                                 </div>
                             </div>
 
@@ -167,7 +188,8 @@
                                         of
                                         No. of Patents submitted : International</label></div>
                                 <div class="col-md-3 col-sm-3 col-3">
-                                    <input type="number" id="publishedPapers" class="form-control d-inline-block" v-model="formData.internationalpatentssubmitted">
+                                    <input type="number" id="publishedPapers" class="form-control d-inline-block"
+                                        v-model="formData.internationalpatentssubmitted">
                                 </div>
                             </div>
 
@@ -175,11 +197,32 @@
 
                     </div>
                 </div>
+                <div class="row">
 
+                    <div class="col-md-6 mb-3">
+                        <label for="gm-finance">Signature of Applicant:</label>
+                        <input type="text" id="gm-finance" name="gm-finance" class="input-line">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="gm-finance">Signature of Director Concerned on Prog. of Work:</label>
+                        <input type="text" id="gm-finance" name="gm-finance" class="input-line">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="gm-finance">Remarks of Director Concerned:</label>
+                        <input type="text" id="gm-finance" name="gm-finance" class="input-line">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="director-admin">Date:</label>
+                        <input type="text" id="director-admin" name="director-admin" class="input-line">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="m-2">* Attach list of publications carrying NCP name and titles/venues/durations
                         of International Conferences attended:</label>
-                    <button class="btn btn-success btn-outline-success mt-2" type="button" id="attachButton">Attach</button>
+                    <button class="printOff btn btn-success btn-outline-success mt-2" type="button"
+                        id="attachButton">Attach</button>
                 </div>
             </div>
             <!--CAAD SECTION-->
@@ -213,9 +256,28 @@
                     </div>
                 </div>
             </div> -->
+            <div class="printOff card p-3 mb-3">
+                <div class="d-flex justify-content-start align-items-center mt-4">
+                    <label class="mb-2 mb-md-0">14. Please print the form and upload it:</label>
+                    <button class="btn btn-success mb-2 mb-md-0 ms-3" @click="$printForm()">
+                        <i class="fas fa-print"></i> <!-- Font Awesome icon for printing -->
+                    </button>
+                </div>
+                <div class="mt-3 d-md-flex ">
+                    <input type="file" @change="handleFileUpload" class="form-control-file">
+                </div>
+            </div>
+
+
+
             <!-- Submit Button -->
-            <div class="form-actions d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-success btn-outline-success">Submit</button>
+            <div class="printOff">
+                <div class="row">
+                    <div class="form-actions d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-success me-2" @click="saveForm">Save</button>
+                        <button type="submit" class="btn btn-success" @click="submitForm">Submit</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -227,23 +289,39 @@ export default {
     data() {
         return {
             formData: {
-            name:'',
-            supervisor:'',
-            designation:'',
-            joiningdate:'',
-            starttime:'',
-            endtime:'',
-            status:'',
-            summary:'',
-            publishedpapers:'',
-            submittedpapers:'',
-            acceptedpapers:'',
-            presentedpapers:'',
-            nationalpatentssubmitted:'',
-            internationalpatentssubmitted:'',
+                name: '',
+                supervisor: '',
+                designation: '',
+                joiningdate: '',
+                starttime: '',
+                endtime: '',
+                status: '',
+                summary: '',
+                publishedpapers: '',
+                submittedpapers: '',
+                acceptedpapers: '',
+                presentedpapers: '',
+                nationalpatentssubmitted: '',
+                internationalpatentssubmitted: '',
+                todayDate: '',
             },
         };
-    }
+    },
+
+    methods: {
+        submitForm() {
+            const currentDate = new Date();
+            const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+            const day = currentDate.getDate().toString().padStart(2, '0');
+            const year = currentDate.getFullYear();
+            this.formData.todayDate = `${year}-${month}-${day}`;
+            // console.log(this.formData.todayDate);
+        }
+    },
+    mounted() {
+        // Initialize dateValue when the component is mounted
+        this.submitForm();
+    },
 };
 </script>
   
