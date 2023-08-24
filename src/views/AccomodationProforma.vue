@@ -456,9 +456,7 @@ export default {
     },
 
     methods: {
-        printForm() {
-            window.print();
-        },
+       
         loadSavedFormData() {
             const formDataCookie = this.getCookie(this.cookieName);
             if (formDataCookie) {

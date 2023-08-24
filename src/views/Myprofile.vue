@@ -34,7 +34,7 @@
                   <label for="example-text-input" class="form-control-label"
                     >First name</label
                   >
-                  <input class="form-control" type="text" value="Jesse" />
+                  <input class="form-control" type="text" :value="studentInfo.std_name" readonly/>
                 </div>
                 <div class="col-md-6">
                   <label for="example-text-input" class="form-control-label"
@@ -102,21 +102,29 @@ import setTooltip from "@/assets/js/tooltip.js";
 import CompleteProfile from "./components/CompleteProfile.vue";
 import ArgonInput from "@/components/ArgonInput.vue";
 import ArgonButton from "@/components/ArgonButton.vue";
+import axios from "axios"; // Import Axios
+
 const body = document.getElementsByTagName("body")[0];
 
 export default {
   name: "MyprofileComp",
   data() {
     return {
-      showMenu: false
+      showMenu: false,
+      studentInfo: {
+
+      } // To store student data
     };
   },
   components: { CompleteProfile, ArgonInput, ArgonButton },
 
-  mounted() {
+  async mounted() {
     this.$store.state.isAbsolute = true;
     setNavPills();
     setTooltip();
+
+     // Fetch student data when the component is mounted
+     await this.fetchStudentData();
   },
   beforeMount() {
     this.$store.state.imageLayout = "profile-overview";
@@ -132,6 +140,16 @@ export default {
     this.$store.state.showFooter = true;
     this.$store.state.hideConfigButton = false;
     body.classList.remove("profile-overview");
-  }
+  },
+  methods: {
+    async fetchStudentData() {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/student/3740530943812');
+        this.studentInfo = response.data;
+      } catch (error) {
+        console.error('Error fetching student data:', error);
+      }
+    }
+  },
 };
 </script>

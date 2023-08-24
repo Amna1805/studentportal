@@ -60,6 +60,7 @@
                                 class="input-line">. I have settled dues and/or pending matters with all concerned
                             departments at NCP Campus and there is no claim of any description against me.</p>
                     </div>
+                    <!-- conver the 'w-e-f' fields to data formats -->
                 </div>
                 <div class="option">
                     <div class="form-check">
