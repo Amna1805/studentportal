@@ -8,7 +8,7 @@
     </div>
   </div> -->
   <main class="main-content mt-0">
-    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" :style="{
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg mt-n3" :style="{
       'background-image': `url(${require('@/assets/img/ncpsignupbg.jpg')})`,
       'background-position': 'top'
     }">
