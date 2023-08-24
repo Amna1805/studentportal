@@ -231,7 +231,6 @@ export default {
     return {
       activeSection: 'personal',
       hoveredSection: '',
-      isEditing:false,
       showMenu: false,
       studentInfo: {
 
@@ -265,7 +264,7 @@ export default {
     },
     async fetchStudentData() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/student/7110417690181a');
+        const response = await axios.get('http://127.0.0.1:8000/student/7110417690181');
         this.studentInfo = response.data;
       } catch (error) {
         console.error('Error fetching student data:', error);
