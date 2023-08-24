@@ -164,7 +164,7 @@
                             </div>
                             <div class="col-md-6">
                                 <input type="date" placeholder="Date" class="form-control" id="applyDate"
-                                    v-model="researcherInfo.applyDate">
+                                   readonly v-model="researcherInfo.applyDate">
                             </div>
                         </div>
 
@@ -484,6 +484,18 @@ export default {
             }
             return null;
         },
+        submitForm() {
+            const currentDate = new Date();
+            const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+            const day = currentDate.getDate().toString().padStart(2, '0');
+            const year = currentDate.getFullYear();
+            this.researcherInfo.applyDate = `${year}-${month}-${day}`;
+            // console.log(this.formData.todayDate);
+        },
+    },
+    mounted() {
+        // Initialize dateValue when the component is mounted
+        this.submitForm();
     },
 };
 </script>
