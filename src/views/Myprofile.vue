@@ -229,9 +229,8 @@ export default {
   name: "MyprofileComp",
   data() {
     return {
-      isEditing:false,
-      activeSection: 'personal', 
-      hoveredSection:'',
+      activeSection: 'personal',
+      hoveredSection: '',
       showMenu: false,
       studentInfo: {
 
@@ -265,7 +264,7 @@ export default {
     },
     async fetchStudentData() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/student/3740530943812');
+        const response = await axios.get('http://127.0.0.1:8000/student/7110417690181');
         this.studentInfo = response.data;
       } catch (error) {
         console.error('Error fetching student data:', error);
